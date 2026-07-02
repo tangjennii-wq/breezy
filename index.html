@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Winter Break — a warm week together</title>
+<!--LEAFLET-START-->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<!--LEAFLET-END-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #33302b; --soft-ink: #6b6459; --line: #e6ddca; --paper: #f7f0e1;
+    --card: #fffdf7; --accent: #3f72b0; --leaf: #6b7a5a; --tag-bg: #efe7d5; --marigold: #e0863a;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: "Figtree", "Figtree", "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6; font-size: 17px;
+  }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 52px 40px 72px; }
+
+  header.cover { text-align: center; padding: 8px 0 34px; }
+  .eyebrow {
+    font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; text-transform: uppercase;
+    letter-spacing: 0.28em; font-size: 11.5px; color: var(--accent); margin-bottom: 18px;
+  }
+  h1 { font-size: 42px; font-weight: 700; line-height: 1.1; margin: 0 0 14px; letter-spacing: -0.01em; }
+  .subtitle {
+    font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; font-size: 13.5px;
+    letter-spacing: 0.04em; color: var(--soft-ink); margin: 0 0 20px;
+  }
+  .strip { display: inline-block; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 10px 0; margin-top: 4px; }
+  .strip span { font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; font-size: 12px; color: var(--soft-ink); letter-spacing: 0.03em; }
+  .strip .dot { color: var(--line); margin: 0 9px; }
+
+  .intro { font-size: 17.5px; color: var(--soft-ink); margin: 34px 0 40px; }
+  .intro p { margin: 0 0 15px; }
+
+  h2.section {
+    font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; text-transform: uppercase; font-weight: 700;
+    letter-spacing: 0.16em; font-size: 13px; color: var(--accent);
+    border-bottom: 1px solid var(--line); padding-bottom: 8px; margin: 8px 0 24px;
+  }
+
+  .compare-wrap { overflow-x: auto; margin-bottom: 40px; }
+  table.compare { width: 100%; border-collapse: collapse; background: var(--card); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; font-size: 12px; }
+  table.compare th, table.compare td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  table.compare thead th { font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; text-transform: uppercase; letter-spacing: 0.06em; font-size: 10px; color: var(--accent); background: var(--tag-bg); white-space: nowrap; }
+  table.compare tbody th { font-weight: normal; font-size: 12.5px; color: var(--ink); width: 122px; }
+  table.compare td.golf-no { color: #b0a892; }
+  table.compare tbody th small { display: block; font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; font-size: 9.5px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--accent); margin-top: 3px; }
+  table.compare tbody tr:last-child th, table.compare tbody tr:last-child td { border-bottom: none; }
+  table.compare tbody tr:nth-child(even) { background: #faf7f0; }
+  .wine-col { color: var(--leaf); }
+  .num-badge { display: inline-block; width: 17px; height: 17px; line-height: 17px; text-align: center; background: var(--accent); color: #fff; border-radius: 50%; font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; font-size: 10px; margin-right: 6px; vertical-align: 1px; }
+
+  .card-top { display: flex; align-items: baseline; gap: 10px; font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; text-transform: uppercase; letter-spacing: 0.14em; font-size: 11px; color: var(--accent); margin-bottom: 12px; }
+  .card-top .n { background: var(--accent); color: #fff; border-radius: 50%; width: 22px; height: 22px; line-height: 22px; text-align: center; letter-spacing: 0; font-size: 12px; flex: 0 0 auto; }
+  .region { font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; text-transform: uppercase; letter-spacing: 0.1em; font-size: 11px; color: var(--soft-ink); margin: 2px 0 14px; }
+  .stay { margin: 0 0 12px; }
+  .stay b { font-weight: normal; font-style: italic; color: var(--accent); }
+  .blurb { color: var(--soft-ink); margin: 0 0 14px; }
+
+  /* maps */
+  .locmap { height: 340px; width: 100%; border: 1px solid var(--line); border-radius: 10px; margin: 4px 0 10px; background: #eef1f0; z-index: 0; }
+  .maplegend { font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; font-size: 11.5px; color: var(--soft-ink); display: flex; flex-wrap: wrap; gap: 6px 16px; margin: 0 0 16px; }
+  .maplegend .li { display: inline-flex; align-items: center; gap: 6px; }
+  .maplegend .sw { width: 11px; height: 11px; border-radius: 50%; display: inline-block; }
+  .leaflet-tooltip.lbl { background: rgba(255,255,255,0.88); border: none; box-shadow: 0 1px 2px rgba(0,0,0,0.15); color: var(--ink); font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; font-size: 10.5px; padding: 1px 5px; }
+  .leaflet-tooltip.lbl:before { display: none; }
+
+  .nearby { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 12px 0; margin: 0 0 16px; }
+  .nearby h4 { font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; text-transform: uppercase; letter-spacing: 0.1em; font-size: 11px; color: var(--accent); margin: 0 0 8px; }
+  .nearby ul { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 3px 20px; }
+  .nearby li { font-size: 14px; color: var(--ink); padding-left: 16px; position: relative; }
+  .nearby li:before { content: "\2022"; position: absolute; left: 2px; color: var(--accent); }
+  .nearby li .t { color: var(--soft-ink); }
+
+  .links { margin: 0 0 16px; }
+  .links h4 { font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; text-transform: uppercase; letter-spacing: 0.1em; font-size: 11px; color: var(--accent); margin: 0 0 8px; }
+  .links ul { list-style: none; padding: 0; margin: 0; }
+  .links li { font-size: 14px; color: var(--ink); margin-bottom: 5px; display: flex; gap: 10px; }
+  .links .lk-cat { font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; font-size: 10px; text-transform: uppercase; letter-spacing: 0.07em; color: var(--soft-ink); flex: 0 0 74px; padding-top: 2px; }
+  .links .lk-list { flex: 1; }
+  a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 0.5px; }
+  a:hover { color: var(--ink); }
+
+  .spec { display: flex; gap: 14px; padding: 8px 0; border-bottom: 1px solid var(--line); font-size: 14.5px; }
+  .spec:last-child { border-bottom: none; }
+  .spec .k { font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; text-transform: uppercase; letter-spacing: 0.07em; font-size: 11px; color: var(--accent); flex: 0 0 108px; padding-top: 2px; }
+  .spec .v { flex: 1; color: var(--ink); }
+  .spec.wine .k { color: var(--leaf); }
+  .spec.travel .k { color: #2f6a7a; }
+  .spec.total .k { color: #2f6a7a; font-weight: bold; }
+  .spec .sub { color: var(--soft-ink); font-size: 12.5px; }
+  .star { color: #b08d3e; }
+  .spec.golf .k { color: #9a9384; }
+  .spec.golf .v { color: var(--soft-ink); font-size: 13px; }
+
+  .day { display: flex; gap: 14px; padding: 7px 0; border-top: 1px solid var(--line); font-size: 14.5px; }
+  .day .d { font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; font-size: 10.5px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--accent); flex: 0 0 92px; padding-top: 3px; }
+  .day .d span { display: block; color: var(--soft-ink); font-size: 9.5px; }
+  .day .what { flex: 1; }
+  .day .what strong { font-weight: normal; font-style: italic; }
+
+  .leaning { background: #f3f1e8; border: 1px solid var(--line); border-radius: 10px; padding: 26px 30px; margin-top: 30px; page-break-inside: avoid; }
+  .leaning h2 { font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; text-transform: uppercase; letter-spacing: 0.18em; font-size: 13px; color: var(--accent); margin: 0 0 14px; }
+  .leaning p { margin: 0 0 14px; color: var(--soft-ink); }
+  .leaning p:last-child { margin-bottom: 0; }
+  .leaning strong { color: var(--ink); font-weight: normal; font-style: italic; }
+
+  .note { font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; font-size: 11.5px; color: var(--soft-ink); margin-top: 26px; padding-top: 14px; border-top: 1px solid var(--line); line-height: 1.5; }
+  footer { text-align: center; font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; font-size: 12px; color: var(--soft-ink); margin-top: 28px; padding-top: 18px; border-top: 1px solid var(--line); }
+
+  /* tabs */
+  .tabs { margin: 4px 0 20px; }
+  .tabbtns { display: flex; flex-wrap: wrap; gap: 5px; border-bottom: 1px solid var(--line); margin-bottom: 22px; position: sticky; top: 0; background: var(--paper); padding-top: 6px; z-index: 5; }
+  .tabbtn { font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.01em; padding: 8px 15px; border: 1px solid var(--line); background: var(--card); color: var(--soft-ink); border-radius: 999px; cursor: pointer; }
+  .tabbtn .tn { display: inline-block; width: 16px; height: 16px; line-height: 16px; text-align: center; background: var(--accent); color: #fff; border-radius: 50%; font-size: 9.5px; margin-right: 6px; vertical-align: 1px; }
+  .tabbtn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .tabbtn.active .tn { background: #fff; color: var(--accent); }
+  .tabpanel { display: none; }
+  .tabpanel.active { display: block; }
+  .tabpanel > h3 { font-size: 26px; font-weight: normal; margin: 0; }
+  .stays-h { font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; text-transform: uppercase; letter-spacing: 0.1em; font-size: 11px; color: var(--accent); margin: 26px 0 12px; padding-top: 16px; border-top: 1px solid var(--line); }
+  .callout { background: #f3f1e8; border: 1px solid var(--line); border-radius: 8px; padding: 11px 14px; font-size: 13.5px; color: var(--soft-ink); margin: 0 0 16px; }
+  table.stays { width: 100%; border-collapse: collapse; font-size: 13.5px; background: var(--card); }
+  table.stays th, table.stays td { text-align: left; padding: 9px 11px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  table.stays thead th { font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; text-transform: uppercase; letter-spacing: 0.06em; font-size: 10px; color: var(--accent); }
+  table.stays .opt { font-size: 14px; }
+  table.stays .price { white-space: nowrap; }
+  .tag-ok { color: #5f7a4e; font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; font-size: 11px; }
+  .tag-no { color: #b23a2e; font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; font-size: 11px; }
+
+  /* multi-page site nav */
+  .topnav { position: sticky; top: 0; z-index: 30; background: var(--paper); border-bottom: 1px solid var(--line); display: flex; flex-direction: column; align-items: flex-start; gap: 11px; padding: 14px 40px; }
+  .topnav .brand { font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
+  .topnav .navlinks { display: flex; flex-wrap: wrap; gap: 6px; }
+  .topnav .navlinks a { font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; font-size: 12.5px; font-weight: 600; letter-spacing: 0.01em; color: var(--soft-ink); text-decoration: none; padding: 7px 15px; border: 1px solid var(--line); background: var(--card); border-radius: 999px; cursor: pointer; }
+  .topnav .navlinks a.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .pagenav { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin: 6px 0 8px; }
+  .pagenav a { font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; font-size: 12.5px; font-weight: 600; letter-spacing: 0.01em; color: var(--soft-ink); text-decoration: none; padding: 7px 15px; border: 1px solid var(--line); background: var(--card); border-radius: 999px; cursor: pointer; }
+  .pagenav a.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .page { display: none; }
+  .page.active { display: block; }
+  .gotolink { display: inline-block; font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; font-size: 12.5px; color: var(--accent); cursor: pointer; margin: 0 0 14px; }
+
+  /* San Miguel deep-dive components */
+  .smastay { border: 1px solid var(--line); border-radius: 10px; background: var(--card); padding: 16px 18px; margin-bottom: 12px; page-break-inside: avoid; }
+  .smastay .top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+  .smastay .nm { font-size: 18px; }
+  .smastay .pr { font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; font-size: 12.5px; color: var(--leaf); white-space: nowrap; text-align: right; }
+  .smastay .meta { font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--accent); margin: 3px 0 6px; }
+  .smastay .desc { color: var(--soft-ink); font-size: 14.5px; margin: 0; }
+  .smastay .svc { font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; font-size: 12px; color: var(--leaf); margin: 8px 0 0; }
+  .smastay .svc b { color: var(--accent); font-weight: normal; text-transform: uppercase; letter-spacing: 0.06em; font-size: 10.5px; }
+  .lead-tag { display: inline-block; font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: #fff; background: var(--accent); border-radius: 20px; padding: 2px 9px; margin-left: 8px; vertical-align: 2px; }
+  .drives { list-style: none; padding: 0; margin: 10px 0 0; display: grid; grid-template-columns: 1fr 1fr; gap: 4px 24px; }
+  .drives li { font-size: 14px; color: var(--ink); padding-left: 16px; position: relative; }
+  .drives li:before { content: "\2022"; position: absolute; left: 2px; color: var(--accent); }
+  .drives li .t { color: var(--soft-ink); }
+  .cap { font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; font-size: 11.5px; color: var(--soft-ink); margin: 4px 0 0; line-height: 1.5; }
+  .bucket h3 { font-size: 20px; font-weight: normal; margin: 22px 0 4px; }
+  .bucket .lead { color: var(--soft-ink); font-size: 14.5px; margin: 0 0 14px; }
+  table.budget { width: 100%; border-collapse: collapse; font-size: 14.5px; background: var(--card); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+  table.budget td { padding: 9px 14px; border-bottom: 1px solid var(--line); }
+  table.budget tr:last-child td { border-bottom: none; }
+  table.budget .amt { text-align: right; white-space: nowrap; }
+  table.budget tr.total td { font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; font-size: 13px; letter-spacing: 0.03em; background: var(--tag-bg); }
+
+  @media print {
+    body { background: #fff; font-size: 11.5pt; }
+    .wrap { max-width: 100%; padding: 0; }
+    .leaning, table.compare { box-shadow: none; }
+    .topnav { display: none !important; }
+    .pagenav { display: none !important; }
+    .page { display: block !important; }
+    .page + .page { page-break-before: always; }
+    table.compare { font-size: 9.5pt; }
+    .locmap, .maplegend { display: none !important; }
+    .nearby ul { grid-template-columns: 1fr 1fr; }
+    .tabbtns { display: none !important; }
+    .tabpanel { display: block !important; page-break-before: always; margin-bottom: 6px; }
+    .tabpanel:first-of-type { page-break-before: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page active" id="page-overview">
+<div class="wrap">
+
+  <header class="cover">
+    <div class="eyebrow">Family Holiday &middot; The Week After Christmas</div>
+    <h1><span style="color:var(--accent)">Winter</span> <span style="color:var(--marigold)">Break</span></h1>
+  </header>
+  <div class="pagenav">
+    <a data-page="page-overview" class="active">Overview</a>
+    <a data-page="page-careyes">Careyes / Cuixmala</a>
+    <a data-page="page-cabos">Los Cabos</a>
+    <a data-page="page-sanmiguel">San Miguel de Allende</a>
+    <a data-page="page-jarabacoa">Dominican Republic</a>
+  </div>
+
+  <div class="intro">
+    <p><strong>The vibe:</strong> warm, unhurried and tasteful &mdash; a real place with wonderful food and nature at the door, and everyone together under one roof. Four directions, each with its own energy:</p>
+    <ul class="drives" style="grid-template-columns:1fr;">
+      <li><strong>San Miguel de Allende</strong> <span class="t">&mdash; colonial-town culture, a real wine route, and some of Mexico's best food</span></li>
+      <li><strong>Careyes / Cuixmala</strong> <span class="t">&mdash; wild, artful Pacific coast; casitas, coves and a nature reserve</span></li>
+      <li><strong>Los Cabos / Todos Santos</strong> <span class="t">&mdash; easy beach + farm-to-table, reef snorkeling and desert calm</span></li>
+      <li><strong>Dominican Republic (Sea Horse Ranch)</strong> <span class="t">&mdash; laid-back Caribbean beach with waterfalls, water sports, and the trip’s only whitewater rafting</span></li>
+    </ul>
+  </div>
+  <p class="cap" style="margin:-26px 0 40px;">Also considered: Riviera Maya / Tulum, Puerto Escondido, and El Yunque (Puerto Rico).</p>
+
+  <h2 class="section">At a Glance</h2>
+  <div class="compare-wrap">
+    <table class="compare">
+      <thead>
+        <tr>
+          <th>Place</th>
+          <th>Setting</th>
+          <th>Food</th>
+          <th>Water</th>
+          <th>Hikes</th>
+          <th class="col-golf">Golf</th>
+          <th class="wine-col">Wine</th>
+          <th class="col-travel">Travel</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>Cuixmala / Careyes <small>Mexico &middot; Pacific coast</small></th>
+          <td>Private estate in a coastal nature reserve; artful, bohemian</td>
+          <td>Biodynamic estate garden; chef &amp; staff</td>
+          <td>Swimmable coves + private pools</td>
+          <td>Reserve &amp; jungle-to-beach trails</td>
+          <td>Yes &mdash; nearby</td>
+          <td class="wine-col">Cellar only</td>
+          <td class="col-travel">~7&ndash;8h fly + 1&frac12;&ndash;3h drive</td>
+        </tr>
+        <tr>
+          <th>Los Cabos / Todos Santos <small>Mexico &middot; Baja</small></th>
+          <td>Organic farm in the hills; or tasteful Todos Santos ~1h north</td>
+          <td>Celebrated farm-to-table kitchen</td>
+          <td>Pool-first; swimmable coves a drive away</td>
+          <td>Sierra de la Laguna &amp; canyon falls</td>
+          <td>Yes &mdash; several nearby</td>
+          <td class="wine-col">Mexican wines on the list</td>
+          <td class="col-travel">~6&frac12;h fly + ~40 min drive</td>
+        </tr>
+        <tr>
+          <th>San Miguel de Allende <small>Mexico &middot; highlands</small></th>
+          <td>Vineyard/olive estate; beautiful colonial town 20 min away</td>
+          <td>Excellent food town + estate kitchen</td>
+          <td>Pools with valley views; no coast</td>
+          <td>Reserve, canyon &amp; Bernal day hikes</td>
+          <td>Yes &mdash; in town</td>
+          <td class="wine-col">Real wine route on the doorstep</td>
+          <td class="col-travel">~6&ndash;7h fly (1 stop) + 1&ndash;1&frac12;h drive</td>
+        </tr>
+        <tr>
+          <th>Jarabacoa <small>Dominican Rep. &middot; mountains</small></th>
+          <td>Pine forests, rivers &amp; coffee farms; cooler air</td>
+          <td>Private chef, mountain produce, coffee estates</td>
+          <td>Pool + rivers &amp; swimming holes; no beach</td>
+          <td>Best hiking &mdash; falls, rivers, Pico Duarte</td>
+          <td>Yes &mdash; 9-hole in town</td>
+          <td class="wine-col">Bring your own; fireside evenings</td>
+          <td class="col-travel">~4h fly (nonstop) + 1&ndash;1&frac12;h drive</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <footer>Put together for the family &bull; A week together, late December 2026</footer>
+
+</div>
+</div><!-- #page-overview -->
+
+<div class="page" id="page-careyes">
+<div class="wrap">
+
+  <header class="cover">
+    <h1>Careyes &amp; Cuixmala</h1>
+    <p class="subtitle">Costalegre, Pacific coast, Jalisco, Mexico &middot; Dec 26, 2026 &ndash; Jan 2, 2027 &middot; eight of us</p>
+  </header>
+  <div class="pagenav">
+    <a data-page="page-overview">Overview</a>
+    <a data-page="page-careyes" class="active">Careyes / Cuixmala</a>
+    <a data-page="page-cabos">Los Cabos</a>
+    <a data-page="page-sanmiguel">San Miguel de Allende</a>
+    <a data-page="page-jarabacoa">Dominican Republic</a>
+  </div>
+
+  <div class="intro">
+    <p>The wild-and-artful coast: 35,000 acres of protected reserve, nine miles of empty beaches, swimmable coves, and a bohemian community of clifftop "ocean castles" and casitas. It's the purest casita answer &mdash; and the most remote, so it rewards settling in and staying put.</p>
+    <p>Below: an area map with drive times, where to stay (Careyes villas, the Cuixmala estate, and Las Alamandas), the water and wildlife, a proposed week, and an honest budget &mdash; this is the priciest finalist.</p>
+  </div>
+
+  <h2 class="section">The Area &mdash; Beaches, Wildlife &amp; More</h2>
+  <div class="locmap" id="careyesmap"></div>
+  <div class="maplegend" id="careyesleg"></div>
+  <p class="cap">A remote, spread-out coast. Manzanillo (ZLO, ~1&ndash;1½h) is the nearest airport; Puerto Vallarta (PVR, ~2½&ndash;3h) is the other gateway, off-map to the north.</p>
+  <ul class="drives">
+    <li>Beaches &amp; coves (Playa Rosa, Careyitos) <span class="t">&mdash; at the door</span></li>
+    <li>Chamela-Cuixmala reserve safari <span class="t">&mdash; on the estate</span></li>
+    <li>Careyes Polo Club &amp; beach club <span class="t">&mdash; ~10 min</span></li>
+    <li>Copa del Sol (boat or drive) <span class="t">&mdash; short hop</span></li>
+    <li>Tenacatita snorkel cove <span class="t">&mdash; ~30 min</span></li>
+    <li>El Tamarindo golf (Four Seasons) <span class="t">&mdash; ~20 min</span></li>
+    <li>Las Alamandas <span class="t">&mdash; ~40 min north</span></li>
+    <li>Manzanillo airport (ZLO) <span class="t">&mdash; ~1&ndash;1½h</span></li>
+  </ul>
+
+  <h2 class="section">Where We Could Stay</h2>
+
+  <div class="bucket">
+    <h3>The Cuixmala estate <span class="lead-tag">Most upscale</span></h3>
+    <p class="lead">The closest thing on the whole list to Babylonstoren &mdash; a famous biodynamic eco-estate that grows most of its own food, wrapped in a private nature reserve. The dream match in spirit; the catch is that, for our dates, the houses that fit the group are limited and pricey, so it's a splurge rather than the easy option.</p>
+  </div>
+
+  <div class="smastay">
+    <div class="top"><span class="nm">Cuixmala &mdash; Casa Bugambilia + Casa Orquídea</span><span class="pr">~737,000 MXN (~$38,800) / wk<br>(both houses)</span></div>
+    <div class="meta">Two small houses combined (Orquídea sleeps 4) · biodynamic estate · pools · staff · the most Babylonstoren-like on the list</div>
+    <p class="desc">The 8-guest casita is <span style="color:#b23a2e">not available</span> for these dates; fitting all eight means taking both small houses &mdash; most of the budget on lodging alone. The grand villas (Casa Cuixmala, La Loma) are by quote, from ~$2,200/night. <a href="https://cuixmala.com/" target="_blank" rel="noopener">Cuixmala</a></p>
+  </div>
+
+  <div class="bucket">
+    <h3>Careyes villas &mdash; best for eight under one roof</h3>
+    <p class="lead">Private clifftop and oceanfront villas with pools, staff and a chef, in the Careyes community. This is the easiest way to get everyone together here.</p>
+  </div>
+
+  <div class="smastay">
+    <div class="top"><span class="nm">Casa Minos complex <span class="lead-tag">Value</span></span><span class="pr">from ~$2,200 / night<br>(~$15,400+/wk)</span></div>
+    <div class="meta">6 suites (Casa Minos 4 + Casita Creta 2) · sleeps ~12 · private beach · ocean-view terraces · staffed</div>
+    <p class="desc">The best value in Careyes: a two-house complex with a private beach and pools, comfortably fitting eight. <a href="https://www.costalegre-realestate.com/casaminos/" target="_blank" rel="noopener">Casa Minos</a></p>
+  </div>
+
+  <div class="smastay">
+    <div class="top"><span class="nm">Villa Careyes 6 &amp; Villa Careyes 7</span><span class="pr">by quote</span></div>
+    <div class="meta">Private ocean-view villas · pools · seclusion · easy beach &amp; restaurant access</div>
+    <p class="desc">Two handsome private villas in the community &mdash; the sweet spot between the value complex and the pricey ocean castles. <a href="https://www.costalegre-realestate.com/villacareyes6/" target="_blank" rel="noopener">Villa Careyes 6</a> &middot; <a href="https://www.costalegre-realestate.com/villacareyes7/" target="_blank" rel="noopener">Villa Careyes 7</a></p>
+  </div>
+
+  <div class="bucket">
+    <h3>Splurge &amp; alternatives</h3>
+    <p class="lead">A few more &mdash; mostly beyond budget, or better as a side option:</p>
+    <ul class="drives" style="grid-template-columns:1fr;">
+      <li><a href="https://www.costalegre-realestate.com/casasoldeoriente/" target="_blank" rel="noopener">Casa Sol de Oriente</a> <span class="t">&mdash; the famous "house in a pool" ocean castle (6BR, sleeps 14), but ~$11,000+/night at the holidays (~$77k+/week) with a ~10-night minimum. A dream splurge, not realistic.</span></li>
+      <li><a href="https://www.costalegre-realestate.com/occidente/" target="_blank" rel="noopener">Casa Sol de Occidente</a> <span class="t">&mdash; the other clifftop "ocean castle," priced in the same over-budget range.</span></li>
+      <li><a href="https://www.alamandas.com/" target="_blank" rel="noopener">Las Alamandas</a> <span class="t">&mdash; an artful boutique estate ~40 min north with its own beaches; ~$377&ndash;$2,865/night per unit or a whole-estate buyout by quote.</span></li>
+    </ul>
+    <p class="cap">Some homes on the <a href="https://lprluxury.com/costacareyes/" target="_blank" rel="noopener">LPR Careyes page</a> (Casa Riscos, Casa Encantada, Casa Las Glorias) are <em>for sale</em>, not for rent. Holiday week carries minimum-stay rules &mdash; confirm per villa.</p>
+  </div>
+
+  <h2 class="section">On the Water &amp; in the Wild</h2>
+  <p class="intro" style="margin:0 0 8px;">This is the coast's real draw. Swimmable coves for <strong>kayaking, paddleboarding and snorkeling</strong>, <strong>boat trips</strong> along the shore to the cliff-top Copa del Sol, and &mdash; because you're going in late December &mdash; the start of <strong>whale-watching season</strong>. Add <strong>sea-turtle releases</strong> and a <strong>horseback safari</strong> through the Chamela-Cuixmala reserve past zebra, eland and a crocodile lagoon. It's ocean rather than rivers, so no whitewater here &mdash; but plenty of water and wildlife.</p>
+
+
+
+
+  <h2 class="section">Further Reading</h2>
+  <div class="links">
+    <ul>
+      <li><span class="lk-cat">Condé Nast</span><span class="lk-list"><a href="https://www.google.com/search?q=site:cntraveler.com+cuixmala+careyes+costalegre" target="_blank" rel="noopener">Cuixmala &amp; Careyes in Condé Nast Traveler</a></span></li>
+      <li><span class="lk-cat">Travel+Leisure</span><span class="lk-list"><a href="https://www.google.com/search?q=site:travelandleisure.com+careyes+costalegre" target="_blank" rel="noopener">Careyes / Costalegre in Travel + Leisure</a></span></li>
+      <li><span class="lk-cat">More</span><span class="lk-list"><a href="https://www.explore.com/2200199/escape-puerto-vallarta-crowds-enjoy-quiet-luxury-mexico-happy-coast-itinerary-costalegre/" target="_blank" rel="noopener">Costalegre, Mexico's "Happy Coast"</a></span></li>
+    </ul>
+  </div>
+
+  <footer>Careyes &amp; Cuixmala deep dive &bull; A week together, late December 2026</footer>
+
+</div>
+</div><!-- #page-careyes -->
+
+<div class="page" id="page-cabos">
+<div class="wrap">
+
+  <header class="cover">
+    <h1>Los Cabos &amp; Todos Santos</h1>
+    <p class="subtitle">Baja California Sur, Mexico &middot; Dec 26, 2026 &ndash; Jan 2, 2027 &middot; eight of us</p>
+  </header>
+  <div class="pagenav">
+    <a data-page="page-overview">Overview</a>
+    <a data-page="page-careyes">Careyes / Cuixmala</a>
+    <a data-page="page-cabos" class="active">Los Cabos</a>
+    <a data-page="page-sanmiguel">San Miguel de Allende</a>
+    <a data-page="page-jarabacoa">Dominican Republic</a>
+  </div>
+
+  <div class="intro">
+    <p>The easiest trip of the finalists &mdash; a ~6½h nonstop from Boston, no red-eye, no connection &mdash; with the best food-and-farm scene and, thanks to the Sea of Cortez, the strongest water of any Mexico option. The trade-off is cost: it's the priciest finalist at peak.</p>
+    <p>Two ways to do it: villas in the Cabo corridor (Pedregal, Palmilla, Cabo del Sol), or the tasteful farm-town pocket of Todos Santos / El Pescadero an hour up the Pacific &mdash; the Paradero you liked. Acre's treehouses are couples-sized, so for the group it's haciendas, a villa, or Todos Santos.</p>
+  </div>
+
+  <h2 class="section">The Area &mdash; Beaches, Reef, Farms &amp; Golf</h2>
+  <div class="locmap" id="cabosmap"></div>
+  <div class="maplegend" id="cabosleg"></div>
+  <p class="cap">Most stays cluster along the corridor between San José del Cabo and Cabo San Lucas; Todos Santos is ~1h up the Pacific. Los Cabos airport (SJD) is central.</p>
+  <ul class="drives">
+    <li>Acre farm &amp; restaurant <span class="t">&mdash; ~15 min from San José</span></li>
+    <li>San José del Cabo (art town) <span class="t">&mdash; ~15&ndash;20 min</span></li>
+    <li>Chileno &amp; Santa María snorkel bays <span class="t">&mdash; ~20&ndash;30 min</span></li>
+    <li>Puerto Los Cabos golf <span class="t">&mdash; ~15 min</span></li>
+    <li>Pedregal / Cabo San Lucas <span class="t">&mdash; ~30&ndash;40 min</span></li>
+    <li>Sierra de la Laguna / Fox Canyon hike <span class="t">&mdash; ~45 min</span></li>
+    <li>Cabo Pulmo reef (snorkel/dive) <span class="t">&mdash; ~1h</span></li>
+    <li>Todos Santos / El Pescadero <span class="t">&mdash; ~1h</span></li>
+  </ul>
+
+  <h2 class="section">Where We Could Stay</h2>
+  <div class="bucket">
+    <h3>The Cabo corridor &mdash; villas for eight</h3>
+    <p class="lead">Private villas with pools and staff in the gated communities (Pedregal, Palmilla, Cabo del Sol). "From" rates below are base-season &mdash; the New Year's week runs higher, so treat them as a floor.</p>
+  </div>
+
+  <div class="smastay">
+    <div class="top"><span class="nm">Villa Bellissima <span class="lead-tag">Available</span></span><span class="pr">from ~$5,250 / night</span></div>
+    <div class="meta">8 BR / 11 baths / sleeps 18 · Pedregal · clifftop · pool</div>
+    <p class="desc"><span class="tag-ok">Available &#10003;</span> for our dates. An expansive Pedregal estate with room for the whole group and then some, in the marquee gated community above Cabo San Lucas. <a href="https://lunacabo.com/villa/villa-bellissima-pedregal/" target="_blank" rel="noopener">Villa Bellissima</a></p>
+  </div>
+
+  <div class="smastay">
+    <div class="top"><span class="nm">Casa Brooks <span class="lead-tag">Available</span></span><span class="pr">from ~$4,975 / night</span></div>
+    <div class="meta">10 BR / sleeps 22 · Cabo del Sol · golf-and-beach community · pool</div>
+    <p class="desc"><span class="tag-ok">Available &#10003;</span> for our dates. A big, social villa in Cabo del Sol with space to spare &mdash; easy for eight, with room if the group grows. <a href="https://lunacabo.com/villa/casa-brooks-cabo-del-sol/" target="_blank" rel="noopener">Casa Brooks</a></p>
+  </div>
+
+  <div class="smastay">
+    <div class="top"><span class="nm">Acre &mdash; haciendas &amp; villas</span><span class="pr">by quote</span></div>
+    <div class="meta">2&ndash;4 BR haciendas/villas (the treehouses are couples-only) · working organic farm · Michelin-green kitchen</div>
+    <p class="desc">The food-and-farm draw: stay among the gardens with the celebrated restaurant on site. For eight you'd take a couple of haciendas or a villa. <a href="https://acreresort.com/" target="_blank" rel="noopener">Acre</a></p>
+  </div>
+
+  <p class="cap">Dozens more villas (and the ultra-splurge ocean castles) at <a href="https://lunacabo.com/services/villas/" target="_blank" rel="noopener">Luna Cabo</a>. "From" rates are base-season; confirm the New Year's-week number per villa.</p>
+
+  <div class="bucket">
+    <h3>Todos Santos / El Pescadero <span class="lead-tag">Most upscale</span></h3>
+    <p class="lead">The polished, design-forward pocket ~1h north &mdash; quieter, farm-driven, on empty Pacific beaches under the Sierra de la Laguna. The splurge way to do Baja &mdash; quiet and design-led.</p>
+    <p class="lead"><b style="color:var(--accent)">Things to do:</b> Cerritos Beach surf, farm-to-table dining &amp; organic farm tours (Rancho Pescadero’s gardens), the artsy Todos Santos town (galleries, Hotel California, Pueblo Mágico streets), Sierra de la Laguna hikes, gray-whale watching off the Pacific (~Dec–April), and low-key yoga, wellness and sunsets.</p>
+  </div>
+
+  <div class="smastay">
+    <div class="top"><span class="nm">Paradero Todos Santos <span class="lead-tag">All-inclusive</span></span><span class="pr">~$25k&ndash;$34k / week<br>(meals + activities incl.)</span></div>
+    <div class="meta">~4 suites (780&ndash;2,674 sq ft) · design farm hotel · private plunge pools · 20+ daily activities</div>
+    <p class="desc">The one you loved &mdash; roomy suites (nothing like Acre's small treehouses), with food and experiences bundled in. In taste and in budget. <a href="https://www.paraderohotels.com/" target="_blank" rel="noopener">Paradero</a></p>
+  </div>
+
+  <div class="smastay">
+    <div class="top"><span class="nm">Rancho Pescadero / Kimpton Mas Olas</span><span class="pr">~$700&ndash;$1,200 / night per room</span></div>
+    <div class="meta">Rooms, suites &amp; villas on 30 acres · working farm-to-table · spa · on the Pacific</div>
+    <p class="desc">A true farm-stay at hotel scale, built around the chef's gardens and the sea. Book a cluster of rooms/suites for the group. <a href="https://www.ranchopescadero.com/" target="_blank" rel="noopener">Rancho Pescadero</a></p>
+  </div>
+
+  <div class="smastay">
+    <div class="top"><span class="nm">Villa Santa Cruz</span><span class="pr">by quote</span></div>
+    <div class="meta">Beachfront boutique hotel on 20+ acres · rooms, tented ocean suites &amp; multi-BR villas (North &amp; Main Villa) · organic farm · 2 restaurants · pool, spa &amp; stables</div>
+    <p class="desc">A Michelin Key hotel and part of a select boutique-hotel collection &mdash; farm-to-table, understated, right on the sand. Book the multi-bedroom villas or a cluster of rooms (they host retreats and buyouts). <a href="https://villasantacruzbaja.com/" target="_blank" rel="noopener">Villa Santa Cruz</a></p>
+  </div>
+
+  <div class="smastay">
+    <div class="top"><span class="nm">A private 5BR villa in El Pescadero</span><span class="pr">by quote</span></div>
+    <div class="meta">5 BR / sleeps 10&ndash;13 · private pool · gated garden setting · mins to Cerritos surf beach</div>
+    <p class="desc">One house for everyone, minutes from Todos Santos and the beaches &mdash; the value route up here. <a href="https://www.todossantosvillarentals.com/city/el-pescadero/" target="_blank" rel="noopener">Todos Santos villa rentals</a></p>
+  </div>
+
+  <div class="smastay">
+    <div class="top"><span class="nm">Hotel San Cristóbal</span><span class="pr">~$300&ndash;$600 / night per room</span></div>
+    <div class="meta">Boho beach hotel · understated · best value up here</div>
+    <p class="desc">Low-key and characterful on the sand &mdash; book a block of rooms for a relaxed, budget-friendly base. <a href="https://sancristobalbaja.com/" target="_blank" rel="noopener">Hotel San Cristóbal</a></p>
+  </div>
+
+  <h2 class="section">On the Water</h2>
+  <p class="intro" style="margin:0 0 8px;">The best water of the Mexico finalists. <strong>Cabo Pulmo</strong> (~1h) is a protected national park with the healthiest coral reef in the Sea of Cortez &mdash; world-class snorkeling and diving among huge schools of fish, rays and turtles. Closer in, the <strong>Chileno and Santa María</strong> bays are calm, swimmable snorkel coves. Late December is prime <strong>whale-watching</strong> season (humpbacks and grays), and there's <strong>surf</strong> at Cerritos near Todos Santos plus easy <strong>kayak/SUP</strong> in the bays. No rivers, so no whitewater &mdash; but the ocean more than makes up for it.</p>
+
+
+
+
+  <h2 class="section">Further Reading</h2>
+  <div class="links">
+    <ul>
+      <li><span class="lk-cat">Condé Nast</span><span class="lk-list"><a href="https://www.google.com/search?q=site:cntraveler.com+todos+santos+los+cabos" target="_blank" rel="noopener">Todos Santos &amp; Los Cabos in Condé Nast Traveler</a></span></li>
+      <li><span class="lk-cat">Travel+Leisure</span><span class="lk-list"><a href="https://www.google.com/search?q=site:travelandleisure.com+todos+santos+baja" target="_blank" rel="noopener">Todos Santos &amp; Baja in Travel + Leisure</a></span></li>
+    </ul>
+  </div>
+
+  <footer>Los Cabos &amp; Todos Santos deep dive &bull; A week together, late December 2026</footer>
+
+</div>
+</div><!-- #page-cabos -->
+
+<div class="page" id="page-sanmiguel">
+<div class="wrap">
+
+  <header class="cover">
+    <h1>San Miguel de Allende</h1>
+    <p class="subtitle">Colonial highlands, Guanajuato, Mexico &middot; Dec 26, 2026 &ndash; Jan 2, 2027 &middot; eight of us</p>
+  </header>
+  <div class="pagenav">
+    <a data-page="page-overview">Overview</a>
+    <a data-page="page-careyes">Careyes / Cuixmala</a>
+    <a data-page="page-cabos">Los Cabos</a>
+    <a data-page="page-sanmiguel" class="active">San Miguel de Allende</a>
+    <a data-page="page-jarabacoa">Dominican Republic</a>
+  </div>
+
+  <div class="intro">
+    <p>Our first pick, and the easiest to make work: a beautiful, walkable town with wonderful food, a real wine route on the doorstep, comfortable dry-season weather, and simple logistics for a group &mdash; all without feeling like a resort.</p>
+    <p>Below: an area map with drive times to the wineries, walks, water and golf; a shortlist of five standout houses (each linked) on a zoomed in-town map; a proposed week; and a rough all-in.</p>
+  </div>
+
+  <h2 class="section">The Area &mdash; Wineries, Walks, Water &amp; Golf</h2>
+  <div class="locmap" id="areamap"></div>
+  <div class="maplegend" id="arealeg"></div>
+  <p class="cap">Everything is an easy drive from town. León (BJX, ~1½h) and Querétaro (QRO, ~1h) airports are off-map.</p>
+  <ul class="drives">
+    <li>El Charco del Ingenio (walk) <span class="t">&mdash; ~10 min</span></li>
+    <li>Club de Golf Malanquín <span class="t">&mdash; ~10 min</span></li>
+    <li>Viñedo San Miguel (winery) <span class="t">&mdash; ~10 min</span></li>
+    <li>Presa Allende (kayak / canoe / SUP) <span class="t">&mdash; ~15 min</span></li>
+    <li>Hot springs (La Gruta) <span class="t">&mdash; ~15 min</span></li>
+    <li>Dos Búhos (winery) <span class="t">&mdash; ~15 min</span></li>
+    <li>La Santísima Trinidad (winery) <span class="t">&mdash; ~20 min</span></li>
+    <li>Tres Raíces (winery) <span class="t">&mdash; ~25&ndash;30 min</span></li>
+    <li>Cuna de Tierra (winery) <span class="t">&mdash; ~35 min</span></li>
+    <li>Cañada de la Virgen (walk/ruins) <span class="t">&mdash; ~40 min</span></li>
+  </ul>
+
+  <h2 class="section">Where We Could Stay &mdash; The Shortlist</h2>
+  <div class="locmap" id="townmap"></div>
+  <div class="maplegend" id="townleg"></div>
+  <p class="cap">Five favorites, all in or on the edge of town, walkable to the restaurants. Pins are approximate. Holiday-week rates shown (New Year's); all are fully staffed.</p>
+
+  <div class="smastay">
+    <div class="top"><span class="nm">Rosewood 5-Bedroom Residence <span class="lead-tag">Most upscale</span></span><span class="pr">~$25k&ndash;$35k / week<br>(NYE, service incl.)</span></div>
+    <div class="meta">5 BR · up to 10 · 3,600 sq ft · heart of town · full hotel service</div>
+    <p class="desc">The step up in polish: a private residence with Rosewood's chef, concierge, housekeeping, spa, and four pools &amp; cabanas on tap. Summer rate is ~$2,382/night; confirm the holiday number. <a href="https://www.rosewoodhotels.com/en/san-miguel-de-allende/residences" target="_blank" rel="noopener">Rosewood Residences</a></p>
+    <p class="svc"><b>Staff</b> &nbsp;Full hotel service &mdash; private chef on request, concierge, daily housekeeping and room service; spa, pools &amp; fitness included.</p>
+  </div>
+
+  <div class="smastay">
+    <div class="top"><span class="nm">Casa Olivos</span><span class="pr">~$16,800 / week</span></div>
+    <div class="meta">6 BR / 12 · Centro · 11,000 sq ft · pool + hot tub · rooftop Parroquia views · staffed, daily breakfast</div>
+    <p class="desc">A marvel for Centro: Italian marble floors, gold-leaf doors, gardens, a 36-ft pool, and a rooftop looking to the Parroquia. Cook, maid &amp; gardener included. <a href="https://premiersanmiguel.com/villas/casa-olivos" target="_blank" rel="noopener">Casa Olivos</a></p>
+    <p class="svc"><b>Staff</b> &nbsp;Cook, maid &amp; gardener (Mon&ndash;Sat); daily breakfast, arrival snacks + margaritas, and a welcome bottle of tequila &amp; wine included.</p>
+  </div>
+
+  <div class="smastay">
+    <div class="top"><span class="nm">Casa Carino</span><span class="pr">~$18,600 / week</span></div>
+    <div class="meta">7 BR / 14 · scenic hillside · elevator · big pool + sala pool house · sweeping town views · full staff</div>
+    <p class="desc">The grand one: a four-story house on a hillside with the best views of San Miguel, dining for 14, cook and wait staff. Room to spare for eight. <a href="https://premiersanmiguel.com/villas/casa-carino" target="_blank" rel="noopener">Casa Carino</a></p>
+    <p class="svc"><b>Staff</b> &nbsp;Cook, two housekeepers &amp; wait staff, 5½ days a week (two shifts, to 11pm). Groceries and pool heating extra.</p>
+  </div>
+
+  <div class="smastay">
+    <div class="top"><span class="nm">Casa Campos</span><span class="pr">~$16,800 / week</span></div>
+    <div class="meta">5 (+small 6th) BR / 10 · best street in Centro · heated saltwater pool + hot tub · chef's kitchen · staffed, breakfast incl</div>
+    <p class="desc">A UNESCO house freshly renovated in 2023, with 360° rooftop views of the Parroquia, a professional chef's kitchen, and every modern comfort. <a href="https://premiersanmiguel.com/villas/casa-campos" target="_blank" rel="noopener">Casa Campos</a></p>
+    <p class="svc"><b>Staff</b> &nbsp;Professional staff of 4 with a house manager; continental breakfast included, and a chef's kitchen set up for hiring a private chef.</p>
+  </div>
+
+  <div class="smastay">
+    <div class="top"><span class="nm">Casa Heyne</span><span class="pr">~$14,800 / week</span></div>
+    <div class="meta">6 BR / 12 · Lavandería, hillside edge of the historic district (~12 min walk to town) · 16,000 sq ft adobe hacienda · staff of 6</div>
+    <p class="desc">The hacienda choice: a handcrafted adobe home among bougainvillea and gardens on a rock wall, 11 fireplaces and a hot tub hidden in the rocks. <a href="https://premiersanmiguel.com/villas/casa-heyne" target="_blank" rel="noopener">Casa Heyne</a></p>
+    <p class="svc"><b>Staff</b> &nbsp;Staff of 6 incl. cook &amp; bilingual house manager; they cook breakfast + lunch, but food/groceries are <em>not</em> included in the rate.</p>
+  </div>
+
+  <div class="bucket">
+    <h3>On the vines (alternative)</h3>
+    <p class="lead">If the estate-among-the-vines feeling wins over being in town: <a href="https://lasantisimatrinidad.com.mx/" target="_blank" rel="noopener">La Santísima Trinidad</a> (a 4BR residence plus rooms, ~20 min out) or <a href="https://liveinsanmiguel.com/the-ultimate-vineyard-guide-in-san-miguel/" target="_blank" rel="noopener">Viñedo San Miguel</a> (~10 min out).</p>
+  </div>
+
+  <h2 class="section">On the Water</h2>
+  <p class="intro" style="margin:0 0 8px;">San Miguel is high-desert, so the water here is gentle rather than whitewater. On <strong>Presa Allende</strong>, the reservoir ~15 min southwest of town, you can kayak, canoe, paddleboard and sail &mdash; Amigos de la Presa runs guided paddles, and it's an easy, pretty half-day. There's no river tubing or whitewater rafting nearby (the closest rafting is the Huasteca, a long haul away). If river adventures like the ones you loved in Costa Rica are a must, that's where <strong>Jarabacoa</strong> (whitewater rafting, canyoning, river days) and <strong>El Yunque</strong> (rainforest rivers &amp; natural pools) pull ahead.</p>
+
+
+
+
+
+  <h2 class="section">Further Reading</h2>
+  <div class="links">
+    <ul>
+      <li><span class="lk-cat">Condé Nast</span><span class="lk-list"><a href="https://www.google.com/search?q=site:cntraveler.com+san+miguel+de+allende" target="_blank" rel="noopener">San Miguel in Condé Nast Traveler</a> &mdash; named Best Small City in the World (five times)</span></li>
+      <li><span class="lk-cat">Travel+Leisure</span><span class="lk-list"><a href="https://www.google.com/search?q=site:travelandleisure.com+san+miguel+de+allende" target="_blank" rel="noopener">San Miguel in Travel + Leisure</a> &mdash; repeatedly voted #1 City in the World</span></li>
+    </ul>
+  </div>
+
+  <footer>San Miguel de Allende deep dive &bull; A week together, late December 2026</footer>
+
+</div>
+</div><!-- #page-sanmiguel -->
+
+<div class="page" id="page-jarabacoa">
+<div class="wrap">
+
+  <header class="cover">
+    <h1>Dominican Republic &mdash; North Coast</h1>
+    <p class="subtitle">Sea Horse Ranch + Jarabacoa adventures &middot; Dec 26, 2026 &ndash; Jan 2, 2027 &middot; eight of us</p>
+  </header>
+  <div class="pagenav">
+    <a data-page="page-overview">Overview</a>
+    <a data-page="page-careyes">Careyes / Cuixmala</a>
+    <a data-page="page-cabos">Los Cabos</a>
+    <a data-page="page-sanmiguel">San Miguel de Allende</a>
+    <a data-page="page-jarabacoa" class="active">Dominican Republic</a>
+  </div>
+
+  <div class="intro">
+    <p>Our DR pick: base on the quiet <strong>north coast at Sea Horse Ranch</strong> &mdash; a gated community of private beach villas with full service, ~20 min from Puerto Plata (direct flights from Boston) and far from the mainstream crowds. It stacks up the water and adventure you're after: the 27 Waterfalls of Damajagua (canyoning &amp; jumping), Cabarete's kite/surf/SUP beaches, El Choco caves, snorkeling, and a whitewater-rafting day-trip up to Jarabacoa (~2h).</p>
+    <p>One honest note: this is a beach-and-adventure week, not a wine one &mdash; the north coast isn't a wine region (Ocoa Bay's vineyard is ~3.5h away). If wine matters more than the beach, the alternative is to base up in the Jarabacoa mountains (rustic) instead.</p>
+  </div>
+
+  <h2 class="section">The Area &mdash; Beach, Falls &amp; Rivers</h2>
+  <div class="locmap" id="jaramap"></div>
+  <div class="maplegend" id="jaraleg"></div>
+  <p class="cap">The north coast is low-key and green, ~20 min from Puerto Plata's airport (POP, direct flights from Boston). The mountains and rafting are a ~2h day-trip south.</p>
+  <ul class="drives">
+    <li>Sea Horse Ranch beach &amp; Cabarete <span class="t">&mdash; at the door</span></li>
+    <li>Puerto Plata airport (POP) <span class="t">&mdash; ~20 min</span></li>
+    <li>27 Waterfalls of Damajagua (canyoning) <span class="t">&mdash; ~45 min</span></li>
+    <li>Sosúa beaches &amp; snorkeling <span class="t">&mdash; ~15 min</span></li>
+    <li>Playa Grande golf (Río San Juan) <span class="t">&mdash; ~1h</span></li>
+    <li>Jarabacoa &mdash; whitewater rafting &amp; hikes <span class="t">&mdash; ~2h</span></li>
+    <li>Samaná (whales, from mid-Jan) <span class="t">&mdash; ~3h</span></li>
+  </ul>
+
+  <h2 class="section">Where We Could Stay</h2>
+  <div class="bucket">
+    <h3>Sea Horse Ranch <span class="lead-tag">Main pick</span></h3>
+    <p class="lead">A 250-acre gated community of private oceanfront villas &mdash; not a resort bubble &mdash; with a beach club restaurant, tennis, an equestrian center, two oceanfront pools, and full concierge (in-villa chef and all-inclusive menus available). Beach, service and seclusion, minutes from the airport.</p>
+  </div>
+
+  <div class="smastay">
+    <div class="top"><span class="nm">Villa Windward (Sea Horse Ranch)</span><span class="pr">est. ~$2,000&ndash;$2,800 / night</span></div>
+    <div class="meta">6 BR / 7 ba · private pool &amp; gardens · exceptional build · beach-club &amp; concierge access</div>
+    <p class="desc">The roomy top-tier option, easily fitting eight with space to spare. <a href="https://sea-horse-ranch.com/dominican-republic-vacation-rentals/" target="_blank" rel="noopener">Sea Horse Ranch rentals</a></p>
+  </div>
+
+  <div class="smastay">
+    <div class="top"><span class="nm">Villa Soleil (Sea Horse Ranch)</span><span class="pr">est. ~$1,500&ndash;$2,200 / night</span></div>
+    <div class="meta">5 BR · classic Caribbean layout · private pool · gardens · walk to the beach club</div>
+    <p class="desc">A relaxed five-bedroom in the same community &mdash; a touch more value. <a href="https://www.vrbo.com/4657396ha" target="_blank" rel="noopener">A 5BR at Sea Horse Ranch</a> &middot; <a href="https://isleblue.co/villas/vacation-rentals/caribbean/dominican-republic/cabarete/villa-sea-horse-ranch-2" target="_blank" rel="noopener">more villas</a></p>
+  </div>
+
+  <div class="bucket">
+    <h3>Or: a mountains-first base in Jarabacoa</h3>
+    <p class="lead">If you'd rather wake up in the cool pine mountains and have rafting, hikes and an Ocoa Bay wine day-trip on the doorstep (trading the beach and the polish), base in Jarabacoa instead &mdash; lodging is comfortable-rustic.</p>
+  </div>
+
+  <div class="smastay">
+    <div class="top"><span class="nm">Simply Dominican &mdash; Jarabacoa villas</span><span class="pr">by quote (~$500&ndash;$900/night)</span></div>
+    <div class="meta">Private mountain villas with pools &amp; staff · adventure at the door · Ocoa Bay wine ~2h</div>
+    <p class="desc">Book activities (rafting, canyoning, Pico Duarte) through <a href="https://www.ranchobaiguate.com/" target="_blank" rel="noopener">Rancho Baiguate</a>. <a href="https://simplydominican.com/property-location/jarabacoa/" target="_blank" rel="noopener">Jarabacoa villas</a></p>
+  </div>
+
+  <h2 class="section">On the Water &amp; Adventure</h2>
+  <p class="intro" style="margin:0 0 8px;">This coast is loaded with the water-and-adventure you loved. The <strong>27 Waterfalls of Damajagua</strong> (~45 min) is a canyoning romp of jumps and natural slides; <strong>Cabarete</strong> is the Caribbean's kite/surf/SUP capital; there's <strong>snorkeling and diving</strong> off Sosúa, <strong>El Choco caves</strong> to explore, and horseback along the sand. For the whitewater itch, a day-trip up to <strong>Jarabacoa</strong> (~2h) rafts the Río Yaque del Norte &mdash; the only real whitewater on the whole shortlist. Beaches are swimmable and calm at the coves. The one gap is wine (no vineyard on this coast); whale season in Samaná starts ~mid-January, just after your dates.</p>
+
+
+
+  <h2 class="section">Further Reading</h2>
+  <div class="links">
+    <ul>
+      <li><span class="lk-cat">Condé Nast</span><span class="lk-list"><a href="https://www.google.com/search?q=site:cntraveler.com+cabarete+sosua+dominican+republic+north+coast" target="_blank" rel="noopener">The DR north coast in Condé Nast Traveler</a></span></li>
+      <li><span class="lk-cat">Travel+Leisure</span><span class="lk-list"><a href="https://www.google.com/search?q=site:travelandleisure.com+cabarete+dominican+republic" target="_blank" rel="noopener">Cabarete &amp; Jarabacoa in Travel + Leisure</a></span></li>
+      <li><span class="lk-cat">Stay</span><span class="lk-list"><a href="https://sea-horse-ranch.com/" target="_blank" rel="noopener">Sea Horse Ranch</a></span></li>
+    </ul>
+  </div>
+
+
+  <footer>Dominican Republic (north coast) deep dive &bull; A week together, late December 2026</footer>
+
+</div>
+</div><!-- #page-jarabacoa -->
+
+<script>
+(function () {
+  var btns = document.querySelectorAll('.tabbtn');
+  btns.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var id = b.getAttribute('data-tab');
+      document.querySelectorAll('.tabbtn').forEach(function (x) { x.classList.remove('active'); });
+      document.querySelectorAll('.tabpanel').forEach(function (x) { x.classList.remove('active'); });
+      b.classList.add('active');
+      var panel = document.getElementById(id);
+      if (panel) { panel.classList.add('active'); if (window.__fixMaps) window.__fixMaps(); }
+    });
+  });
+})();
+</script>
+<!--MAPINIT-START-->
+<script>
+(function () {
+  if (typeof L === 'undefined') return;
+  var CAT = {
+    stay:   { c: '#b23a2e', label: 'Stay' },
+    town:   { c: '#7a6a52', label: 'Town' },
+    hike:   { c: '#5f7a4e', label: 'Hike / nature' },
+    beach:  { c: '#2f7a8a', label: 'Beach / water' },
+    water:  { c: '#2f6f8a', label: 'Kayak / paddle' },
+    springs:{ c: '#3f8fa0', label: 'Hot springs' },
+    golf:   { c: '#9a7d2e', label: 'Golf' },
+    wine:   { c: '#8a2f4a', label: 'Winery / wine' },
+    air:    { c: '#6b6157', label: 'Airport' }
+  };
+  var MAPS = {
+    map1: [
+      { la: 19.283, ln: -104.955, n: 'Cuixmala (stay)', k: 'stay' },
+      { la: 19.436, ln: -105.030, n: 'Careyes', k: 'town' },
+      { la: 19.605, ln: -105.183, n: 'Las Alamandas', k: 'town' },
+      { la: 19.283, ln: -104.790, n: 'La Manzanilla', k: 'town' },
+      { la: 19.290, ln: -104.860, n: 'Tenacatita beach', k: 'beach' },
+      { la: 19.500, ln: -105.030, n: 'Chamela-Cuixmala reserve', k: 'hike' },
+      { la: 19.323, ln: -104.998, n: 'El Tamarindo golf', k: 'golf' }
+    ],
+    map2: [
+      { la: 23.108, ln: -109.742, n: 'Acre (stay)', k: 'stay' },
+      { la: 23.063, ln: -109.702, n: 'San José del Cabo', k: 'town' },
+      { la: 22.891, ln: -109.912, n: 'Cabo San Lucas', k: 'town' },
+      { la: 23.470, ln: -109.717, n: 'Fox Canyon falls', k: 'hike' },
+      { la: 23.443, ln: -109.428, n: 'Cabo Pulmo', k: 'beach' },
+      { la: 23.073, ln: -109.660, n: 'Puerto Los Cabos golf', k: 'golf' },
+      { la: 23.152, ln: -109.721, n: 'Los Cabos airport', k: 'air' },
+      { la: 23.446, ln: -110.223, n: 'Todos Santos / El Pescadero', k: 'town' }
+    ],
+    map3: [
+      { la: 21.035, ln: -100.870, n: 'La Santísima Trinidad (stay)', k: 'stay' },
+      { la: 21.100, ln: -100.870, n: 'Tres Raíces vineyard', k: 'wine' },
+      { la: 20.914, ln: -100.744, n: 'San Miguel de Allende', k: 'town' },
+      { la: 21.157, ln: -100.933, n: 'Dolores Hidalgo', k: 'town' },
+      { la: 20.923, ln: -100.735, n: 'El Charco reserve', k: 'hike' },
+      { la: 20.767, ln: -100.930, n: 'Cañada de la Virgen', k: 'hike' },
+      { la: 20.895, ln: -100.755, n: 'Malanquín golf', k: 'golf' }
+    ],
+    map4: [
+      { la: 18.418, ln: -70.626, n: 'Ocoa Bay estate (stay)', k: 'stay' },
+      { la: 18.348, ln: -70.626, n: 'Palmar de Ocoa beach', k: 'beach' },
+      { la: 18.453, ln: -70.734, n: 'Azua', k: 'town' },
+      { la: 18.540, ln: -70.600, n: 'Ocoa hills & waterfalls', k: 'hike' }
+    ],
+    map5: [
+      { la: 19.121, ln: -70.629, n: 'Jarabacoa villa (stay)', k: 'stay' },
+      { la: 19.083, ln: -70.560, n: 'Salto de Jimenoa', k: 'hike' },
+      { la: 19.083, ln: -70.610, n: 'Salto de Baiguate', k: 'hike' },
+      { la: 19.055, ln: -70.855, n: 'Pico Duarte trailhead', k: 'hike' },
+      { la: 18.912, ln: -70.748, n: 'Constanza', k: 'town' }
+    ],
+    map6: [
+      { la: 18.360, ln: -65.831, n: 'Rainforest villa (stay)', k: 'stay' },
+      { la: 18.298, ln: -65.787, n: 'El Yunque / La Mina falls', k: 'hike' },
+      { la: 18.379, ln: -65.720, n: 'Luquillo beach', k: 'beach' },
+      { la: 18.383, ln: -65.773, n: 'Río Mar golf', k: 'golf' },
+      { la: 18.466, ln: -66.117, n: 'Old San Juan', k: 'town' },
+      { la: 18.437, ln: -66.002, n: 'San Juan airport', k: 'air' }
+    ],
+    areamap: [
+      { la: 20.9142, ln: -100.7440, n: 'San Miguel — the Jardín', k: 'town' },
+      { la: 20.9580, ln: -100.7920, n: 'Viñedo San Miguel · ~10 min', k: 'wine' },
+      { la: 20.8700, ln: -100.8000, n: 'Presa Allende · kayak/paddle · ~15 min', k: 'water' },
+      { la: 20.9480, ln: -100.7300, n: 'Dos Búhos winery · ~15 min', k: 'wine' },
+      { la: 20.9800, ln: -100.8100, n: 'Hot springs (La Gruta) · ~15 min', k: 'springs' },
+      { la: 20.9900, ln: -100.8400, n: 'La Santísima Trinidad · ~20 min', k: 'wine' },
+      { la: 21.0500, ln: -100.8600, n: 'Tres Raíces winery · ~25 min', k: 'wine' },
+      { la: 21.1200, ln: -100.9050, n: 'Cuna de Tierra winery · ~35 min', k: 'wine' },
+      { la: 20.9230, ln: -100.7350, n: 'El Charco del Ingenio · ~10 min', k: 'hike' },
+      { la: 20.7670, ln: -100.9300, n: 'Cañada de la Virgen · ~40 min', k: 'hike' },
+      { la: 20.8950, ln: -100.7550, n: 'Club de Golf Malanquín · ~10 min', k: 'golf' }
+    ],
+    townmap: [
+      { la: 20.9142, ln: -100.7440, n: 'The Jardín (town center)', k: 'town' },
+      { la: 20.9128, ln: -100.7448, n: 'Rosewood Residence', k: 'stay' },
+      { la: 20.9140, ln: -100.7418, n: 'Casa Olivos', k: 'stay' },
+      { la: 20.9112, ln: -100.7462, n: 'Casa Campos', k: 'stay' },
+      { la: 20.9092, ln: -100.7398, n: 'Casa Heyne (Lavandería)', k: 'stay' },
+      { la: 20.9188, ln: -100.7378, n: 'Casa Carino (hillside)', k: 'stay' }
+    ],
+    careyesmap: [
+      { la: 19.283, ln: -104.955, n: 'Cuixmala estate (stay)', k: 'stay' },
+      { la: 19.436, ln: -105.030, n: 'Careyes villas & casitas (stay)', k: 'stay' },
+      { la: 19.605, ln: -105.183, n: 'Las Alamandas (stay)', k: 'stay' },
+      { la: 19.428, ln: -105.028, n: 'Playa Rosa & Careyitos', k: 'beach' },
+      { la: 19.420, ln: -105.033, n: 'Copa del Sol', k: 'town' },
+      { la: 19.447, ln: -105.022, n: 'Careyes Polo Club', k: 'town' },
+      { la: 19.290, ln: -104.860, n: 'Tenacatita cove — snorkel/kayak', k: 'water' },
+      { la: 19.500, ln: -105.030, n: 'Chamela-Cuixmala reserve (safari)', k: 'hike' },
+      { la: 19.323, ln: -104.998, n: 'El Tamarindo golf', k: 'golf' },
+      { la: 19.145, ln: -104.558, n: 'Manzanillo airport (~1½h)', k: 'air' }
+    ],
+    cabosmap: [
+      { la: 23.108, ln: -109.742, n: 'Acre farm (stay)', k: 'stay' },
+      { la: 23.063, ln: -109.702, n: 'San José del Cabo (town)', k: 'town' },
+      { la: 22.886, ln: -109.905, n: 'Pedregal villas', k: 'stay' },
+      { la: 22.985, ln: -109.720, n: 'Palmilla / Cabo del Sol villas', k: 'stay' },
+      { la: 22.970, ln: -109.800, n: 'Chileno & Santa María snorkel bays', k: 'water' },
+      { la: 23.443, ln: -109.428, n: 'Cabo Pulmo reef (snorkel/dive)', k: 'water' },
+      { la: 23.470, ln: -109.717, n: 'Fox Canyon / Sierra de la Laguna', k: 'hike' },
+      { la: 23.073, ln: -109.660, n: 'Puerto Los Cabos golf', k: 'golf' },
+      { la: 23.152, ln: -109.721, n: 'Los Cabos airport (SJD)', k: 'air' },
+      { la: 23.400, ln: -110.190, n: 'Todos Santos / El Pescadero (stays)', k: 'stay' }
+    ],
+    jaramap: [
+      { la: 19.747, ln: -70.395, n: 'Sea Horse Ranch (stay)', k: 'stay' },
+      { la: 19.750, ln: -70.410, n: 'Cabarete — kite/surf/SUP', k: 'water' },
+      { la: 19.755, ln: -70.520, n: 'Sosúa (beach town)', k: 'town' },
+      { la: 19.685, ln: -70.780, n: '27 Waterfalls of Damajagua', k: 'hike' },
+      { la: 19.385, ln: -69.955, n: 'Playa Grande golf', k: 'golf' },
+      { la: 19.757, ln: -70.570, n: 'Puerto Plata airport (POP)', k: 'air' },
+      { la: 19.100, ln: -70.640, n: 'Jarabacoa rafting (~2h)', k: 'water' }
+    ]
+  };
+
+  var LEGID = { areamap: 'arealeg', townmap: 'townleg', careyesmap: 'careyesleg', cabosmap: 'cabosleg', jaramap: 'jaraleg' };
+  var instances = {};
+  Object.keys(MAPS).forEach(function (id) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    var map = L.map(id, { scrollWheelZoom: false, zoomControl: true });
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; OpenStreetMap &copy; CARTO', subdomains: 'abcd', maxZoom: 19
+    }).addTo(map);
+
+    var pts = MAPS[id], bounds = [], used = {};
+    pts.forEach(function (p) {
+      var col = (CAT[p.k] || CAT.town).c;
+      var isStay = p.k === 'stay';
+      L.circleMarker([p.la, p.ln], {
+        radius: isStay ? 9 : 6, color: '#fff', weight: isStay ? 2 : 1.5,
+        fillColor: col, fillOpacity: 1
+      }).addTo(map).bindTooltip(p.n, {
+        permanent: true, direction: 'right', offset: [6, 0],
+        className: 'lbl' + (isStay ? ' stay' : '')
+      });
+      bounds.push([p.la, p.ln]);
+      used[p.k] = true;
+    });
+    map.fitBounds(bounds, { padding: [34, 34] });
+    instances[id] = { map: map, bounds: bounds };
+
+    var leg = document.getElementById(LEGID[id] || ('leg' + id.slice(3)));
+    if (leg) {
+      leg.innerHTML = Object.keys(CAT).filter(function (k) { return used[k]; }).map(function (k) {
+        return '<span class="li"><span class="sw" style="background:' + CAT[k].c + '"></span>' + CAT[k].label + '</span>';
+      }).join('');
+    }
+  });
+
+  // Maps inside hidden tabs render at 0 size; fix when a tab is shown.
+  window.__fixMaps = function () {
+    Object.keys(instances).forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el && el.offsetParent !== null) {
+        var inst = instances[id];
+        inst.map.invalidateSize();
+        inst.map.fitBounds(inst.bounds, { padding: [34, 34] });
+      }
+    });
+  };
+  setTimeout(window.__fixMaps, 300);
+})();
+</script>
+<!--MAPINIT-END-->
+<script>
+(function () {
+  function show(id) {
+    document.querySelectorAll('.page').forEach(function (p) { p.classList.toggle('active', p.id === id); });
+    document.querySelectorAll('.topnav a[data-page]').forEach(function (a) { a.classList.toggle('active', a.getAttribute('data-page') === id); });
+    window.scrollTo(0, 0);
+    if (window.__fixMaps) setTimeout(window.__fixMaps, 60);
+  }
+  document.querySelectorAll('[data-page]').forEach(function (el) {
+    el.addEventListener('click', function (e) { e.preventDefault(); show(el.getAttribute('data-page')); });
+  });
+})();
+</script>
+</body>
+</html>
