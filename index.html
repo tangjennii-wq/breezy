@@ -70,6 +70,8 @@
 
   /* maps */
   .locmap { height: 340px; width: 100%; border: 1px solid var(--line); border-radius: 10px; margin: 4px 0 10px; background: #eef1f0; z-index: 0; }
+  .pagenav .navgroup { align-self:center; font-weight:700; color:var(--soft-ink); font-size:11px; letter-spacing:.1em; text-transform:uppercase; padding:0 4px; }
+  .pagenav .navrowbreak { flex-basis:100%; height:0; }
   .maplegend { font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; font-size: 11.5px; color: var(--soft-ink); display: flex; flex-wrap: wrap; gap: 6px 16px; margin: 0 0 16px; }
   .maplegend .li { display: inline-flex; align-items: center; gap: 6px; }
   .maplegend .sw { width: 11px; height: 11px; border-radius: 50%; display: inline-block; }
@@ -225,40 +227,41 @@
   </header>
   <div class="pagenav">
     <a data-page="page-overview" class="active">Overview</a>
+    <span class="navgroup">Caribbean</span>
+    <a data-page="page-pr">Puerto Rico</a>
+    <a data-page="page-grenada">Grenada</a>
+    <a data-page="page-bvi">British Virgin Islands</a>
+    <a data-page="page-jarabacoa">Dominican Republic</a>
+    <span class="navrowbreak"></span>
+    <span class="navgroup">Pacific</span>
     <a data-page="page-careyes">Careyes / Cuixmala</a>
     <a data-page="page-cabos">Los Cabos</a>
     <a data-page="page-todossantos">Todos Santos</a>
     <a data-page="page-sanmiguel">San Miguel de Allende</a>
-    <a data-page="page-jarabacoa">Dominican Republic</a>
-    <a data-page="page-pr">Puerto Rico</a>
-    <a data-page="page-grenada">Grenada</a>
-    <a data-page="page-bvi">British Virgin Islands</a>
-    <a data-page="page-riviera">Riviera Maya</a>
-  </div>
-
-  <div style="border:1px solid var(--accent); border-radius:14px; padding:16px 22px; margin:0 0 26px; background:rgba(63,114,176,0.06);">
-    <div style="font-weight:700; color:var(--accent); letter-spacing:.02em; margin-bottom:6px;">Where we're leaning</div>
-    <p style="margin:0;">Two front-runners: <strong>Grenada</strong> &mdash; locally-owned organic cocoa &amp; spice estates, rainforest waterfalls and quiet beaches &mdash; and <strong>Guana Island</strong> in the BVI, an 850-acre private nature sanctuary with an organic orchard, seven beaches and miles of trails. Both are the closest in spirit to Babylonstoren, both stack up real hikes and swimmable water, and both sit right on budget. <strong>Puerto Rico</strong> is the easy-travel backup &mdash; ~4h nonstop, no passport.</p>
   </div>
 
   <div class="intro">
-    <p><strong>The vibe:</strong> not a generic resort-strip vacation &mdash; we want places that feel curated, design-forward, immersed in nature and experiential, where the destination itself is the experience (Babylonstoren, Amangiri) rather than just a base for excursions. A few directions, each with its own energy:</p>
-    <ul class="drives" style="grid-template-columns:1fr;">
-      <li><strong>Careyes / Cuixmala</strong> <span class="t">&mdash; private architectural estates on a wild coastline; horses, nature preserves, empty beaches and dramatic scenery. Curated and singular.</span></li>
-      <li><strong>San Miguel de Allende</strong> <span class="t">&mdash; a colonial-city escape: architecture, food, art and courtyards. More cultural than nature.</span></li>
-      <li><strong>Todos Santos / El Pescadero</strong> <span class="t">&mdash; Baja surf town meets boutique design hotel; artsy, desert, farm-to-table, slow.</span></li>
-      <li><strong>Dominican Republic (Sea Horse Ranch)</strong> <span class="t">&mdash; a tropical adventure estate: villa living, horses, beaches, waterfalls, rafting and surf.</span></li>
-      <li><strong>Los Cabos</strong> <span class="t">&mdash; the resort end: beach clubs, golf, pools and spas, where the hotel is the destination.</span></li>
-    </ul>
-    <p style="margin-top:18px;">And, closer to the East Coast, four Caribbean directions &mdash; three worth a real look (the two front-runners first), one to rule out:</p>
-    <ul class="drives" style="grid-template-columns:1fr;">
-      <li><strong>Grenada (Spice Island)</strong> <span class="t">&mdash; locally-owned organic cocoa &amp; spice estates, rainforest waterfalls and quiet beaches; farm-to-table and off the mainstream track.</span></li>
-      <li><strong>British Virgin Islands (Guana Island)</strong> <span class="t">&mdash; a private-island nature sanctuary with an organic orchard, seven beaches and miles of trails; the most Babylonstoren-like of the islands.</span></li>
-      <li><strong>Puerto Rico (El Yunque &amp; coffee country)</strong> <span class="t">&mdash; a mountain coffee-farm villa with rainforest and beach; ~4h nonstop and no passport, the easy-travel option.</span></li>
-      <li><strong>Riviera Maya / Tulum</strong> <span class="t">&mdash; included honestly as the one where the vibe is off: a busy resort-and-beach-club strip, not the farm-estate feel.</span></li>
-    </ul>
+    <p><strong>The vibe:</strong> not a generic resort vacation &mdash; we want places that feel curated, design-forward, immersed in nature and experiential, where the destination itself is the experience (Babylonstoren) rather than just a base for excursions. The options fall into two directions: the Caribbean &amp; East Coast (shorter flights) and Pacific Mexico. This page is the general overview &mdash; open any section above to deep-dive each destination.</p>
   </div>
-  <p class="cap" style="margin:-26px 0 40px;">Also on the radar: Puerto Escondido.</p>
+
+  <h2 class="section">Caribbean &amp; East Coast</h2>
+  <p class="cap" style="margin:-8px 0 14px;">Shorter flights from Boston &mdash; and where all our favorites are, roughly in order of preference.</p>
+  <ul class="drives" style="grid-template-columns:1fr;">
+    <li><strong>Puerto Rico (Royal Isabela &amp; Vieques)</strong> <span class="t">&mdash; a working farm-estate of cliff-top casitas with farm-to-table dining, plus the design guesthouse Finca Victoria on Vieques; ~4h nonstop, no passport.</span></li>
+    <li><strong>Grenada (Six Senses La Sagesse &amp; Calabash)</strong> <span class="t">&mdash; a design/wellness resort with an organic garden, plus locally-owned cocoa &amp; spice estates, rainforest waterfalls and quiet beaches.</span></li>
+    <li><strong>British Virgin Islands (Virgin Gorda)</strong> <span class="t">&mdash; Rosewood Little Dix Bay and Oil Nut Bay, with The Baths, sailing and Guana Island as a private nature-sanctuary alternative.</span></li>
+    <li><strong>Dominican Republic (Playa Grande &amp; Sea Horse Ranch)</strong> <span class="t">&mdash; a design-forward beach base (the storybook Playa Grande bungalows) or a roomier full-service villa (Sea Horse Ranch), with waterfalls, reefs and rafting; ~4h nonstop.</span></li>
+  </ul>
+  <p class="cap" style="font-size:0.78em; font-style:italic; margin:16px 0 26px;">Dominica's Secret Bay (<a href="https://secretbay.dm/" target="_blank" rel="noopener">secretbay.dm</a>) was a beautiful option &mdash; clifftop rainforest villas on the Nature Island &mdash; but a full week at holiday time books up far in advance, so it'd be one to plan a year ahead, sadly.</p>
+
+  <h2 class="section">Pacific Mexico</h2>
+  <ul class="drives" style="grid-template-columns:1fr;">
+    <li><strong>Careyes / Cuixmala</strong> <span class="t">&mdash; private architectural estates on a wild coastline; horses, nature preserves, empty beaches and dramatic scenery. Curated and singular.</span></li>
+    <li><strong>Todos Santos / El Pescadero</strong> <span class="t">&mdash; Baja surf town meets boutique design hotel; artsy, desert, farm-to-table, slow.</span></li>
+    <li><strong>San Miguel de Allende</strong> <span class="t">&mdash; the highlands option: a colonial city of architecture, food, art and courtyards, on a real wine route. More cultural than coastal.</span></li>
+    <li><strong>Los Cabos</strong> <span class="t">&mdash; the resort end: beach clubs, golf, pools and spas, where the hotel is the destination.</span></li>
+  </ul>
+  <p class="cap" style="margin:6px 0 40px; font-size:0.78em; font-style:italic;">Also on the radar but doesn't seem to be the vibe: Riviera Maya / Tulum, the US Virgin Islands (Lovango), and Turks &amp; Caicos.</p>
 
   <h2 class="section">At a Glance</h2>
   <div class="compare-wrap">
@@ -277,24 +280,44 @@
       </thead>
       <tbody>
         <tr>
-          <th>Grenada <small>Spice &amp; cocoa island</small></th>
-          <td>Beach villa + organic cocoa &amp; spice estates</td>
-          <td>Tree-to-bar chocolate; estate-to-plate</td>
-          <td>Grand Anse beach; snorkel sculpture park</td>
+          <th>Puerto Rico <small>Royal Isabela &middot; Vieques &middot; mountains</small></th>
+          <td>Working farm-estate casitas on Atlantic cliffs; design-island &amp; coffee-mountain options</td>
+          <td>Farm-to-table from the estate's own gardens</td>
+          <td>Atlantic cliffs &amp; beaches; Vieques bio-bay; river swims</td>
+          <td>Cliff &amp; mountain trails; Cerro de Punta</td>
+          <td>Yes &mdash; oceanfront course (bonus)</td>
+          <td class="wine-col">&mdash;</td>
+          <td class="col-travel">~4h fly (nonstop) + ~1&frac12;h drive &middot; no passport</td>
+        </tr>
+        <tr>
+          <th>Grenada <small>Six Senses &middot; Spice Island</small></th>
+          <td>Design/wellness resort (Six Senses) or boutique beach (Calabash); organic garden</td>
+          <td>Farm-to-table; tree-to-bar cocoa &amp; spice estates</td>
+          <td>Calm SW beaches; diving &amp; snorkel sculpture park</td>
           <td>Grand &Eacute;tang rainforest; Seven Sisters falls</td>
           <td class="golf-no">&mdash; (9-hole nearby)</td>
           <td class="wine-col">&mdash;</td>
           <td class="col-travel">~6h fly (1 stop; seasonal nonstop)</td>
         </tr>
         <tr>
-          <th>British Virgin Islands <small>Guana &mdash; private island</small></th>
-          <td>850-acre private-island nature sanctuary + orchard</td>
-          <td>All-inclusive farm-to-table; island orchard</td>
-          <td>Seven beaches; snorkel, sail, paddle</td>
-          <td>12 miles of trails; Sugarloaf summit</td>
+          <th>British Virgin Islands <small>Virgin Gorda</small></th>
+          <td>Rosewood Little Dix Bay or Oil Nut Bay villas; Guana private-island alt</td>
+          <td>Sea-to-table dining; beach-club restaurants</td>
+          <td>The Baths, sailing, snorkel &amp; empty cays</td>
+          <td>Gorda Peak &amp; island trails</td>
           <td class="golf-no">&mdash;</td>
-          <td class="wine-col">&mdash; (most wine incl.)</td>
-          <td class="col-travel">~7h fly (via SJU/EIS) + island boat</td>
+          <td class="wine-col">&mdash;</td>
+          <td class="col-travel">~7h fly (via SJU/STT) + hop/ferry</td>
+        </tr>
+        <tr>
+          <th>Dominican Republic <small>North coast &middot; Playa Grande</small></th>
+          <td>Design bungalows (Playa Grande) or oceanfront villa community (Sea Horse Ranch)</td>
+          <td>In-villa chef; beach-club dining</td>
+          <td>Swimmable beaches, reefs &amp; waterfalls</td>
+          <td>Damajagua falls; Jarabacoa rafting &amp; Pico Duarte</td>
+          <td>Yes &mdash; Playa Grande course</td>
+          <td class="wine-col">&mdash;</td>
+          <td class="col-travel">~4h fly (nonstop) + ~20 min drive</td>
         </tr>
         <tr>
           <th>Cuixmala / Careyes <small>Mexico &middot; Pacific coast</small></th>
@@ -305,16 +328,6 @@
           <td>Yes &mdash; nearby</td>
           <td class="wine-col">&mdash;</td>
           <td class="col-travel">~7&ndash;8h fly + 1&frac12;&ndash;3h drive</td>
-        </tr>
-        <tr>
-          <th>Los Cabos <small>Mexico &middot; Baja</small></th>
-          <td>Gated villa communities + organic farm (Acre)</td>
-          <td>Celebrated farm-to-table kitchen</td>
-          <td>Reef diving; swimmable snorkel coves</td>
-          <td>Sierra de la Laguna &amp; canyon falls</td>
-          <td>Yes &mdash; several nearby</td>
-          <td class="wine-col">&mdash;</td>
-          <td class="col-travel">~6&frac12;h fly + ~40 min drive</td>
         </tr>
         <tr>
           <th>Todos Santos / El Pescadero <small>Mexico &middot; Baja</small></th>
@@ -337,34 +350,14 @@
           <td class="col-travel">~6&ndash;7h fly (1 stop) + 1&ndash;1&frac12;h drive</td>
         </tr>
         <tr>
-          <th>Jarabacoa <small>Dominican Rep. &middot; mountains</small></th>
-          <td>Pine forests, rivers &amp; coffee farms; cooler air</td>
-          <td>Private chef, mountain produce, coffee estates</td>
-          <td>Pool + rivers &amp; swimming holes; no beach</td>
-          <td>Best hiking &mdash; falls, rivers, Pico Duarte</td>
-          <td>Yes &mdash; 9-hole in town</td>
+          <th>Los Cabos <small>Mexico &middot; Baja</small></th>
+          <td>Gated villa communities + organic farm (Acre)</td>
+          <td>Celebrated farm-to-table kitchen</td>
+          <td>Reef diving; swimmable snorkel coves</td>
+          <td>Sierra de la Laguna &amp; canyon falls</td>
+          <td>Yes &mdash; several nearby</td>
           <td class="wine-col">&mdash;</td>
-          <td class="col-travel">~4h fly (nonstop) + 1&ndash;1&frac12;h drive</td>
-        </tr>
-        <tr>
-          <th>Puerto Rico <small>El Yunque &amp; coffee country</small></th>
-          <td>Mountain coffee-farm villa; rainforest &amp; beach</td>
-          <td>Farm-to-table; coffee estates; San Juan dining</td>
-          <td>Luquillo beaches; rainforest pools</td>
-          <td>El Yunque rainforest &amp; waterfalls</td>
-          <td>Yes &mdash; Río Grande</td>
-          <td class="wine-col">&mdash;</td>
-          <td class="col-travel">~4h fly (nonstop) &middot; no passport</td>
-        </tr>
-        <tr class="vibe-off">
-          <th>Riviera Maya / Tulum <small>Mexico &middot; the &ldquo;vibe is off&rdquo; option</small></th>
-          <td><em>Busy resort-and-beach-club strip; not the farm-estate feel</em></td>
-          <td>Great food, but scene-y and crowded</td>
-          <td>Cenotes &amp; reef &mdash; beautiful but packed</td>
-          <td>Sian Ka'an; mostly flat</td>
-          <td>Yes &mdash; several</td>
-          <td class="wine-col">&mdash;</td>
-          <td class="col-travel">~4&frac12;h fly (nonstop) + ~1&frac12;h drive</td>
+          <td class="col-travel">~6&frac12;h fly + ~40 min drive</td>
         </tr>
       </tbody>
     </table>
@@ -385,15 +378,17 @@
   </header>
   <div class="pagenav">
     <a data-page="page-overview">Overview</a>
+    <span class="navgroup">Caribbean</span>
+    <a data-page="page-pr">Puerto Rico</a>
+    <a data-page="page-grenada">Grenada</a>
+    <a data-page="page-bvi">British Virgin Islands</a>
+    <a data-page="page-jarabacoa">Dominican Republic</a>
+    <span class="navrowbreak"></span>
+    <span class="navgroup">Pacific</span>
     <a data-page="page-careyes" class="active">Careyes / Cuixmala</a>
     <a data-page="page-cabos">Los Cabos</a>
     <a data-page="page-todossantos">Todos Santos</a>
     <a data-page="page-sanmiguel">San Miguel de Allende</a>
-    <a data-page="page-jarabacoa">Dominican Republic</a>
-    <a data-page="page-pr">Puerto Rico</a>
-    <a data-page="page-grenada">Grenada</a>
-    <a data-page="page-bvi">British Virgin Islands</a>
-    <a data-page="page-riviera">Riviera Maya</a>
   </div>
 
   <div class="intro">
@@ -487,15 +482,17 @@
   </header>
   <div class="pagenav">
     <a data-page="page-overview">Overview</a>
+    <span class="navgroup">Caribbean</span>
+    <a data-page="page-pr">Puerto Rico</a>
+    <a data-page="page-grenada">Grenada</a>
+    <a data-page="page-bvi">British Virgin Islands</a>
+    <a data-page="page-jarabacoa">Dominican Republic</a>
+    <span class="navrowbreak"></span>
+    <span class="navgroup">Pacific</span>
     <a data-page="page-careyes">Careyes / Cuixmala</a>
     <a data-page="page-cabos" class="active">Los Cabos</a>
     <a data-page="page-todossantos">Todos Santos</a>
     <a data-page="page-sanmiguel">San Miguel de Allende</a>
-    <a data-page="page-jarabacoa">Dominican Republic</a>
-    <a data-page="page-pr">Puerto Rico</a>
-    <a data-page="page-grenada">Grenada</a>
-    <a data-page="page-bvi">British Virgin Islands</a>
-    <a data-page="page-riviera">Riviera Maya</a>
   </div>
 
   <div class="intro">
@@ -572,15 +569,17 @@
   </header>
   <div class="pagenav">
     <a data-page="page-overview">Overview</a>
+    <span class="navgroup">Caribbean</span>
+    <a data-page="page-pr">Puerto Rico</a>
+    <a data-page="page-grenada">Grenada</a>
+    <a data-page="page-bvi">British Virgin Islands</a>
+    <a data-page="page-jarabacoa">Dominican Republic</a>
+    <span class="navrowbreak"></span>
+    <span class="navgroup">Pacific</span>
     <a data-page="page-careyes">Careyes / Cuixmala</a>
     <a data-page="page-cabos">Los Cabos</a>
     <a data-page="page-todossantos" class="active">Todos Santos</a>
     <a data-page="page-sanmiguel">San Miguel de Allende</a>
-    <a data-page="page-jarabacoa">Dominican Republic</a>
-    <a data-page="page-pr">Puerto Rico</a>
-    <a data-page="page-grenada">Grenada</a>
-    <a data-page="page-bvi">British Virgin Islands</a>
-    <a data-page="page-riviera">Riviera Maya</a>
   </div>
 
   <div class="intro">
@@ -666,15 +665,17 @@
   </header>
   <div class="pagenav">
     <a data-page="page-overview">Overview</a>
+    <span class="navgroup">Caribbean</span>
+    <a data-page="page-pr">Puerto Rico</a>
+    <a data-page="page-grenada">Grenada</a>
+    <a data-page="page-bvi">British Virgin Islands</a>
+    <a data-page="page-jarabacoa">Dominican Republic</a>
+    <span class="navrowbreak"></span>
+    <span class="navgroup">Pacific</span>
     <a data-page="page-careyes">Careyes / Cuixmala</a>
     <a data-page="page-cabos">Los Cabos</a>
     <a data-page="page-todossantos">Todos Santos</a>
     <a data-page="page-sanmiguel" class="active">San Miguel de Allende</a>
-    <a data-page="page-jarabacoa">Dominican Republic</a>
-    <a data-page="page-pr">Puerto Rico</a>
-    <a data-page="page-grenada">Grenada</a>
-    <a data-page="page-bvi">British Virgin Islands</a>
-    <a data-page="page-riviera">Riviera Maya</a>
   </div>
 
   <div class="intro">
@@ -770,25 +771,28 @@
 
   <header class="cover">
     <h1>Dominican Republic &mdash; North Coast</h1>
-    <p class="subtitle">Sea Horse Ranch + Jarabacoa adventures &middot; Dec 26, 2026 &ndash; Jan 2, 2027 &middot; eight of us</p>
+    <p class="subtitle">Playa Grande &amp; Sea Horse Ranch, north coast &middot; Dec 26, 2026 &ndash; Jan 2, 2027 &middot; eight of us</p>
   </header>
   <div class="pagenav">
     <a data-page="page-overview">Overview</a>
+    <span class="navgroup">Caribbean</span>
+    <a data-page="page-pr">Puerto Rico</a>
+    <a data-page="page-grenada">Grenada</a>
+    <a data-page="page-bvi">British Virgin Islands</a>
+    <a data-page="page-jarabacoa" class="active">Dominican Republic</a>
+    <span class="navrowbreak"></span>
+    <span class="navgroup">Pacific</span>
     <a data-page="page-careyes">Careyes / Cuixmala</a>
     <a data-page="page-cabos">Los Cabos</a>
     <a data-page="page-todossantos">Todos Santos</a>
     <a data-page="page-sanmiguel">San Miguel de Allende</a>
-    <a data-page="page-jarabacoa" class="active">Dominican Republic</a>
-    <a data-page="page-pr">Puerto Rico</a>
-    <a data-page="page-grenada">Grenada</a>
-    <a data-page="page-bvi">British Virgin Islands</a>
-    <a data-page="page-riviera">Riviera Maya</a>
   </div>
 
   <div class="intro">
-    <p><strong>The vibe:</strong> A tropical adventure estate &mdash; villa living, horseback, beaches, waterfalls, rivers, rafting and surf. Active and outdoorsy, less design-focused.</p>
-    <p>Our DR pick: base on the quiet <strong>north coast at Sea Horse Ranch</strong> &mdash; a gated community of private beach villas with full service, ~20 min from Puerto Plata (direct flights from Boston) and far from the mainstream crowds. It stacks up the water and adventure you're after: the 27 Waterfalls of Damajagua (canyoning &amp; jumping), Cabarete's kite/surf/SUP beaches, El Choco caves, snorkeling, and a whitewater-rafting day-trip up to Jarabacoa (~2h).</p>
-    <p>One honest note: this is a beach-and-adventure week, not a wine one &mdash; the north coast isn't a wine region (Ocoa Bay's vineyard is ~3.5h away). If wine matters more than the beach, the alternative is to base up in the Jarabacoa mountains (rustic) instead.</p>
+    <p><strong>The vibe:</strong> a design-forward beach base on the quiet north coast, with a whole lot of water and adventure at the door &mdash; waterfalls, reefs, kite/surf, horseback and a whitewater day-trip. Two very different homes for the week, and the choice comes down to <em>vibe vs. easy group living</em>.</p>
+    <p><strong>Lead pick &mdash; Playa Grande Beach Club:</strong> the design choice, and the most on-brief. Nine storybook bungalows by the Kemble family on a wild mile-long Atlantic beach at Río San Juan, with its own restaurant, pool and the Robert Trent Jones golf course next door. It photographs like a magazine, and fits eight (book the three-bedroom bungalows or a full buyout).</p>
+    <p><strong>Or Sea Horse Ranch:</strong> the roomier, full-service alternative &mdash; one big oceanfront villa with a private pool, staff and in-villa chef, in a gated community with a beach club, calmer swimming coves and quicker access to the Cabarete/Damajagua adventure hub. Less designed, but easier for a group and better for swimming.</p>
+    <p><strong>Best of both &mdash; a split stay:</strong> 3 nights at Playa Grande on the coast, then 2 nights at a boutique mountain lodge in Jarabacoa for whitewater rafting, waterfalls and cool mountain air.</p>
   </div>
 
   <h2 class="section">The Area &mdash; Beach, Falls &amp; Rivers</h2>
@@ -799,35 +803,45 @@
     <li>Sea Horse Ranch beach &amp; Cabarete <span class="t">&mdash; at the door</span></li>
     <li>Puerto Plata airport (POP) <span class="t">&mdash; ~20 min</span></li>
     <li>27 Waterfalls of Damajagua (canyoning) <span class="t">&mdash; ~45 min</span></li>
-    <li>Sosúa beaches &amp; snorkeling <span class="t">&mdash; ~15 min</span></li>
-    <li>Playa Grande golf (Río San Juan) <span class="t">&mdash; ~1h</span></li>
+    <li>Sos&uacute;a beaches &amp; snorkeling <span class="t">&mdash; ~15 min</span></li>
+    <li>Playa Grande golf (R&iacute;o San Juan) <span class="t">&mdash; ~1h</span></li>
     <li>Jarabacoa &mdash; whitewater rafting &amp; hikes <span class="t">&mdash; ~2h</span></li>
     <li>Samaná (whales, from mid-Jan) <span class="t">&mdash; ~3h</span></li>
   </ul>
 
   <h2 class="section">Where We Could Stay</h2>
-  <div class="bucket">
-    <h3>Sea Horse Ranch <span class="lead-tag">Main pick</span></h3>
-    <p class="lead">A 250-acre gated community of private oceanfront villas &mdash; not a resort bubble &mdash; with a beach club restaurant, tennis, an equestrian center, two oceanfront pools, and full concierge (in-villa chef and all-inclusive menus available). Beach, service and seclusion, minutes from the airport.</p>
+  <div style="border:1px solid var(--accent); border-radius:14px; padding:14px 20px; margin:0 0 22px; background:rgba(63,114,176,0.06);">
+    <div style="font-weight:700; color:var(--accent); margin-bottom:6px;">Playa Grande vs. Sea Horse Ranch</div>
+    <p style="margin:0 0 6px;"><strong>Playa Grande</strong> wins on <strong>vibe</strong>: design-forward, curated and magazine-worthy, with an on-site restaurant &amp; pool and golf next door. Tradeoffs &mdash; bungalows rather than one villa, a wild Atlantic surf beach (dramatic, not always calm for swimming), and a bit more remote (~1&frac12;h from Puerto Plata).</p>
+    <p style="margin:0;"><strong>Sea Horse Ranch</strong> wins on <strong>activities &amp; easy group living</strong>: one big villa with chef &amp; staff, calm swimming coves, and the closest base to Cabarete kite/surf and the Damajagua falls (~20 min from the airport). Tradeoff &mdash; villa-standard rather than designed.</p>
   </div>
-
+  <div class="bucket">
+    <h3>Playa Grande Beach Club <span class="lead-tag">Lead &mdash; design pick</span></h3>
+    <p class="lead">Nine storybook designer bungalows by the Kemble family on a wild mile-long Atlantic beach at Río San Juan, with an on-site restaurant, pool and the Robert Trent Jones golf course next door &mdash; the most tasteful, curated base on the coast.</p>
+  </div>
+  <div class="smastay">
+    <div class="top"><span class="nm">Playa Grande &mdash; three-bedroom bungalows or a buyout</span><span class="pr">by quote</span></div>
+    <div class="meta">Six 1-BR + three 3-BR bungalows · fits eight easily (two or three of the 3-BR bungalows, or a full buyout) · restaurant &amp; pool · Kemble-family design</div>
+    <p class="desc">Book a cluster of the three-bedroom bungalows, or take the whole property &mdash; storybook interiors on an empty beach. <a href="https://www.playagrandebeachclub.com/" target="_blank" rel="noopener">Playa Grande Beach Club</a></p>
+  </div>
+  <div class="bucket">
+    <h3>Sea Horse Ranch <span class="lead-tag">Roomier alternative</span></h3>
+    <p class="lead">A 250-acre gated community of private oceanfront villas &mdash; beach club, tennis, an equestrian center, calm swimming coves and full concierge (in-villa chef available). One big house for everyone, minutes from the airport and the Cabarete adventure hub.</p>
+  </div>
   <div class="smastay">
     <div class="top"><span class="nm">Villa Windward (Sea Horse Ranch)</span><span class="pr">est. ~$2,000&ndash;$2,800 / night</span></div>
     <div class="meta">6 BR / 7 ba · private pool &amp; gardens · exceptional build · beach-club &amp; concierge access</div>
     <p class="desc">The roomy top-tier option, easily fitting eight with space to spare. <a href="https://sea-horse-ranch.com/dominican-republic-vacation-rentals/" target="_blank" rel="noopener">Sea Horse Ranch rentals</a></p>
   </div>
-
   <div class="smastay">
     <div class="top"><span class="nm">Villa Soleil (Sea Horse Ranch)</span><span class="pr">est. ~$1,500&ndash;$2,200 / night</span></div>
     <div class="meta">5 BR · classic Caribbean layout · private pool · gardens · walk to the beach club</div>
     <p class="desc">A relaxed five-bedroom in the same community &mdash; a touch more value. <a href="https://www.vrbo.com/4657396ha" target="_blank" rel="noopener">A 5BR at Sea Horse Ranch</a> &middot; <a href="https://isleblue.co/villas/vacation-rentals/caribbean/dominican-republic/cabarete/villa-sea-horse-ranch-2" target="_blank" rel="noopener">more villas</a></p>
   </div>
-
   <div class="bucket">
     <h3>Or: a mountains-first base in Jarabacoa</h3>
     <p class="lead">If you'd rather wake up in the cool pine mountains and have rafting, hikes and an Ocoa Bay wine day-trip on the doorstep (trading the beach and the polish), base in Jarabacoa instead &mdash; lodging is comfortable-rustic.</p>
   </div>
-
   <div class="smastay">
     <div class="top"><span class="nm">Simply Dominican &mdash; Jarabacoa villas</span><span class="pr">by quote (~$500&ndash;$900/night)</span></div>
     <div class="meta">Private mountain villas with pools &amp; staff · adventure at the door · Ocoa Bay wine ~2h</div>
@@ -836,6 +850,8 @@
 
   <h2 class="section">On the Water &amp; Adventure</h2>
   <p class="intro" style="margin:0 0 8px;">This coast is loaded with the water-and-adventure you loved. The <strong>27 Waterfalls of Damajagua</strong> (~45 min) is a canyoning romp of jumps and natural slides; <strong>Cabarete</strong> is the Caribbean's kite/surf/SUP capital; there's <strong>snorkeling and diving</strong> off Sosúa, <strong>El Choco caves</strong> to explore, and horseback along the sand. For the whitewater itch, a day-trip up to <strong>Jarabacoa</strong> (~2h) rafts the Río Yaque del Norte &mdash; the only real whitewater on the whole shortlist. Beaches are swimmable and calm at the coves. The one gap is wine (no vineyard on this coast); whale season in Samaná starts ~mid-January, just after your dates.</p>
+  <p class="intro" style="margin:0 0 8px;"><strong>Easy add-ons for the week:</strong> private-chef dinners, whitewater rafting, waterfall adventures, surfing lessons, horseback riding on the beach, and in-villa massages.</p>
+  <p class="cap">Rough all-in for eight (excl. flights): ~$20&ndash;35k &mdash; easily within budget, with plenty of room for private experiences.</p>
 
 
 
@@ -844,7 +860,7 @@
     <ul>
       <li><span class="lk-cat">Condé Nast</span><span class="lk-list"><a href="https://www.google.com/search?q=site:cntraveler.com+cabarete+sosua+dominican+republic+north+coast" target="_blank" rel="noopener">The DR north coast in Condé Nast Traveler</a></span></li>
       <li><span class="lk-cat">Travel+Leisure</span><span class="lk-list"><a href="https://www.google.com/search?q=site:travelandleisure.com+cabarete+dominican+republic" target="_blank" rel="noopener">Cabarete &amp; Jarabacoa in Travel + Leisure</a></span></li>
-      <li><span class="lk-cat">Stay</span><span class="lk-list"><a href="https://sea-horse-ranch.com/" target="_blank" rel="noopener">Sea Horse Ranch</a></span></li>
+      <li><span class="lk-cat">Stay</span><span class="lk-list"><a href="https://www.playagrandebeachclub.com/" target="_blank" rel="noopener">Playa Grande Beach Club</a> &middot; <a href="https://sea-horse-ranch.com/" target="_blank" rel="noopener">Sea Horse Ranch</a></span></li>
     </ul>
   </div>
 
@@ -857,67 +873,71 @@
 <div class="page" id="page-pr">
 <div class="wrap">
   <header class="cover">
-    <h1>Puerto Rico &mdash; Coffee Country</h1>
-    <p class="subtitle">Central mountains, Puerto Rico &middot; Dec 26, 2026 &ndash; Jan 2, 2027 &middot; eight of us</p>
+    <h1>Puerto Rico</h1>
+    <p class="subtitle">Royal Isabela, Vieques &amp; the mountains &middot; Dec 26, 2026 &ndash; Jan 2, 2027 &middot; eight of us</p>
   </header>
   <div class="pagenav">
     <a data-page="page-overview">Overview</a>
+    <span class="navgroup">Caribbean</span>
+    <a data-page="page-pr" class="active">Puerto Rico</a>
+    <a data-page="page-grenada">Grenada</a>
+    <a data-page="page-bvi">British Virgin Islands</a>
+    <a data-page="page-jarabacoa">Dominican Republic</a>
+    <span class="navrowbreak"></span>
+    <span class="navgroup">Pacific</span>
     <a data-page="page-careyes">Careyes / Cuixmala</a>
     <a data-page="page-cabos">Los Cabos</a>
     <a data-page="page-todossantos">Todos Santos</a>
     <a data-page="page-sanmiguel">San Miguel de Allende</a>
-    <a data-page="page-jarabacoa">Dominican Republic</a>
-    <a data-page="page-pr" class="active">Puerto Rico</a>
-    <a data-page="page-grenada">Grenada</a>
-    <a data-page="page-bvi">British Virgin Islands</a>
-    <a data-page="page-riviera">Riviera Maya</a>
   </div>
   <div class="intro">
-    <p><strong>The vibe:</strong> a working coffee-and-wine country in the mountains &mdash; farm-to-table, cool air, waterfalls and rivers, with tastings on real estates. The shortest, simplest trip of all: <strong>~4h nonstop from Boston, no passport</strong>.</p>
-    <p>Base in a private mountain villa or coffee-farm stay around Jayuya / Utuado, and fill the days with coffee-hacienda tours, a tasting at <strong>Finca Vista Bella</strong> (the island's only vineyard), and hikes; the beach is an easy day-trip. (Sam's family has done El Yunque, so this heads to the central highlands instead.)</p>
+    <p><strong>The vibe:</strong> the easy, no-passport trip that still delivers a real working-farm estate. <strong>~4h nonstop from Boston</strong>, then a short drive or hop. The standout is <strong>Royal Isabela</strong> &mdash; freestanding casitas with private plunge pools on 200-ft Atlantic cliffs, a farm-to-table restaurant cooking daily from the estate's own River Farm and organic garden, and a dramatic oceanfront course (a bonus for the golfers).</p>
+    <p>Two more directions if you want them: <strong>Vieques</strong>, where Finca Victoria is a design-forward, plant-based guesthouse beside an 18,000-acre wildlife refuge and the world's brightest bioluminescent bay; or the cool <strong>central mountains</strong> for working coffee haciendas, waterfalls and river swims. (Sam's family has done El Yunque, so this skips the standard rainforest circuit.)</p>
   </div>
-  <h2 class="section">The Area &mdash; Mountains, Coffee &amp; Vines</h2>
+  <h2 class="section">The Area &mdash; Cliffs, Islands &amp; Mountains</h2>
   <div class="locmap" id="prmap"></div>
   <div class="maplegend" id="prleg"></div>
-  <p class="cap">The cool central cordillera, ~1&frac12;h up from San Juan (SJU, ~4h nonstop from Boston). Beaches are a ~1h day-trip either coast.</p>
+  <p class="cap">Three possible bases: Royal Isabela on the north-west cliffs (~1&frac12;h from San Juan), Vieques off the east coast (a 22-min hop), and coffee country in the central mountains. SJU is ~4h nonstop from Boston.</p>
   <ul class="drives">
-    <li>Finca Vista Bella (PR's only vineyard) <span class="t">&mdash; Utuado</span></li>
-    <li>Hacienda San Pedro &amp; Prosperidad (coffee) <span class="t">&mdash; Jayuya</span></li>
-    <li>Toro Negro forest &amp; Cerro de Punta (highest peak) <span class="t">&mdash; ~30&ndash;45 min</span></li>
-    <li>Rivers &amp; waterfalls <span class="t">&mdash; nearby</span></li>
-    <li>A beach day (Ponce / west coast) <span class="t">&mdash; ~1h</span></li>
-    <li>San Juan airport (SJU) <span class="t">&mdash; ~1&frac12;h</span></li>
+    <li>Royal Isabela (NW cliffs) <span class="t">&mdash; ~1&frac12;h from San Juan</span></li>
+    <li>Finca Victoria, Vieques <span class="t">&mdash; 22-min hop from SJU</span></li>
+    <li>Mosquito bioluminescent Bay (Vieques) <span class="t">&mdash; brightest in the world</span></li>
+    <li>Coffee country (Jayuya / Utuado) <span class="t">&mdash; central mountains</span></li>
+    <li>Cerro de Punta &amp; Toro Negro forest <span class="t">&mdash; the highlands</span></li>
+    <li>San Juan airport (SJU) <span class="t">&mdash; ~4h nonstop</span></li>
   </ul>
   <h2 class="section">Where We Could Stay</h2>
   <div class="smastay">
-    <div class="top"><span class="nm">Château d'Amélia (winery &amp; vineyard)</span><span class="pr">by quote</span></div>
-    <div class="meta">Family-owned winery/vineyard stay in Utuado · mountain views · the wine-estate option</div>
-    <p class="desc">A private stay on a working Puerto Rican winery in the mountains &mdash; the closest thing here to a wine-estate base. <a href="https://www.vrbo.com/2796808" target="_blank" rel="noopener">Château d'Amélia</a></p>
+    <div class="top"><span class="nm">Royal Isabela <span class="lead-tag">Working farm estate</span></span><span class="pr">~$2k / casita night at holiday time (sleeps 2)</span></div>
+    <div class="meta">Freestanding casitas (each sleeps 2) with private plunge pools · 200-ft Atlantic cliffs · farm-to-table restaurant from its own River Farm &amp; garden · oceanfront course · spa &amp; pool</div>
+    <p class="desc">A genuine working-farm estate you eat from, on dramatic cliffs &mdash; understated, design-forward and immersed in nature. Each casita sleeps two, so eight of you means about four casitas; the oceanfront golf is a bonus for Sam &amp; his brother. <a href="https://www.royalisabela.com/" target="_blank" rel="noopener">Royal Isabela</a></p>
   </div>
   <div class="smastay">
-    <div class="top"><span class="nm">Casa Campo Jayuya (coffee farm)</span><span class="pr">by quote</span></div>
-    <div class="meta">Hideaway on a 30-acre coffee farm · central mountains · Jayuya</div>
-    <p class="desc">Wake up on a working coffee farm, farm-to-table and quiet. Add a private chef for the group. <a href="https://www.discoverpuertorico.com/article/visit-working-coffee-hacienda-puerto-rico" target="_blank" rel="noopener">PR coffee haciendas</a></p>
+    <div class="top"><span class="nm">Finca Victoria, Vieques <span class="lead-tag">Design guesthouse</span></span><span class="pr">by quote</span></div>
+    <div class="meta">Puerto Rican-owned boho-chic treehouses, cabins &amp; an airstream · plant-based farm-to-table from its own gardens · pool &amp; Ayurvedic wellness · air-conditioned</div>
+    <p class="desc">A design-forward, deeply relaxed island hideaway on Vieques &mdash; individually decorated rooms open to the landscape, with a wellness bent and the world's brightest bio-bay nearby. Book a buyout for the group. <a href="https://www.finca-victoria.com/" target="_blank" rel="noopener">Finca Victoria</a></p>
   </div>
+  <p class="cap">Also on Vieques: <a href="https://hixislandhouse.com/" target="_blank" rel="noopener">Hix Island House</a> &mdash; striking off-grid concrete architecture and a design landmark, but famously open-air with <strong>no air-conditioning</strong>, so not the pick for this group.</p>
   <div class="smastay">
-    <div class="top"><span class="nm">A private 5&ndash;6BR mountain villa</span><span class="pr">by quote</span></div>
-    <div class="meta">Pool &amp; views · one house for the group · near Jayuya / Utuado / Adjuntas</div>
-    <p class="desc">If you'd rather have everyone under one roof with a pool, book a private villa in coffee country and day-trip the estates. <a href="https://www.airbnb.com/jayuya-puerto-rico/stays" target="_blank" rel="noopener">Browse mountain villas</a></p>
+    <div class="top"><span class="nm">Coffee country &mdash; a mountain villa or coffee-farm stay</span><span class="pr">by quote</span></div>
+    <div class="meta">Private villa with pool or a working coffee hacienda · Jayuya / Utuado / Adjuntas · farm-to-table</div>
+    <p class="desc">The cool-mountains alternative: everyone under one roof (or on a real coffee farm), day-tripping haciendas, rivers and waterfalls. <a href="https://www.discoverpuertorico.com/article/visit-working-coffee-hacienda-puerto-rico" target="_blank" rel="noopener">PR coffee haciendas</a></p>
   </div>
+  <p class="cap">Rough all-in for eight (excl. flights): at holiday rates (~$2k/casita, two guests each), four casitas run ~$8k/night &mdash; so a full week lands at the top of or just over the ~$50k budget. Elegant, with golf, great hiking and excellent food; trimming a night or two keeps it in range.</p>
   <h2 class="section">Things to Do</h2>
   <ul class="drives">
-    <li>Coffee-hacienda "seed to cup" tours &amp; tastings <span class="t">(Hacienda San Pedro, Prosperidad)</span></li>
-    <li>Finca Vista Bella vineyard tour &amp; wine tasting <span class="t">(Utuado)</span></li>
+    <li>Farm-to-table dining from the estate's own gardens <span class="t">(Royal Isabela)</span></li>
+    <li>Kayak the bioluminescent Mosquito Bay <span class="t">(Vieques &mdash; brightest in the world)</span></li>
+    <li>Wild beaches &amp; snorkeling on the Vieques refuge</li>
+    <li>Coffee-hacienda &ldquo;seed to cup&rdquo; tours &amp; tastings <span class="t">(the mountains)</span></li>
     <li>Cerro de Punta &amp; Toro Negro forest hikes <span class="t">&mdash; the island's high country</span></li>
-    <li>River swimming &amp; waterfalls <span class="t">&mdash; cool mountain rivers</span></li>
-    <li>Taíno heritage &mdash; Jayuya petroglyphs &amp; museum</li>
-    <li>A beach day on either coast <span class="t">&mdash; ~1h down</span></li>
+    <li>Oceanfront golf on the cliffs at Royal Isabela <span class="t">&mdash; the bonus round</span></li>
   </ul>
   <h2 class="section">Further Reading</h2>
   <div class="links">
     <ul>
-      <li><span class="lk-cat">Condé Nast</span><span class="lk-list"><a href="https://www.google.com/search?q=site:cntraveler.com+puerto+rico+coffee+mountains" target="_blank" rel="noopener">Puerto Rico's mountains in Condé Nast Traveler</a></span></li>
-      <li><span class="lk-cat">Discover PR</span><span class="lk-list"><a href="https://www.discoverpuertorico.com/article/visit-working-coffee-hacienda-puerto-rico" target="_blank" rel="noopener">Working coffee haciendas guide</a></span></li>
+      <li><span class="lk-cat">Royal Isabela</span><span class="lk-list"><a href="https://www.royalisabela.com/" target="_blank" rel="noopener">Royal Isabela</a> &middot; <a href="https://www.caribjournal.com/2025/09/02/puerto-rico-royal-isabela/" target="_blank" rel="noopener">Caribbean Journal review</a></span></li>
+      <li><span class="lk-cat">Finca Victoria</span><span class="lk-list"><a href="https://www.finca-victoria.com/" target="_blank" rel="noopener">Finca Victoria, Vieques</a></span></li>
     </ul>
   </div>
   <footer>Puerto Rico deep dive &bull; A week together, late December 2026</footer>
@@ -926,62 +946,65 @@
 <div class="page" id="page-grenada">
 <div class="wrap">
   <header class="cover">
-    <h1>Grenada &mdash; Spice &amp; Cocoa Island</h1>
-    <p class="subtitle">St. George's &amp; the north &middot; Dec 26, 2026 &ndash; Jan 2, 2027 &middot; eight of us</p>
+    <h1>Grenada &mdash; Spice Island</h1>
+    <p class="subtitle">St. George's &amp; the south &middot; Dec 26, 2026 &ndash; Jan 2, 2027 &middot; eight of us</p>
   </header>
   <div class="pagenav">
     <a data-page="page-overview">Overview</a>
+    <span class="navgroup">Caribbean</span>
+    <a data-page="page-pr">Puerto Rico</a>
+    <a data-page="page-grenada" class="active">Grenada</a>
+    <a data-page="page-bvi">British Virgin Islands</a>
+    <a data-page="page-jarabacoa">Dominican Republic</a>
+    <span class="navrowbreak"></span>
+    <span class="navgroup">Pacific</span>
     <a data-page="page-careyes">Careyes / Cuixmala</a>
     <a data-page="page-cabos">Los Cabos</a>
     <a data-page="page-todossantos">Todos Santos</a>
     <a data-page="page-sanmiguel">San Miguel de Allende</a>
-    <a data-page="page-jarabacoa">Dominican Republic</a>
-    <a data-page="page-pr">Puerto Rico</a>
-    <a data-page="page-grenada" class="active">Grenada</a>
-    <a data-page="page-bvi">British Virgin Islands</a>
-    <a data-page="page-riviera">Riviera Maya</a>
   </div>
   <div class="intro">
-    <p><strong>The vibe:</strong> the "Spice Island" &mdash; organic <strong>cocoa and spice estates</strong>, tree-to-bar chocolate, rainforest waterfalls, and quiet beaches. The agritourism here is modern and locally owned (Belmont Estate, Mount Edgecombe), so it's a working-farm experience, farm-to-table, and genuinely off the mainstream track.</p>
-    <p>Base in a private beach villa near Grand Anse or Morne Rouge, and fill the days with the cocoa &amp; spice estates, waterfall hikes and reefs. ~6h from Boston (usually one stop; a seasonal nonstop has run from Logan).</p>
+    <p><strong>The vibe:</strong> the "Spice Island" &mdash; a design/wellness resort and a boutique beach classic, wrapped around organic <strong>cocoa and spice estates</strong>, tree-to-bar chocolate, rainforest waterfalls and quiet beaches. The estates here are modern and locally owned (Belmont Estate), so it's a real working-farm experience, farm-to-table, and off the mainstream track. Probably the nicest blend of design, hiking, diving/snorkeling and wellness.</p>
+    <p>Base at Six Senses La Sagesse or the boutique Calabash Hotel on the calm southern beaches, and fill the days with the cocoa &amp; spice estates, waterfall hikes and reefs. ~6h from Boston (usually one stop; a seasonal nonstop has run from Logan).</p>
   </div>
   <h2 class="section">The Area &mdash; Cocoa, Spice &amp; Sea</h2>
   <div class="locmap" id="grenadamap"></div>
   <div class="maplegend" id="grenadaleg"></div>
-  <p class="cap">A small, green island: beaches in the southwest near St. George's, the cocoa &amp; spice estates and rainforest in the north and centre. Maurice Bishop airport (GND) is by the beaches.</p>
+  <p class="cap">A small, green island: beaches and the two resorts in the south near St. George's, the cocoa &amp; spice estates and rainforest in the north and centre. Maurice Bishop airport (GND) is by the beaches.</p>
   <ul class="drives">
+    <li>Six Senses La Sagesse (SE beaches) <span class="t">&mdash; ~25 min</span></li>
+    <li>Calabash Hotel (L'Anse aux &Eacute;pines) <span class="t">&mdash; near St. George's</span></li>
     <li>Belmont Estate (organic cocoa &amp; spice) <span class="t">&mdash; ~1h north</span></li>
-    <li>Mount Edgecombe (working cacao farm &amp; table) <span class="t">&mdash; north-west</span></li>
-    <li>Grand Étang rainforest &amp; Seven Sisters Falls <span class="t">&mdash; ~40 min</span></li>
-    <li>Grand Anse &amp; Morne Rouge beaches <span class="t">&mdash; at the door</span></li>
-    <li>Underwater sculpture park (snorkel) <span class="t">&mdash; ~15 min</span></li>
+    <li>Grand &Eacute;tang rainforest &amp; Seven Sisters Falls <span class="t">&mdash; ~40 min</span></li>
+    <li>Grand Anse beach &amp; sculpture park <span class="t">&mdash; ~15 min</span></li>
     <li>Maurice Bishop airport (GND) <span class="t">&mdash; ~15 min</span></li>
   </ul>
   <h2 class="section">Where We Could Stay</h2>
   <div class="smastay">
-    <div class="top"><span class="nm">A private beach villa (Grand Anse / Morne Rouge)</span><span class="pr">by quote</span></div>
-    <div class="meta">5&ndash;6 BR villa with pool · above Grenada's best beaches · full staff</div>
-    <p class="desc">One house for the group by the sea, with the estates and rainforest a short drive inland. (Villa Caribali / Hummingbird are 5BR examples.) <a href="https://www.exceptionalvillas.com/grenada" target="_blank" rel="noopener">Grenada villas</a></p>
+    <div class="top"><span class="nm">Six Senses La Sagesse <span class="lead-tag">Design + wellness</span></span><span class="pr">by quote</span></div>
+    <div class="meta">Six Senses' Caribbean debut (2024) · pool suites &amp; 1&ndash;4BR villas around a lagoon · organic garden &amp; farm-to-table · spa · two beaches</div>
+    <p class="desc">Design-forward and sustainability-minded, set between calm La Sagesse bay and the wilder L'Anse Pere, with produce grown on site &mdash; the most polished base on the island. Book villas or a cluster of suites for the group. <a href="https://www.sixsenses.com/en/hotels-resorts/the-americas/grenada/la-sagesse/" target="_blank" rel="noopener">Six Senses La Sagesse</a></p>
   </div>
   <div class="smastay">
-    <div class="top"><span class="nm">Mount Edgecombe <span class="lead-tag">Working cacao farm</span></span><span class="pr">by quote</span></div>
-    <div class="meta">Boutique hotel on a 28-acre working cacao &amp; spice farm · rainforest · The Edge farm-to-table restaurant · 4BR Spice House + rooms</div>
-    <p class="desc">The agritourism base: sleep on the farm, walk the spice trail, and eat from the land. Book the house + rooms for the group. <a href="https://www.mountedgecombegrenada.com/" target="_blank" rel="noopener">Mount Edgecombe</a></p>
+    <div class="top"><span class="nm">Calabash Hotel <span class="lead-tag">Boutique beach</span></span><span class="pr">by quote</span></div>
+    <div class="meta">Relais &amp; Ch&acirc;teaux · suites around a garden lawn on a calm beach · L'Anse aux &Eacute;pines · personal, understated service</div>
+    <p class="desc">A long-loved, low-key boutique hotel on a quiet beach near St. George's &mdash; gracious and unshowy, a Grenadian classic, and the better-value base. Holiday-week availability is limited, so email them directly to ask about dates. <a href="https://www.calabashhotel.com/" target="_blank" rel="noopener">Calabash Hotel</a></p>
   </div>
+  <p class="cap">Rough all-in for eight (excl. flights): ~$35&ndash;45k. Note: Six Senses is a splurge &mdash; its 4-bedroom Cliff Retreat runs ~$11.5&ndash;13k/night (~$57&ndash;65k for five nights), well over budget for a full week; <strong>Calabash keeps Grenada in range</strong>.</p>
   <h2 class="section">Things to Do</h2>
   <ul class="drives">
     <li>Belmont Estate &mdash; cocoa, goat dairy, tree-to-bar &amp; estate-to-plate lunch</li>
     <li>Mount Edgecombe spice trail (40+ spices &amp; fruit trees)</li>
-    <li>Grand Étang rainforest &amp; the Seven Sisters waterfalls hike</li>
-    <li>Grand Anse &amp; hidden beaches; snorkel the underwater sculpture park</li>
+    <li>Grand &Eacute;tang rainforest &amp; the Seven Sisters waterfalls hike</li>
+    <li>Diving &amp; snorkeling &mdash; reefs and the underwater sculpture park</li>
     <li>River Antoine rum distillery &amp; nutmeg stations</li>
-    <li>Farm-to-table dinners built around the island's spices</li>
+    <li>Spa &amp; wellness days; farm-to-table dinners built around the island's spices</li>
   </ul>
   <h2 class="section">Further Reading</h2>
   <div class="links">
     <ul>
+      <li><span class="lk-cat">Six Senses</span><span class="lk-list"><a href="https://www.sixsenses.com/en/hotels-resorts/the-americas/grenada/la-sagesse/" target="_blank" rel="noopener">Six Senses La Sagesse</a></span></li>
       <li><span class="lk-cat">Belmont</span><span class="lk-list"><a href="https://belmontestategrenada.com/" target="_blank" rel="noopener">Belmont Estate agritourism</a></span></li>
-      <li><span class="lk-cat">Condé Nast</span><span class="lk-list"><a href="https://www.google.com/search?q=site:cntraveler.com+grenada+spice+island" target="_blank" rel="noopener">Grenada in Condé Nast Traveler</a></span></li>
     </ul>
   </div>
   <footer>Grenada deep dive &bull; A week together, late December 2026</footer>
@@ -990,118 +1013,74 @@
 <div class="page" id="page-bvi">
 <div class="wrap">
   <header class="cover">
-    <h1>British Virgin Islands &mdash; Guana Island</h1>
-    <p class="subtitle">A private island off Tortola &middot; Dec 26, 2026 &ndash; Jan 2, 2027 &middot; eight of us</p>
+    <h1>British Virgin Islands</h1>
+    <p class="subtitle">Virgin Gorda &middot; Dec 26, 2026 &ndash; Jan 2, 2027 &middot; eight of us</p>
   </header>
   <div class="pagenav">
     <a data-page="page-overview">Overview</a>
+    <span class="navgroup">Caribbean</span>
+    <a data-page="page-pr">Puerto Rico</a>
+    <a data-page="page-grenada">Grenada</a>
+    <a data-page="page-bvi" class="active">British Virgin Islands</a>
+    <a data-page="page-jarabacoa">Dominican Republic</a>
+    <span class="navrowbreak"></span>
+    <span class="navgroup">Pacific</span>
     <a data-page="page-careyes">Careyes / Cuixmala</a>
     <a data-page="page-cabos">Los Cabos</a>
     <a data-page="page-todossantos">Todos Santos</a>
     <a data-page="page-sanmiguel">San Miguel de Allende</a>
-    <a data-page="page-jarabacoa">Dominican Republic</a>
-    <a data-page="page-pr">Puerto Rico</a>
-    <a data-page="page-grenada">Grenada</a>
-    <a data-page="page-bvi" class="active">British Virgin Islands</a>
-    <a data-page="page-riviera">Riviera Maya</a>
   </div>
   <div class="intro">
-    <p><strong>The vibe:</strong> a private-island nature sanctuary &mdash; 850 acres, seven beaches, an <strong>organic orchard and farm-to-table kitchen</strong>, and 12 miles of hiking trails, with just 18 rooms and no crowds. Understated and fully immersed in nature: the most Babylonstoren-like of the Caribbean picks, on an island you largely have to yourselves.</p>
-    <p>Book a cluster of sea-view cottages and a house for the group &mdash; all-inclusive, with meals, most wine and activities included. Fly to San Juan or Tortola (Beef Island), then Guana's own boat across. Passports needed; ~7h door-to-door.</p>
+    <p><strong>The vibe:</strong> quiet-island living on <strong>Virgin Gorda</strong> &mdash; the BVI's most beautiful island, home to the boulder-and-grotto beaches of The Baths and a pair of understated, nature-first resorts. Design-forward and low-key, with sailing, snorkeling and empty cays a short hop away.</p>
+    <p>The two bases are <strong>Rosewood Little Dix Bay</strong> (Laurance Rockefeller's original, reborn) and the villa-and-marina world of <strong>Oil Nut Bay</strong>. For a whole private island instead, <strong>Guana Island</strong> off Tortola is an 850-acre nature sanctuary (below). No nonstop &mdash; fly to San Juan or St. Thomas, then a short hop or ferry (~7h door-to-door); passports needed.</p>
   </div>
-  <h2 class="section">The Area &mdash; One Small Island</h2>
+  <h2 class="section">The Area &mdash; Virgin Gorda &amp; the Cays</h2>
   <div class="locmap" id="bvimap"></div>
   <div class="maplegend" id="bvileg"></div>
-  <p class="cap">An 850-acre private island off Tortola's north-east coast, reached by the island's own boat from Beef Island (EIS). Seven beaches ring the shore; trails climb to Sugarloaf.</p>
+  <p class="cap">Virgin Gorda sits near the top of the BVI chain. Fly to San Juan (SJU) or St. Thomas (STT), then a short flight or ferry to Virgin Gorda (VIJ). The Baths, sailing and empty cays are close by.</p>
   <ul class="drives">
-    <li>White Bay beach (&frac12;-mile of sand) <span class="t">&mdash; at the door</span></li>
-    <li>Sugarloaf Mountain (806 ft) <span class="t">&mdash; island high point</span></li>
-    <li>Seven beaches &amp; snorkel coves <span class="t">&mdash; around the island</span></li>
-    <li>Organic orchard &amp; gardens <span class="t">&mdash; farm-to-table</span></li>
-    <li>The Baths, Virgin Gorda <span class="t">&mdash; day sail</span></li>
-    <li>Beef Island airport (EIS) <span class="t">&mdash; private boat transfer</span></li>
+    <li>Rosewood Little Dix Bay <span class="t">&mdash; Virgin Gorda</span></li>
+    <li>Oil Nut Bay <span class="t">&mdash; Virgin Gorda's east end</span></li>
+    <li>The Baths (boulders &amp; grottoes) <span class="t">&mdash; iconic</span></li>
+    <li>Gorda Peak National Park hike <span class="t">&mdash; island high point</span></li>
+    <li>Guana Island (private-island alt) <span class="t">&mdash; off Tortola</span></li>
+    <li>Virgin Gorda airport (VIJ) <span class="t">&mdash; hop / ferry from SJU/STT</span></li>
   </ul>
   <h2 class="section">Where We Could Stay</h2>
   <div class="smastay">
-    <div class="top"><span class="nm">Guana Island &mdash; sea-view cottages &amp; house <span class="lead-tag">Private island</span></span><span class="pr">from ~$995/night per room, all-in</span></div>
-    <div class="meta">18 rooms across cottages &amp; a house · all-inclusive (meals, most wine, activities) · organic orchard &amp; farm-to-table · 7 beaches · 12 miles of trails</div>
-    <p class="desc">Book a block of Sea View Cottages plus the House for the group &mdash; everyone on one small island, food, wine and boats included. <a href="https://www.guana.com/" target="_blank" rel="noopener">Guana Island</a></p>
+    <div class="top"><span class="nm">Rosewood Little Dix Bay <span class="lead-tag">Iconic, reborn</span></span><span class="pr">~$45&ndash;70k all-in (top of budget)</span></div>
+    <div class="meta">Laurance Rockefeller's 1964 original, reimagined by Rosewood · beachfront rooms, suites &amp; villas on a half-moon bay · spa, hikes &amp; sailing · sea-to-table dining</div>
+    <p class="desc">The understated grande dame of the BVI &mdash; low-slung and nature-first on a gorgeous bay. Book a cluster of rooms or a villa for the group; it runs at the top of the budget. <a href="https://www.rosewoodhotels.com/en/little-dix-bay-virgin-gorda" target="_blank" rel="noopener">Rosewood Little Dix Bay</a></p>
   </div>
   <div class="smastay">
-    <div class="top"><span class="nm">Whole-island buyout <span class="lead-tag">Splurge</span></span><span class="pr">~$34,600/night (up to 32)</span></div>
-    <div class="meta">The entire 850-acre island &amp; its staff to yourselves · sleeps up to 32</div>
-    <p class="desc">A true private-island takeover if the group grows &mdash; beyond budget for eight, but the ultimate version. <a href="https://www.guana.com/" target="_blank" rel="noopener">Whole-island rental</a></p>
+    <div class="top"><span class="nm">Guana Island <span class="lead-tag">Value private-island</span></span><span class="pr">from ~$995/night per room, all-in</span></div>
+    <div class="meta">850-acre private-island nature sanctuary off Tortola · organic orchard, farm-to-table, 7 beaches &amp; 12 miles of trails · all-inclusive</div>
+    <p class="desc">If you'd rather have a whole island to yourselves &mdash; and the best value here &mdash; Guana is the most Babylonstoren-like option in the BVI. <a href="https://www.guana.com/" target="_blank" rel="noopener">Guana Island</a></p>
+  </div>
+  <div class="smastay">
+    <div class="top"><span class="nm">Oil Nut Bay <span class="lead-tag">Splurge &mdash; over budget</span></span><span class="pr">~$70k+ all-in</span></div>
+    <div class="meta">Secluded east-end community reachable only by boat or air · private villas · marina, beach club &amp; pools · nature trails</div>
+    <p class="desc">A villa-and-marina world at the wild end of Virgin Gorda &mdash; extraordinary, but it runs over the ~$50k budget for eight. Here as the dream option. <a href="https://oilnutbay.com/" target="_blank" rel="noopener">Oil Nut Bay</a></p>
   </div>
   <h2 class="section">Things to Do</h2>
   <ul class="drives">
-    <li>Snorkel &amp; swim the seven beaches (White Bay, Muskmelon Bay)</li>
-    <li>Hike 12 miles of trails to the Sugarloaf summit</li>
-    <li>Kayak, paddleboard &amp; small-boat sailing off the beach</li>
-    <li>Tour the organic orchard &amp; farm-to-table gardens</li>
-    <li>Wildlife: flamingos, iguanas &amp; the island sanctuary</li>
-    <li>Day sail to The Baths, Jost Van Dyke &amp; Anegada</li>
+    <li>The Baths &mdash; boulders, grottoes &amp; snorkeling</li>
+    <li>Sail &amp; island-hop the empty cays (Anegada, Jost Van Dyke)</li>
+    <li>Hike Gorda Peak &amp; the island trails</li>
+    <li>Snorkel &amp; dive the reefs</li>
+    <li>Spa, pool &amp; long beach days</li>
+    <li>Sunset sails and swimming off the boat</li>
   </ul>
   <h2 class="section">Further Reading</h2>
   <div class="links">
     <ul>
-      <li><span class="lk-cat">Guana</span><span class="lk-list"><a href="https://www.guana.com/" target="_blank" rel="noopener">Guana Island</a></span></li>
-      <li><span class="lk-cat">Cond&eacute; Nast</span><span class="lk-list"><a href="https://www.google.com/search?q=site:cntraveler.com+guana+island+british+virgin+islands" target="_blank" rel="noopener">Guana Island in Cond&eacute; Nast Traveler</a></span></li>
+      <li><span class="lk-cat">Rosewood</span><span class="lk-list"><a href="https://www.rosewoodhotels.com/en/little-dix-bay-virgin-gorda" target="_blank" rel="noopener">Rosewood Little Dix Bay</a></span></li>
+      <li><span class="lk-cat">Oil Nut Bay</span><span class="lk-list"><a href="https://oilnutbay.com/" target="_blank" rel="noopener">Oil Nut Bay</a></span></li>
     </ul>
   </div>
-  <footer>British Virgin Islands (Guana Island) deep dive &bull; A week together, late December 2026</footer>
+  <footer>British Virgin Islands deep dive &bull; A week together, late December 2026</footer>
 </div>
 </div><!-- #page-bvi -->
-<div class="page" id="page-riviera">
-<div class="wrap">
-  <header class="cover">
-    <h1>Riviera Maya <span style="color:var(--marigold)">&middot; the vibe-off wildcard</span></h1>
-    <p class="subtitle">Yucatán, Mexico &middot; Dec 26, 2026 &ndash; Jan 2, 2027 &middot; eight of us</p>
-  </header>
-  <div class="pagenav">
-    <a data-page="page-overview">Overview</a>
-    <a data-page="page-careyes">Careyes / Cuixmala</a>
-    <a data-page="page-cabos">Los Cabos</a>
-    <a data-page="page-todossantos">Todos Santos</a>
-    <a data-page="page-sanmiguel">San Miguel de Allende</a>
-    <a data-page="page-jarabacoa">Dominican Republic</a>
-    <a data-page="page-pr">Puerto Rico</a>
-    <a data-page="page-grenada">Grenada</a>
-    <a data-page="page-bvi">British Virgin Islands</a>
-    <a data-page="page-riviera" class="active">Riviera Maya</a>
-  </div>
-  <div class="intro">
-    <p><strong>The vibe (honestly, off):</strong> beautiful beaches, cenotes, reefs and Maya ruins &mdash; but crowded, mainstream, and (the dealbreaker) no farm, wine or estate character. Great water, wrong energy. It's here for completeness so every option's on the table.</p>
-    <p>If we <em>did</em> do it, we'd skip the busy Tulum strip and base at a quiet <strong>Soliman Bay / Tankah</strong> villa, then day-trip cenotes, Cozumel diving and the ruins. Fun and easy (~4h nonstop) &mdash; just not the curated-estate experience we're chasing.</p>
-  </div>
-  <h2 class="section">The Area &mdash; Beaches, Cenotes &amp; Ruins</h2>
-  <div class="locmap" id="rivieramap"></div>
-  <div class="maplegend" id="rivieraleg"></div>
-  <p class="cap">The Yucatán Caribbean coast. Cancún airport (CUN) is central; a quiet Soliman Bay base is ~1h south.</p>
-  <ul class="drives">
-    <li>Soliman Bay / Tankah villas <span class="t">&mdash; the quiet pocket</span></li>
-    <li>Cenotes (Dos Ojos, Gran Cenote) <span class="t">&mdash; snorkel/dive</span></li>
-    <li>Tulum ruins &amp; Cobá <span class="t">&mdash; ~20&ndash;60 min</span></li>
-    <li>Cozumel reef (ferry from Playa) <span class="t">&mdash; best diving</span></li>
-    <li>Sian Ka'an biosphere <span class="t">&mdash; boat &amp; birds</span></li>
-    <li>Cancún airport (CUN) <span class="t">&mdash; ~1&ndash;1&frac12;h</span></li>
-  </ul>
-  <h2 class="section">Where We Could Stay</h2>
-  <div class="smastay">
-    <div class="top"><span class="nm">A private villa at Soliman Bay / Tankah</span><span class="pr">by quote</span></div>
-    <div class="meta">Quiet cove north of Tulum · big private houses · pool · away from the strip</div>
-    <p class="desc">The least-crowded way to do it &mdash; a private house on a calm bay, with all the cenotes and ruins within reach. <a href="https://www.mayaluxe.com/luxury-villas/" target="_blank" rel="noopener">Riviera Maya villas</a></p>
-  </div>
-  <h2 class="section">Why the Vibe's Off</h2>
-  <ul class="drives">
-    <li>No farm, vineyard or working-estate character <span class="t">&mdash; misses the whole brief</span></li>
-    <li>Crowded &amp; mainstream <span class="t">&mdash; Tulum's beach strip especially</span></li>
-    <li>Beaches get seaweed (sargassum) at times</li>
-    <li>Reads as a beach-and-cenote resort trip, not a destination-as-experience</li>
-    <li>Upside: superb water &mdash; cenotes, reefs, turtles &mdash; and easy ~4h nonstop</li>
-  </ul>
-  <footer>Riviera Maya &bull; the deliberately-off wildcard, late December 2026</footer>
-</div>
-</div><!-- #page-riviera -->
 
 <script>
 (function () {
@@ -1245,40 +1224,32 @@
       { la: 19.100, ln: -70.640, n: 'Jarabacoa rafting (~2h)', k: 'water' }
     ],
     prmap: [
-      { la: 18.267, ln: -66.700, n: 'Mountain coffee-farm villa (stay)', k: 'stay' },
-      { la: 18.340, ln: -66.600, n: 'Coffee haciendas (central mountains)', k: 'wine' },
-      { la: 18.295, ln: -65.790, n: 'El Yunque rainforest & falls', k: 'hike' },
-      { la: 18.379, ln: -65.720, n: 'Luquillo beach', k: 'beach' },
-      { la: 18.466, ln: -66.117, n: 'Old San Juan', k: 'town' },
+      { la: 18.508, ln: -67.060, n: 'Royal Isabela (stay)', k: 'stay' },
+      { la: 18.093, ln: -65.472, n: 'Finca Victoria, Vieques (stay)', k: 'stay' },
+      { la: 18.096, ln: -65.443, n: 'Mosquito bio-bay (Vieques)', k: 'water' },
+      { la: 18.267, ln: -66.700, n: 'Coffee country (Jayuya/Utuado)', k: 'hike' },
+      { la: 18.172, ln: -66.592, n: 'Cerro de Punta & Toro Negro', k: 'hike' },
       { la: 18.439, ln: -66.002, n: 'San Juan airport (SJU)', k: 'air' }
     ],
     grenadamap: [
-      { la: 12.020, ln: -61.764, n: 'Beach villa (Grand Anse)', k: 'stay' },
+      { la: 12.006, ln: -61.665, n: 'Six Senses La Sagesse (stay)', k: 'stay' },
+      { la: 12.006, ln: -61.762, n: 'Calabash Hotel (stay)', k: 'stay' },
       { la: 12.196, ln: -61.622, n: 'Belmont Estate (cocoa & spice)', k: 'wine' },
-      { la: 12.155, ln: -61.690, n: 'Mount Edgecombe cacao farm', k: 'stay' },
       { la: 12.097, ln: -61.695, n: 'Grand Étang & Seven Sisters falls', k: 'hike' },
-      { la: 12.023, ln: -61.769, n: 'Grand Anse beach', k: 'beach' },
+      { la: 12.023, ln: -61.769, n: 'Grand Anse beach & sculpture park', k: 'beach' },
       { la: 12.004, ln: -61.786, n: 'Maurice Bishop airport (GND)', k: 'air' }
     ],
     bvimap: [
-      { la: 18.475, ln: -64.575, n: 'Guana Island (stay)', k: 'stay' },
-      { la: 18.472, ln: -64.582, n: 'White Bay beach', k: 'beach' },
-      { la: 18.478, ln: -64.571, n: 'Sugarloaf Mountain (hike)', k: 'hike' },
-      { la: 18.481, ln: -64.569, n: 'North Bay snorkel cove', k: 'water' },
-      { la: 18.433, ln: -64.443, n: 'The Baths, Virgin Gorda (day sail)', k: 'beach' },
-      { la: 18.445, ln: -64.543, n: 'Beef Island airport (EIS)', k: 'air' }
-    ],
-    rivieramap: [
-      { la: 20.210, ln: -87.460, n: 'Tulum villa/strip (stay)', k: 'stay' },
-      { la: 20.215, ln: -87.429, n: 'Tulum ruins', k: 'town' },
-      { la: 20.300, ln: -87.450, n: 'Cenotes', k: 'water' },
-      { la: 20.629, ln: -87.073, n: 'Playa del Carmen', k: 'town' },
-      { la: 20.100, ln: -87.550, n: "Sian Ka'an reserve", k: 'hike' },
-      { la: 21.036, ln: -86.877, n: 'Cancún airport (CUN)', k: 'air' }
+      { la: 18.453, ln: -64.421, n: 'Rosewood Little Dix Bay (stay)', k: 'stay' },
+      { la: 18.502, ln: -64.354, n: 'Oil Nut Bay (stay)', k: 'stay' },
+      { la: 18.433, ln: -64.443, n: 'The Baths', k: 'beach' },
+      { la: 18.478, ln: -64.399, n: 'Gorda Peak hike', k: 'hike' },
+      { la: 18.475, ln: -64.575, n: 'Guana Island (private-island alt)', k: 'stay' },
+      { la: 18.446, ln: -64.427, n: 'Virgin Gorda airport (VIJ)', k: 'air' }
     ]
   };
 
-  var LEGID = { areamap: 'arealeg', townmap: 'townleg', careyesmap: 'careyesleg', cabosmap: 'cabosleg', todosmap: 'todosleg', jaramap: 'jaraleg', prmap: 'prleg', grenadamap: 'grenadaleg', bvimap: 'bvileg', rivieramap: 'rivieraleg' };
+  var LEGID = { areamap: 'arealeg', townmap: 'townleg', careyesmap: 'careyesleg', cabosmap: 'cabosleg', todosmap: 'todosleg', jaramap: 'jaraleg', prmap: 'prleg', grenadamap: 'grenadaleg', bvimap: 'bvileg' };
   var instances = {};
   Object.keys(MAPS).forEach(function (id) {
     var el = document.getElementById(id);
