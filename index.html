@@ -25,15 +25,15 @@
   }
   .wrap { max-width: 860px; margin: 0 auto; padding: 52px 40px 72px; }
 
-  header.cover { text-align: center; padding: 8px 0 34px; }
+  header.cover { text-align: center; padding: 12px 0 36px; }
   .eyebrow {
     font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; text-transform: uppercase;
     letter-spacing: 0.28em; font-size: 11.5px; color: var(--accent); margin-bottom: 18px;
   }
-  h1 { font-size: 42px; font-weight: 700; line-height: 1.1; margin: 0 0 14px; letter-spacing: -0.01em; }
+  h1 { font-size: 35px; font-weight: 700; line-height: 1.12; margin: 0 0 18px; letter-spacing: -0.01em; }
   .subtitle {
     font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; font-size: 13.5px;
-    letter-spacing: 0.04em; color: var(--soft-ink); margin: 0 0 20px;
+    letter-spacing: 0.04em; color: var(--soft-ink); margin: 0 0 26px;
   }
   .strip { display: inline-block; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 10px 0; margin-top: 4px; }
   .strip span { font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; font-size: 12px; color: var(--soft-ink); letter-spacing: 0.03em; }
@@ -72,8 +72,8 @@
 
   /* maps */
   .locmap { height: 340px; width: 100%; border: 1px solid var(--line); border-radius: 10px; margin: 4px 0 10px; background: #eef1f0; z-index: 0; }
-  .pagenav .navgroup { align-self:center; font-weight:700; color:var(--soft-ink); font-size:11px; letter-spacing:.1em; text-transform:uppercase; padding:0 4px; }
-  .pagenav .navrowbreak { flex-basis:100%; height:0; }
+  .pagenav .navgroup { align-self:center; font-family:"Figtree","Helvetica Neue",Arial,sans-serif; font-weight:600; color:var(--ink); opacity:.55; font-size:10px; letter-spacing:.2em; text-transform:uppercase; padding:0 4px 0 10px; }
+  .pagenav .navrowbreak { flex-basis:100%; height:2px; }
   .maplegend { font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; font-size: 11.5px; color: var(--soft-ink); display: flex; flex-wrap: wrap; gap: 6px 16px; margin: 0 0 16px; }
   .maplegend .li { display: inline-flex; align-items: center; gap: 6px; }
   .maplegend .sw { width: 11px; height: 11px; border-radius: 50%; display: inline-block; }
@@ -149,9 +149,10 @@
   .topnav .navlinks { display: flex; flex-wrap: wrap; gap: 6px; }
   .topnav .navlinks a { font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; font-size: 12.5px; font-weight: 600; letter-spacing: 0.01em; color: var(--soft-ink); text-decoration: none; padding: 7px 15px; border: 1px solid var(--line); background: var(--card); border-radius: 999px; cursor: pointer; }
   .topnav .navlinks a.active { background: var(--accent); color: #fff; border-color: var(--accent); }
-  .pagenav { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin: 6px 0 8px; }
-  .pagenav a { font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; font-size: 12.5px; font-weight: 600; letter-spacing: 0.01em; color: var(--soft-ink); text-decoration: none; padding: 7px 15px; border: 1px solid var(--line); background: var(--card); border-radius: 999px; cursor: pointer; }
-  .pagenav a.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .pagenav { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 6px; margin: 6px 0 34px; }
+  .pagenav a { font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; font-size: 12.5px; font-weight: 600; letter-spacing: 0.01em; color: var(--soft-ink); text-decoration: none; padding: 8px 19px; border: 1px solid rgba(107,99,79,0.16); background: var(--card); border-radius: 999px; cursor: pointer; transition: transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease; }
+  .pagenav a:hover { transform: translateY(-1.5px); box-shadow: 0 4px 14px rgba(60,50,30,0.09); }
+  .pagenav a.active { background: #35639e; color: #fff; border-color: transparent; box-shadow: 0 2px 10px rgba(53,99,158,0.28); }
   .page { display: none; }
   .page.active { display: block; }
   .gotolink { display: inline-block; font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; font-size: 12.5px; color: var(--accent); cursor: pointer; margin: 0 0 14px; }
@@ -242,7 +243,7 @@
   </div>
 
   <div class="intro">
-    <p><strong>The vibe:</strong> not a generic resort vacation &mdash; we want places that feel curated, design-forward, immersed in nature and experiential, where the destination itself is the experience (Babylonstoren) rather than just a base for excursions. The options fall into two directions: Pacific Mexico (the strongest fits) and the Caribbean &amp; East Coast (shorter flights). This page is the general overview &mdash; open any section above to deep-dive each destination.</p>
+    <p><strong>The vibe:</strong> curated, design-forward and immersed in nature &mdash; places where the destination itself is the experience (Babylonstoren). Two directions: Pacific Mexico (the strongest fits) and the Caribbean (shorter flights). Open any section above to deep-dive.</p>
   </div>
 
   <h2 class="section">Pacific Mexico</h2>
@@ -253,7 +254,6 @@
     <li><strong>San Miguel de Allende</strong> <span class="t">&mdash; the highlands option: a colonial city of architecture, food, art and courtyards, on a real wine route. More cultural than coastal.</span></li>
     <li><strong>Los Cabos (Acre)</strong> <span class="t">&mdash; the resort end (beach clubs, golf, pools, spas), but Acre is a genuinely good fit for the goal: a communal 4BR farm Hacienda (sleeps 10, available for our week, ~$16.6k / 6 nights) on a working organic farm campus, with golf ~15 min.</span></li>
   </ul>
-  <p class="cap" style="margin:6px 0 40px; font-size:0.78em; font-style:italic;">Also on the radar but doesn't seem to be the vibe: Riviera Maya / Tulum, the US Virgin Islands (Lovango), and Turks &amp; Caicos.</p>
 
   <h2 class="section">Caribbean &amp; East Coast</h2>
   <p class="cap" style="margin:-8px 0 14px;">The shorter flights from Boston (~4h nonstop for PR &amp; DR).</p>
@@ -262,7 +262,6 @@
     <li><strong>Dominican Republic (Playa Grande &amp; Sea Horse Ranch)</strong> <span class="t">&mdash; a design-forward beach base (the storybook Playa Grande bungalows) or a roomier full-service villa (Sea Horse Ranch), with waterfalls, reefs and rafting; ~4h nonstop.</span></li>
     <li><strong>Grenada (Six Senses La Sagesse &amp; Calabash)</strong> <span class="t">&mdash; a design/wellness resort with an organic garden, plus locally-owned cocoa &amp; spice estates, rainforest waterfalls and quiet beaches. A plus: Six Senses has a 4BR Cliff Retreat (sleeps 10) &mdash; a true communal house on the resort campus, ~$69k for 6 nights.</span></li>
   </ul>
-  <p class="cap" style="font-size:0.78em; font-style:italic; margin:16px 0 26px;">Also on the radar: St. Lucia &mdash; <a href="https://www.sugarbeachresort.com/" target="_blank" rel="noopener">Sugar Beach</a>, a Viceroy resort between the Pitons, with <a href="https://cabotsaintlucia.com/" target="_blank" rel="noopener">Cabot Saint Lucia</a>'s golf course on the island and a lot of activities &mdash; more resort vibes. And Dominica &mdash; a great spot (<a href="https://secretbay.dm/" target="_blank" rel="noopener">Secret Bay</a>), but nothing available for our week. And the British Virgin Islands (Virgin Gorda) &mdash; beautiful, with Guana Island as a Babylonstoren-adjacent private island, but zero golf in the BVI; the deep-dive is saved <a data-page="page-bvi" style="cursor:pointer;">here</a>.</p>
 
   <h2 class="section">At a Glance</h2>
   <p class="cap" style="margin:-8px 0 14px;">The goal: a <strong>Babylonstoren-style communal home base</strong> with surrounding activities &mdash; hikes, water, and golf (doesn't need to be premier; ideally ~30 min, at most 1h).</p>
@@ -304,7 +303,7 @@
         <tr>
           <th>San Miguel de Allende <small>Mexico &middot; highlands</small></th>
           <td>Vineyard/olive estate on a real wine route; beautiful colonial town 20 min away. Getting around: everything on foot from the house; car only for wineries, golf &amp; springs</td>
-          <td>One-roof staffed houses (pools, rooftops, cooks) with the town as the campus; vineyard stay for estate feel</td>
+          <td>One-roof staffed houses (pools, rooftops, cooks) with the town as the campus</td>
           <td>Excellent food town + estate kitchen</td>
           <td>Pools with valley views; no coast</td>
           <td>Reserve, canyon &amp; Bernal day hikes</td>
@@ -356,10 +355,59 @@
   </div>
 
 
+  <h2 class="section">The Rankings</h2>
+  <p class="cap" style="margin:-8px 0 14px;">Where everything nets out, against what we're optimizing for.</p>
+  <p style="margin:0 0 6px;"><strong>Overall best fit</strong></p>
+  <ul class="drives" style="grid-template-columns:1fr; margin-bottom:18px;">
+    <li><strong>1 &middot; Acre</strong> <span class="t">&mdash; the best balance of everything: farm, gardens, communal house, incredible food, walkable property, golf &amp; ocean nearby.</span></li>
+    <li><strong>2 &middot; Sea Horse Ranch (DR)</strong> <span class="t">&mdash; villa + 250-acre campus (horses, biking, tennis, beach club); Cabarete, diving &amp; waterfalls close; 4h nonstop and the gentlest cost.</span></li>
+    <li><strong>3 &middot; Cuixmala</strong> <span class="t">&mdash; the dream estate; hinges on the villa inquiry and the longer trip.</span></li>
+    <li><strong>4 &middot; Rosewood San Miguel</strong> <span class="t">&mdash; amazing home base in a walkable city: architecture, art, restaurants, wineries, hiking; missing water.</span></li>
+    <li><strong>5 &middot; Royal Isabela</strong> <span class="t">&mdash; relaxed communal feel with championship cliffside golf on property; no shared house.</span></li>
+    <li><strong>6 &middot; Paradero / Villa Santa Cruz</strong> <span class="t">&mdash; adventure- and design-forward Baja; excellent if activities lead.</span></li>
+    <li><strong>7 &middot; Villa Bellissima / Casa Brooks</strong> <span class="t">&mdash; big-house comfort in the Cabo golf corridor.</span></li>
+  </ul>
+  <p style="margin:0 0 6px;"><strong>Closest to Babylonstoren</strong></p>
+  <ul class="drives" style="grid-template-columns:1fr; margin-bottom:18px;">
+    <li><strong>1 &middot; Cuixmala</strong> <span class="t">&mdash; working estate, wildlife reserve, farm, conservation, beaches.</span></li>
+    <li><strong>2 &middot; Acre</strong> <span class="t">&mdash; farm, gardens, communal spaces, slow mornings, farm-to-table restaurant.</span></li>
+    <li><strong>3 &middot; Villa Santa Cruz</strong> <span class="t">&mdash; boutique beachfront ranch with gardens, stables &amp; multi-BR villas.</span></li>
+    <li><strong>4 &middot; Hacienda de San Antonio</strong> <span class="t">&mdash; historic hacienda, volcano, coffee estate, gardens, horses (the Cuixmala split).</span></li>
+    <li><strong>5 &middot; Royal Isabela</strong> <span class="t">&mdash; a true working farm-estate on cliffs; wins on scale.</span></li>
+    <li><strong>6 &middot; Paradero / Rancho Pescadero</strong> <span class="t">&mdash; design hotels built around working gardens.</span></li>
+    <li><strong>7 &middot; Rosewood San Miguel</strong> <span class="t">&mdash; courtyards, craftsmanship, gardens, slower pace.</span></li>
+  </ul>
+  <p style="margin:0 0 6px;"><strong>Best home base + surrounding activities</strong></p>
+  <ul class="drives" style="grid-template-columns:1fr; margin-bottom:18px;">
+    <li><strong>1 &middot; Acre</strong> <span class="t">&mdash; walkable farm campus; golf, surfing, snorkeling, whale watching, two towns ≤20 min.</span></li>
+    <li><strong>2 &middot; Rosewood San Miguel</strong> <span class="t">&mdash; walk everywhere: restaurants, galleries, caf&eacute;s; wineries, horseback &amp; hiking near.</span></li>
+    <li><strong>3 &middot; Sea Horse Ranch</strong> <span class="t">&mdash; bikeable community; horses, diving, surfing, waterfalls, Cabarete.</span></li>
+    <li><strong>4 &middot; Cuixmala</strong> <span class="t">&mdash; safaris, three beaches, lagoon tours &amp; kayaking on the estate itself.</span></li>
+    <li><strong>5 &middot; Paradero</strong> <span class="t">&mdash; guided hikes, surfing, wellness &amp; Baja adventures bundled in.</span></li>
+    <li><strong>6 &middot; Royal Isabela</strong> <span class="t">&mdash; golf, beaches, surfing, caves, hiking, coffee farms.</span></li>
+    <li><strong>7 &middot; Playa Grande</strong> <span class="t">&mdash; bungalow mini-campus with golf next door and waterfalls nearby.</span></li>
+  </ul>
+  <p style="margin:0 0 6px;"><strong>Best golf</strong></p>
+  <ul class="drives" style="grid-template-columns:1fr; margin-bottom:40px;">
+    <li><strong>1 &middot; Royal Isabela</strong> <span class="t">&mdash; championship cliffside course on the property.</span></li>
+    <li><strong>2 &middot; Villa Bellissima / Casa Brooks</strong> <span class="t">&mdash; Quivira, Diamante &amp; Cabo del Sol within 0&ndash;30 min.</span></li>
+    <li><strong>3 &middot; Playa Grande</strong> <span class="t">&mdash; the RTJ course next door to the bungalows.</span></li>
+    <li><strong>4 &middot; Acre</strong> <span class="t">&mdash; Puerto Los Cabos ~15 min; the rest of Cabo's courses within ~40.</span></li>
+    <li><strong>5 &middot; San Miguel</strong> <span class="t">&mdash; Malanqu&iacute;n ~10 min from town.</span></li>
+    <li><strong>6 &middot; Careyes / Cuixmala</strong> <span class="t">&mdash; El Tamarindo ~20 min.</span></li>
+    <li><strong>7 &middot; Todos Santos</strong> <span class="t">&mdash; Rancho San Lucas &amp; Solmar ~40&ndash;45 min.</span></li>
+  </ul>
+
+  <h2 class="section">Also on the Radar</h2>
+  <p class="cap" style="font-size:0.78em; font-style:italic; margin:16px 0 26px;">Also on the radar: St. Lucia &mdash; <a href="https://www.sugarbeachresort.com/" target="_blank" rel="noopener">Sugar Beach</a>, a Viceroy resort between the Pitons, with <a href="https://cabotsaintlucia.com/" target="_blank" rel="noopener">Cabot Saint Lucia</a>'s golf course on the island and a lot of activities &mdash; more resort vibes. And Dominica &mdash; a great spot (<a href="https://secretbay.dm/" target="_blank" rel="noopener">Secret Bay</a>), but nothing available for our week. And the British Virgin Islands (Virgin Gorda) &mdash; beautiful, with Guana Island as a Babylonstoren-adjacent private island, but zero golf in the BVI; the deep-dive is saved <a data-page="page-bvi" style="cursor:pointer;">here</a>.</p>
+  <p class="cap" style="margin:0 0 40px; font-size:0.78em; font-style:italic;">Also on the radar but doesn't seem to be the vibe: Riviera Maya / Tulum, the US Virgin Islands (Lovango), and Turks &amp; Caicos.</p>
+
+
   <footer>Put together for the family &bull; A week together, late December 2026</footer>
 
 </div>
 </div><!-- #page-overview -->
+
 
 <div class="page" id="page-careyes">
 <div class="wrap">
@@ -385,7 +433,7 @@
   <div class="intro">
     <p><strong>The vibe:</strong> Private architectural estates on a wild coastline &mdash; quiet, curated and singular. Horses, nature preserves, empty beaches and dramatic scenery; more a private estate than a hotel.</p>
     <p>The wild-and-artful coast: 35,000 acres of protected reserve, nine miles of empty beaches, swimmable coves, and a bohemian community of clifftop "ocean castles" and casitas. It's the purest casita answer &mdash; and the most remote, so it rewards settling in and staying put.</p>
-    <p>Below: an area map with drive times, where to stay (Careyes villas, the Cuixmala estate, and Las Alamandas), the water and wildlife, a proposed week, and an honest budget &mdash; this is the priciest finalist.</p>
+    <p>Below: an area map with drive times, where to stay (the Cuixmala estate and the Careyes villas), the water and wildlife, a proposed week, and an honest budget &mdash; this is the priciest finalist.</p>
     <p class="cap"><strong>Priorities check</strong> &mdash; <strong>Home base:</strong> Cuixmala is the most Babylonstoren-like option on the entire list (a biodynamic farm estate in its own reserve); the Careyes villas put everyone under one roof with the beach club &amp; polo minutes away. <strong>Golf:</strong> El Tamarindo (Four Seasons) ~20 min &#10003; <strong>Getting around:</strong> the estate is vast &mdash; golf carts, staff-driven safari trucks, and rental cars or bikes; you won't be walking between the beaches and the farm.</p>
   </div>
 
@@ -400,7 +448,6 @@
     <li>Copa del Sol (boat or drive) <span class="t">&mdash; short hop</span></li>
     <li>Tenacatita snorkel cove <span class="t">&mdash; ~30 min</span></li>
     <li>El Tamarindo golf (Four Seasons) <span class="t">&mdash; ~20 min</span></li>
-    <li>Las Alamandas <span class="t">&mdash; ~40 min north</span></li>
     <li>Manzanillo airport (ZLO) <span class="t">&mdash; ~1&ndash;1½h</span></li>
   </ul>
 
@@ -417,39 +464,9 @@
     <p class="desc">Booking engine shows Casa Bugambilia ("the most sociable of the 3-BR casitas") from MXN 244,600 / 5 nights and Casa Orquidea from MXN 282,800 &mdash; for eight, likely two casitas (~MXN 527k / ~$29k, 5 nights) or one larger villa. Inquiry submitted for the villas/haciendas &mdash; availability pending. <strong>On the property:</strong> wildlife safaris in the private biosphere reserve, three private beaches, lagoon boat tours, kayaking, hiking trails, the sea-turtle program, and the 5,000-acre biodynamic farm feeding the restaurants. <strong>Walkability:</strong> the estate is vast &mdash; golf carts, staff-driven trucks, or rental cars/bikes between the houses, beaches and farm; the casitas cluster shares its own pool. <a href="https://cuixmala.com/" target="_blank" rel="noopener">Cuixmala</a></p>
   </div>
 
-  <div class="smastay">
-    <div class="top"><span class="nm">Split-stay idea: Hacienda de San Antonio + Cuixmala</span><span class="pr">by quote</span></div>
-    <div class="meta">3&ndash;4 nights each · sister properties under the same family · Colima highlands + Pacific coast</div>
-    <p class="desc">3&ndash;4 nights at <a href="https://haciendadesanantonio.com/" target="_blank" rel="noopener">Hacienda de San Antonio</a> &mdash; a grand 19th-century hacienda on a working ranch beneath the Colima volcano: gardens, horseback riding, and the full hacienda experience &mdash; then 3&ndash;4 nights at Cuixmala for beaches, sea turtles, wildlife safaris, kayaking and the Pacific coast. The two estates are sister properties and arrange the transfer between them.</p>
-  </div>
+  <p class="cap" style="font-style:italic; font-size:0.78em;"><strong>Split-stay idea:</strong> 3&ndash;4 nights at <a href="https://haciendadesanantonio.com/" target="_blank" rel="noopener">Hacienda de San Antonio</a> &mdash; a grand 19th-century hacienda on a working ranch beneath the Colima volcano (gardens, horseback riding, the full hacienda experience) &mdash; then 3&ndash;4 nights at Cuixmala for beaches, sea turtles, safaris and kayaking. Sister properties; they arrange the transfer.</p>
 
-  <div class="bucket">
-    <h3>Careyes villas &mdash; best for eight under one roof</h3>
-    <p class="lead">Private clifftop and oceanfront villas with pools, staff and a chef, in the Careyes community. This is the easiest way to get everyone together here.</p>
-  </div>
-
-  <div class="smastay">
-    <div class="top"><span class="nm">Casa Minos complex <span class="lead-tag">Value</span></span><span class="pr">from ~$2,200 / night<br>(~$15,400+/wk)</span></div>
-    <div class="meta">6 suites (Casa Minos 4 + Casita Creta 2) · sleeps ~12 · private beach · ocean-view terraces · staffed</div>
-    <p class="desc">The best value in Careyes: a two-house complex with a private beach and pools, comfortably fitting eight. <a href="https://www.costalegre-realestate.com/casaminos/" target="_blank" rel="noopener">Casa Minos</a></p>
-  </div>
-
-  <div class="smastay">
-    <div class="top"><span class="nm">Villa Careyes 6 &amp; Villa Careyes 7</span><span class="pr">by quote</span></div>
-    <div class="meta">Private ocean-view villas · pools · seclusion · easy beach &amp; restaurant access</div>
-    <p class="desc">Two handsome private villas in the community &mdash; the sweet spot between the value complex and the pricey ocean castles. <a href="https://www.costalegre-realestate.com/villacareyes6/" target="_blank" rel="noopener">Villa Careyes 6</a> &middot; <a href="https://www.costalegre-realestate.com/villacareyes7/" target="_blank" rel="noopener">Villa Careyes 7</a></p>
-  </div>
-
-  <div class="bucket">
-    <h3>Splurge &amp; alternatives</h3>
-    <p class="lead">A few more &mdash; mostly splurge-priced, or better as a side option:</p>
-    <ul class="drives" style="grid-template-columns:1fr;">
-      <li><a href="https://www.costalegre-realestate.com/casasoldeoriente/" target="_blank" rel="noopener">Casa Sol de Oriente</a> <span class="t">&mdash; the famous "house in a pool" ocean castle (6BR, sleeps 14), but ~$11,000+/night at the holidays (~$77k+/week) with a ~10-night minimum. A dream splurge, not realistic.</span></li>
-      <li><a href="https://www.costalegre-realestate.com/occidente/" target="_blank" rel="noopener">Casa Sol de Occidente</a> <span class="t">&mdash; the other clifftop "ocean castle," priced in the same range.</span></li>
-      <li><a href="https://www.alamandas.com/" target="_blank" rel="noopener">Las Alamandas</a> <span class="t">&mdash; an artful boutique estate ~40 min north with its own beaches; ~$377&ndash;$2,865/night per unit or a whole-estate buyout by quote.</span></li>
-    </ul>
-    <p class="cap">Some homes on the <a href="https://lprluxury.com/costacareyes/" target="_blank" rel="noopener">LPR Careyes page</a> (Casa Riscos, Casa Encantada, Casa Las Glorias) are <em>for sale</em>, not for rent. Holiday week carries minimum-stay rules &mdash; confirm per villa.</p>
-  </div>
+  <p class="cap" style="font-style:italic; font-size:0.78em;"><strong>Careyes villas (one roof for eight):</strong> staffed clifftop villas with pools &amp; chef in the Careyes community &mdash; <a href="https://www.costalegre-realestate.com/casaminos/" target="_blank" rel="noopener">Casa Minos complex</a> (best value, private beach, sleeps ~12, from ~$2,200/night), or <a href="https://www.costalegre-realestate.com/villacareyes6/" target="_blank" rel="noopener">Villa Careyes 6</a> &middot; <a href="https://www.costalegre-realestate.com/villacareyes7/" target="_blank" rel="noopener">Villa Careyes 7</a> (by quote).</p>
 
   <h2 class="section">Things to Do</h2>
   <div class="compare-wrap">
@@ -593,24 +610,7 @@
     <p class="desc"><span class="tag-ok">Available &#10003;</span> for Dec 27&ndash;Jan 2 (only 1 left; free cancellation; flex rate takes a 50% deposit). One communal house for all eight, right on the farm campus &mdash; and the 2&ndash;3BR Jungle Villas (from ~$8k / 6 nights, sleeps 4&ndash;6) are there if the group grows. Puerto Los Cabos golf ~15 min. <strong>On the property:</strong> the Michelin-green restaurant and cocktail bar, farm &amp; garden tours, the animal sanctuary, pool and spa treatments among the palms. <strong>Walkability:</strong> the whole campus is on foot &mdash; a car only to leave the property. <a href="https://acreresort.com/" target="_blank" rel="noopener">Acre</a></p>
   </div>
 
-  <div class="bucket">
-    <h3>The Cabo corridor &mdash; villas for eight</h3>
-    <p class="lead">Or the classic route: private villas with pools and staff in the gated communities (Pedregal, Palmilla, Cabo del Sol). "From" rates below are base-season &mdash; the New Year's week runs higher, so treat them as a floor.</p>
-  </div>
-
-  <div class="smastay">
-    <div class="top"><span class="nm">Villa Bellissima <span class="lead-tag">Available</span></span><span class="pr">from ~$5,250 / night</span></div>
-    <div class="meta">8 BR / 11 baths / sleeps 18 · Pedregal · clifftop · pool</div>
-    <p class="desc"><span class="tag-ok">Available &#10003;</span> for our dates. An expansive Pedregal estate with room for the whole group and then some, in the marquee gated community above Cabo San Lucas. <a href="https://lunacabo.com/villa/villa-bellissima-pedregal/" target="_blank" rel="noopener">Villa Bellissima</a></p>
-  </div>
-
-  <div class="smastay">
-    <div class="top"><span class="nm">Casa Brooks <span class="lead-tag">Available</span></span><span class="pr">from ~$4,975 / night</span></div>
-    <div class="meta">10 BR / sleeps 22 · Cabo del Sol · golf-and-beach community · pool</div>
-    <p class="desc"><span class="tag-ok">Available &#10003;</span> for our dates. A big, social villa in Cabo del Sol with space to spare &mdash; easy for eight, with room if the group grows. <a href="https://lunacabo.com/villa/casa-brooks-cabo-del-sol/" target="_blank" rel="noopener">Casa Brooks</a></p>
-  </div>
-
-  <p class="cap">Dozens more villas (and the ultra-splurge ocean castles) at <a href="https://lunacabo.com/services/villas/" target="_blank" rel="noopener">Luna Cabo</a>. "From" rates are base-season; confirm the New Year's-week number per villa.</p>
+  <p class="cap" style="font-style:italic; font-size:0.78em;"><strong>Backup options &mdash; corridor villas (in case needed):</strong> staffed private villas in the gated communities, both available for our dates &mdash; <a href="https://lunacabo.com/villa/villa-bellissima-pedregal/" target="_blank" rel="noopener">Villa Bellissima</a> (8BR, Pedregal clifftop, from ~$5,250/night) &middot; <a href="https://lunacabo.com/villa/casa-brooks-cabo-del-sol/" target="_blank" rel="noopener">Casa Brooks</a> (10BR, Cabo del Sol golf community, from ~$4,975/night) &middot; dozens more at <a href="https://lunacabo.com/services/villas/" target="_blank" rel="noopener">Luna Cabo</a>. "From" rates are base-season; the New Year's week runs higher.</p>
 
   <h2 class="section">Things to Do</h2>
   <div class="compare-wrap">
@@ -856,7 +856,7 @@
     <p><strong>The vibe:</strong> A colonial-city escape &mdash; architecture, food, art and courtyards, boutique hotels. More cultural than nature-focused.</p>
     <p>Our first pick, and the easiest to make work: a beautiful, walkable town with wonderful food, a real wine route on the doorstep, comfortable dry-season weather, and simple logistics for a group &mdash; all without feeling like a resort.</p>
     <p>Below: an area map with drive times to the wineries, walks, water and golf; a shortlist of five standout houses (each linked) on a zoomed in-town map; a proposed week; and a rough all-in.</p>
-    <p class="cap"><strong>Priorities check</strong> &mdash; <strong>Home base:</strong> the staffed houses are the communal one-roof dream (pools, rooftops, cooks), though the "campus" is the town itself rather than an estate &mdash; the vineyard stay (La Sant&iacute;sima Trinidad) is the estate-feel alternative. <strong>Golf:</strong> Club de Golf Malanqu&iacute;n ~10 min &#10003; <strong>Getting around:</strong> the most walkable of all &mdash; everything in town on foot from the house; a driver or car only for wineries, golf and hot springs.</p>
+    <p class="cap"><strong>Priorities check</strong> &mdash; <strong>Home base:</strong> the staffed houses are the communal one-roof dream (pools, rooftops, cooks), though the "campus" is the town itself rather than an estate. <strong>Golf:</strong> Club de Golf Malanqu&iacute;n ~10 min &#10003; <strong>Getting around:</strong> the most walkable of all &mdash; everything in town on foot from the house; a driver or car only for wineries, golf and hot springs.</p>
   </div>
 
   <h2 class="section">The Area &mdash; Wineries, Walks, Water &amp; Golf</h2>
@@ -884,7 +884,7 @@
   <div class="smastay">
     <div class="top"><span class="nm">Rosewood 5-Bedroom Residence <span class="lead-tag">Most upscale</span></span><span class="pr">~$25k&ndash;$35k / week<br>(NYE, service incl.)</span></div>
     <div class="meta">5 BR · up to 10 · 3,600 sq ft · heart of town · full hotel service</div>
-    <p class="desc">The step up in polish: a private residence with Rosewood's chef, concierge, housekeeping, spa, and four pools &amp; cabanas on tap. Summer rate is ~$2,382/night; confirm the holiday number. <a href="https://www.rosewoodhotels.com/en/san-miguel-de-allende/residences" target="_blank" rel="noopener">Rosewood Residences</a></p>
+    <p class="desc">The step up in polish: a private residence with Rosewood's chef, concierge, housekeeping, spa, and four pools &amp; cabanas on tap. Summer rate is ~$2,382/night; confirm the holiday number. <strong>On the property:</strong> the hotel's four pools, spa, fitness, rooftop bar and restaurants. <strong>Walkability:</strong> heart of town &mdash; everything (hotel campus and San Miguel itself) on foot. <a href="https://www.rosewoodhotels.com/en/san-miguel-de-allende/residences" target="_blank" rel="noopener">Rosewood Residences</a></p>
     <p class="svc"><b>Staff</b> &nbsp;Full hotel service &mdash; private chef on request, concierge, daily housekeeping and room service; spa, pools &amp; fitness included.</p>
   </div>
 
@@ -914,11 +914,6 @@
     <div class="meta">6 BR / 12 · Lavandería, hillside edge of the historic district (~12 min walk to town) · 16,000 sq ft adobe hacienda · staff of 6</div>
     <p class="desc">The hacienda choice: a handcrafted adobe home among bougainvillea and gardens on a rock wall, 11 fireplaces and a hot tub hidden in the rocks. <a href="https://premiersanmiguel.com/villas/casa-heyne" target="_blank" rel="noopener">Casa Heyne</a></p>
     <p class="svc"><b>Staff</b> &nbsp;Staff of 6 incl. cook &amp; bilingual house manager; they cook breakfast + lunch, but food/groceries are <em>not</em> included in the rate.</p>
-  </div>
-
-  <div class="bucket">
-    <h3>On the vines (alternative)</h3>
-    <p class="lead">If the estate-among-the-vines feeling wins over being in town: <a href="https://lasantisimatrinidad.com.mx/" target="_blank" rel="noopener">La Santísima Trinidad</a> (a 4BR residence plus rooms, ~20 min out) or <a href="https://liveinsanmiguel.com/the-ultimate-vineyard-guide-in-san-miguel/" target="_blank" rel="noopener">Viñedo San Miguel</a> (~10 min out).</p>
   </div>
 
   <h2 class="section">Things to Do</h2>
@@ -973,7 +968,7 @@
         <tr class="grp"><th colspan="3">The wine route &amp; day trips</th></tr>
         <tr>
           <th>Wineries</th>
-          <td>Tastings on the wine route (Cuna de Tierra, Dos B&uacute;hos, Tres Ra&iacute;ces)</td>
+          <td>Tastings on the wine route &mdash; <a href="https://lasantisimatrinidad.com.mx/" target="_blank" rel="noopener">La Sant&iacute;sima Trinidad</a>, <a href="https://liveinsanmiguel.com/the-ultimate-vineyard-guide-in-san-miguel/" target="_blank" rel="noopener">Vi&ntilde;edo San Miguel</a>, Cuna de Tierra, Dos B&uacute;hos, Tres Ra&iacute;ces</td>
           <td>10&ndash;35 min</td>
         </tr>
         <tr>
@@ -1071,16 +1066,6 @@
     <div class="meta">5 BR · classic Caribbean layout · private pool · gardens · walk to the beach club</div>
     <p class="desc">A relaxed five-bedroom in the same community &mdash; a touch more value. <a href="https://www.vrbo.com/4657396ha" target="_blank" rel="noopener">A 5BR at Sea Horse Ranch</a> &middot; <a href="https://isleblue.co/villas/vacation-rentals/caribbean/dominican-republic/cabarete/villa-sea-horse-ranch-2" target="_blank" rel="noopener">more villas</a></p>
   </div>
-  <div class="bucket">
-    <h3>Or: a mountains-first base in Jarabacoa</h3>
-    <p class="lead">If you'd rather wake up in the cool pine mountains and have rafting, hikes and an Ocoa Bay wine day-trip on the doorstep (trading the beach and the polish), base in Jarabacoa instead &mdash; lodging is comfortable-rustic.</p>
-  </div>
-  <div class="smastay">
-    <div class="top"><span class="nm">Simply Dominican &mdash; Jarabacoa villas</span><span class="pr">by quote (~$500&ndash;$900/night)</span></div>
-    <div class="meta">Private mountain villas with pools &amp; staff · adventure at the door · Ocoa Bay wine ~2h</div>
-    <p class="desc">Book activities (rafting, canyoning, Pico Duarte) through <a href="https://www.ranchobaiguate.com/" target="_blank" rel="noopener">Rancho Baiguate</a>. <a href="https://simplydominican.com/property-location/jarabacoa/" target="_blank" rel="noopener">Jarabacoa villas</a></p>
-  </div>
-
   <h2 class="section">Things to Do</h2>
   <div class="compare-wrap">
     <table class="compare">
@@ -1340,12 +1325,12 @@
   <div class="smastay">
     <div class="top"><span class="nm">Six Senses La Sagesse <span class="lead-tag">Design + wellness</span></span><span class="pr">4BR Cliff Retreat: $69,078 / 6 nights (~$11.5k/night, taxes incl.)</span></div>
     <div class="meta">Six Senses' Caribbean debut (2024) · pool suites ~592 sq ft + a 484 sq ft terrace &amp; private plunge pool, plus 1&ndash;4BR villas · organic garden &amp; farm-to-table · spa · two beaches (St. David's, SE Grenada)</div>
-    <p class="desc">Design-forward and sustainability-minded, set between calm La Sagesse bay and the wilder L'Anse Pere, with produce grown on site &mdash; the most polished base on the island. <strong>The bonus: the Four Bedroom Cliff Retreat</strong> &mdash; 5,812 sq ft on the Bluff, sleeps 10 with a 270&deg; view &mdash; is a true communal house on the resort campus. Quoted for our dates: $69,078 for 6 nights, breakfast included, free cancellation to 60 days out &mdash; the one Grenada option that nails the home-base brief. <a href="https://www.sixsenses.com/en/hotels-resorts/the-americas/grenada/la-sagesse/" target="_blank" rel="noopener">Six Senses La Sagesse</a></p>
+    <p class="desc">Design-forward and sustainability-minded, set between calm La Sagesse bay and the wilder L'Anse Pere, with produce grown on site &mdash; the most polished base on the island. <strong>The bonus: the Four Bedroom Cliff Retreat</strong> &mdash; 5,812 sq ft on the Bluff, sleeps 10 with a 270&deg; view &mdash; is a true communal house on the resort campus. Quoted for our dates: $69,078 for 6 nights, breakfast included, free cancellation to 60 days out &mdash; the one Grenada option that nails the home-base brief. <strong>On the property:</strong> the spa &amp; wellness programming, organic garden, two beaches, pools, non-motorized watersports and farm-to-table restaurants. <strong>Walkability:</strong> a hilly campus &mdash; buggy service between suites, beaches and restaurants. <a href="https://www.sixsenses.com/en/hotels-resorts/the-americas/grenada/la-sagesse/" target="_blank" rel="noopener">Six Senses La Sagesse</a></p>
   </div>
   <div class="smastay">
     <div class="top"><span class="nm">Calabash Hotel <span class="lead-tag">Boutique beach</span></span><span class="pr">by quote</span></div>
     <div class="meta">Relais &amp; Ch&acirc;teaux · 30 suites, 565&ndash;2,000 sq ft (some with plunge pools) · spa, gym, infinity pool &amp; free watersports · calm beach at L'Anse aux &Eacute;pines, near St. George's</div>
-    <p class="desc">A long-loved, low-key boutique hotel on a quiet beach near St. George's &mdash; gracious and unshowy, a Grenadian classic, and the better-value base. It does have bigger estate homes (2&ndash;5 BR with kitchens), but they're not viewable/bookable online &mdash; you'd have to inquire directly. Honest caveat: probably not our vibe &mdash; more of a traditional resort feel than a design-forward farm estate. <a href="https://www.calabashhotel.com/" target="_blank" rel="noopener">Calabash Hotel</a></p>
+    <p class="desc">A long-loved, low-key boutique hotel on a quiet beach near St. George's &mdash; gracious and unshowy, a Grenadian classic, and the better-value base. It does have bigger estate homes (2&ndash;5 BR with kitchens), but they're not viewable/bookable online &mdash; you'd have to inquire directly. Honest caveat: probably not our vibe &mdash; more of a traditional resort feel than a design-forward farm estate. <strong>On the property:</strong> free Hobie Cats, paddleboards, kayaks &amp; snorkel gear off the beach, the ScubaTech dive center, spa, gym and infinity pool. <strong>Walkability:</strong> compact gardens around a horseshoe lawn &mdash; everything on foot. <a href="https://www.calabashhotel.com/" target="_blank" rel="noopener">Calabash Hotel</a></p>
   </div>
   <p class="cap">Rough all-in for eight (excl. flights): ~$35&ndash;45k at Calabash. The Six Senses 4BR Cliff Retreat is the splurge route &mdash; $69,078 for 6 nights (~$11.5k/night, taxes &amp; breakfast incl.).</p>
   <h2 class="section">Things to Do</h2>
@@ -1581,7 +1566,6 @@
     map1: [
       { la: 19.283, ln: -104.955, n: 'Cuixmala (stay)', k: 'stay' },
       { la: 19.436, ln: -105.030, n: 'Careyes', k: 'town' },
-      { la: 19.605, ln: -105.183, n: 'Las Alamandas', k: 'town' },
       { la: 19.283, ln: -104.790, n: 'La Manzanilla', k: 'town' },
       { la: 19.290, ln: -104.860, n: 'Tenacatita beach', k: 'beach' },
       { la: 19.500, ln: -105.030, n: 'Chamela-Cuixmala reserve', k: 'hike' },
@@ -1651,7 +1635,6 @@
     careyesmap: [
       { la: 19.283, ln: -104.955, n: 'Cuixmala estate (stay)', k: 'stay' },
       { la: 19.436, ln: -105.030, n: 'Careyes villas & casitas (stay)', k: 'stay' },
-      { la: 19.605, ln: -105.183, n: 'Las Alamandas (stay)', k: 'stay' },
       { la: 19.428, ln: -105.028, n: 'Playa Rosa & Careyitos', k: 'beach' },
       { la: 19.420, ln: -105.033, n: 'Copa del Sol', k: 'town' },
       { la: 19.447, ln: -105.022, n: 'Careyes Polo Club', k: 'town' },
