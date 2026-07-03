@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Winter Break — a warm week together</title>
+<title>Winter Break</title>
+<meta property="og:title" content="Winter Break">
+<meta name="twitter:title" content="Winter Break">
 <!--LEAFLET-START-->
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -35,10 +37,6 @@
     font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; font-size: 13.5px;
     letter-spacing: 0.04em; color: var(--soft-ink); margin: 0 0 26px;
   }
-  .strip { display: inline-block; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 10px 0; margin-top: 4px; }
-  .strip span { font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; font-size: 12px; color: var(--soft-ink); letter-spacing: 0.03em; }
-  .strip .dot { color: var(--line); margin: 0 9px; }
-
   .intro { font-size: 17.5px; color: var(--soft-ink); margin: 34px 0 40px; }
   .intro p { margin: 0 0 15px; }
 
@@ -61,14 +59,6 @@
   table.compare tbody tr.grp { background: var(--tag-bg) !important; }
   .wine-col { color: var(--leaf); }
   .compare tr.vibe-off th, .compare tr.vibe-off td { background: #f3e7d6; color: var(--soft-ink); }
-  .num-badge { display: inline-block; width: 17px; height: 17px; line-height: 17px; text-align: center; background: var(--accent); color: #fff; border-radius: 50%; font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; font-size: 10px; margin-right: 6px; vertical-align: 1px; }
-
-  .card-top { display: flex; align-items: baseline; gap: 10px; font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; text-transform: uppercase; letter-spacing: 0.14em; font-size: 11px; color: var(--accent); margin-bottom: 12px; }
-  .card-top .n { background: var(--accent); color: #fff; border-radius: 50%; width: 22px; height: 22px; line-height: 22px; text-align: center; letter-spacing: 0; font-size: 12px; flex: 0 0 auto; }
-  .region { font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; text-transform: uppercase; letter-spacing: 0.1em; font-size: 11px; color: var(--soft-ink); margin: 2px 0 14px; }
-  .stay { margin: 0 0 12px; }
-  .stay b { font-weight: normal; font-style: italic; color: var(--accent); }
-  .blurb { color: var(--soft-ink); margin: 0 0 14px; }
 
   /* maps */
   .locmap { height: 340px; width: 100%; border: 1px solid var(--line); border-radius: 10px; margin: 4px 0 10px; background: #eef1f0; z-index: 0; }
@@ -96,59 +86,12 @@
   a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 0.5px; }
   a:hover { color: var(--ink); }
 
-  .spec { display: flex; gap: 14px; padding: 8px 0; border-bottom: 1px solid var(--line); font-size: 14.5px; }
-  .spec:last-child { border-bottom: none; }
-  .spec .k { font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; text-transform: uppercase; letter-spacing: 0.07em; font-size: 11px; color: var(--accent); flex: 0 0 108px; padding-top: 2px; }
-  .spec .v { flex: 1; color: var(--ink); }
-  .spec.wine .k { color: var(--leaf); }
-  .spec.travel .k { color: #2f6a7a; }
-  .spec.total .k { color: #2f6a7a; font-weight: bold; }
-  .spec .sub { color: var(--soft-ink); font-size: 12.5px; }
   .star { color: #b08d3e; }
-  .spec.golf .k { color: #9a9384; }
-  .spec.golf .v { color: var(--soft-ink); font-size: 13px; }
-
-  .day { display: flex; gap: 14px; padding: 7px 0; border-top: 1px solid var(--line); font-size: 14.5px; }
-  .day .d { font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; font-size: 10.5px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--accent); flex: 0 0 92px; padding-top: 3px; }
-  .day .d span { display: block; color: var(--soft-ink); font-size: 9.5px; }
-  .day .what { flex: 1; }
-  .day .what strong { font-weight: normal; font-style: italic; }
-
-  .leaning { background: #f3f1e8; border: 1px solid var(--line); border-radius: 10px; padding: 26px 30px; margin-top: 30px; page-break-inside: avoid; }
-  .leaning h2 { font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; text-transform: uppercase; letter-spacing: 0.18em; font-size: 13px; color: var(--accent); margin: 0 0 14px; }
-  .leaning p { margin: 0 0 14px; color: var(--soft-ink); }
-  .leaning p:last-child { margin-bottom: 0; }
-  .leaning strong { color: var(--ink); font-weight: normal; font-style: italic; }
-
-  .note { font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; font-size: 11.5px; color: var(--soft-ink); margin-top: 26px; padding-top: 14px; border-top: 1px solid var(--line); line-height: 1.5; }
   footer { text-align: center; font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; font-size: 12px; color: var(--soft-ink); margin-top: 28px; padding-top: 18px; border-top: 1px solid var(--line); }
 
-  /* tabs */
-  .tabs { margin: 4px 0 20px; }
-  .tabbtns { display: flex; flex-wrap: wrap; gap: 5px; border-bottom: 1px solid var(--line); margin-bottom: 22px; position: sticky; top: 0; background: var(--paper); padding-top: 6px; z-index: 5; }
-  .tabbtn { font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.01em; padding: 8px 15px; border: 1px solid var(--line); background: var(--card); color: var(--soft-ink); border-radius: 999px; cursor: pointer; }
-  .tabbtn .tn { display: inline-block; width: 16px; height: 16px; line-height: 16px; text-align: center; background: var(--accent); color: #fff; border-radius: 50%; font-size: 9.5px; margin-right: 6px; vertical-align: 1px; }
-  .tabbtn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
-  .tabbtn.active .tn { background: #fff; color: var(--accent); }
-  .tabpanel { display: none; }
-  .tabpanel.active { display: block; }
-  .tabpanel > h3 { font-size: 26px; font-weight: normal; margin: 0; }
-  .stays-h { font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; text-transform: uppercase; letter-spacing: 0.1em; font-size: 11px; color: var(--accent); margin: 26px 0 12px; padding-top: 16px; border-top: 1px solid var(--line); }
-  .callout { background: #f3f1e8; border: 1px solid var(--line); border-radius: 8px; padding: 11px 14px; font-size: 13.5px; color: var(--soft-ink); margin: 0 0 16px; }
-  table.stays { width: 100%; border-collapse: collapse; font-size: 13.5px; background: var(--card); }
-  table.stays th, table.stays td { text-align: left; padding: 9px 11px; border-bottom: 1px solid var(--line); vertical-align: top; }
-  table.stays thead th { font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; text-transform: uppercase; letter-spacing: 0.06em; font-size: 10px; color: var(--accent); }
-  table.stays .opt { font-size: 14px; }
-  table.stays .price { white-space: nowrap; }
   .tag-ok { color: #5f7a4e; font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; font-size: 11px; }
-  .tag-no { color: #b23a2e; font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; font-size: 11px; }
 
   /* multi-page site nav */
-  .topnav { position: sticky; top: 0; z-index: 30; background: var(--paper); border-bottom: 1px solid var(--line); display: flex; flex-direction: column; align-items: flex-start; gap: 11px; padding: 14px 40px; }
-  .topnav .brand { font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
-  .topnav .navlinks { display: flex; flex-wrap: wrap; gap: 6px; }
-  .topnav .navlinks a { font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; font-size: 12.5px; font-weight: 600; letter-spacing: 0.01em; color: var(--soft-ink); text-decoration: none; padding: 7px 15px; border: 1px solid var(--line); background: var(--card); border-radius: 999px; cursor: pointer; }
-  .topnav .navlinks a.active { background: var(--accent); color: #fff; border-color: var(--accent); }
   .pagenav { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 6px; margin: 6px 0 34px; }
   .pagenav a { font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; font-size: 12.5px; font-weight: 600; letter-spacing: 0.01em; color: var(--soft-ink); text-decoration: none; padding: 8px 19px; border: 1px solid rgba(107,99,79,0.16); background: var(--card); border-radius: 999px; cursor: pointer; transition: transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease; }
   @media (hover: hover) {
@@ -157,7 +100,7 @@
   .pagenav a.active { background: #35639e; color: #fff; border-color: transparent; box-shadow: 0 2px 10px rgba(53,99,158,0.28); }
   .page { display: none; }
   .page.active { display: block; }
-  .gotolink { display: inline-block; font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; font-size: 12.5px; color: var(--accent); cursor: pointer; margin: 0 0 14px; }
+  .drives a[data-page], table.compare a[data-page] { color: inherit; text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 2px; cursor: pointer; }
 
   /* San Miguel deep-dive components */
   .smastay { border: 1px solid var(--line); border-radius: 10px; background: var(--card); padding: 16px 18px; margin-bottom: 12px; page-break-inside: avoid; }
@@ -176,23 +119,23 @@
   .cap { font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; font-size: 13px; color: var(--soft-ink); margin: 4px 0 0; line-height: 1.5; }
   .bucket h3 { font-size: 20px; font-weight: normal; margin: 22px 0 4px; }
   .bucket .lead { color: var(--soft-ink); font-size: 14.5px; margin: 0 0 14px; }
-  table.budget { width: 100%; border-collapse: collapse; font-size: 14.5px; background: var(--card); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
-  table.budget td { padding: 9px 14px; border-bottom: 1px solid var(--line); }
-  table.budget tr:last-child td { border-bottom: none; }
-  table.budget .amt { text-align: right; white-space: nowrap; }
-  table.budget tr.total td { font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; font-size: 13px; letter-spacing: 0.03em; background: var(--tag-bg); }
 
   @media (max-width: 640px) {
-    .wrap { padding: 24px 18px 44px; }
-    header.cover { padding: 4px 0 16px; }
-    h1 { font-size: 30px; letter-spacing: 0; line-height: 1.12; }
-    .subtitle { font-size: 12px; }
-    .eyebrow { font-size: 10px; letter-spacing: 0.18em; }
-    .intro { font-size: 16px; line-height: 1.55; margin-bottom: 26px; }
-    h2.section { font-size: 12px; letter-spacing: 0.12em; }
-    .compare-wrap { -webkit-overflow-scrolling: touch; }
-    table.compare { min-width: 680px; }
-    table.compare th, table.compare td { padding: 8px 8px; }
+    html, body { overflow-x: hidden; }
+    .wrap { padding: 16px 14px 40px; }
+    header.cover { padding: 2px 0 10px; }
+    h1 { font-size: 27px; letter-spacing: 0; line-height: 1.12; margin-bottom: 10px; }
+    .subtitle { font-size: 12px; margin: 0 0 14px; }
+    .eyebrow { font-size: 10px; letter-spacing: 0.18em; margin-bottom: 10px; }
+    .intro { font-size: 15.5px; line-height: 1.5; margin: 18px 0 24px; }
+    h2.section { font-size: 12px; letter-spacing: 0.12em; margin: 4px 0 16px; }
+    .cap { font-size: 12.5px; }
+    .drives li { font-size: 13.5px; }
+    .smastay { padding: 13px 14px; margin-bottom: 10px; }
+    .compare-wrap { -webkit-overflow-scrolling: touch; margin-bottom: 28px; }
+    table.compare { min-width: 640px; font-size: 12.5px; }
+    table.compare tbody th { font-size: 12.5px; }
+    table.compare th, table.compare td { padding: 7px 7px; }
     /* sticky first column: place name stays visible while swiping across columns */
     table.compare thead th:first-child,
     table.compare tbody th {
@@ -208,30 +151,22 @@
     .nearby ul, .drives { grid-template-columns: 1fr !important; }
     .smastay .top { flex-wrap: wrap; gap: 4px; }
     .smastay .pr { text-align: left; white-space: normal; }
-    .spec { gap: 10px; }
-    .spec .k { flex: 0 0 88px; }
-    .day .d { flex: 0 0 82px; }
     .links li { flex-wrap: wrap; gap: 2px 8px; }
-    .pagenav { justify-content: flex-start; gap: 5px; }
-    .pagenav a { padding: 7px 14px; }
+    .pagenav { justify-content: flex-start; gap: 4px; margin: 4px 0 26px; }
+    .pagenav a { padding: 6px 12px; font-size: 12px; }
     .pagenav .navgroup { flex-basis: 100%; padding: 4px 2px 0; }
-    table.stays { font-size: 12.5px; }
   }
 
   @media print {
     body { background: #fff; font-size: 11.5pt; }
     .wrap { max-width: 100%; padding: 0; }
-    .leaning, table.compare { box-shadow: none; }
-    .topnav { display: none !important; }
+    table.compare { box-shadow: none; }
     .pagenav { display: none !important; }
     .page { display: block !important; }
     .page + .page { page-break-before: always; }
     table.compare { font-size: 9.5pt; }
     .locmap, .maplegend { display: none !important; }
     .nearby ul { grid-template-columns: 1fr 1fr; }
-    .tabbtns { display: none !important; }
-    .tabpanel { display: block !important; page-break-before: always; margin-bottom: 6px; }
-    .tabpanel:first-of-type { page-break-before: avoid; }
   }
 </style>
 </head>
@@ -265,18 +200,18 @@
   <h2 class="section">Pacific Mexico</h2>
   <p class="cap" style="margin:-8px 0 14px;">Longer flights, but the strongest fits for the brief.</p>
   <ul class="drives" style="grid-template-columns:1fr;">
-    <li><strong>Careyes / Cuixmala</strong> <span class="t">&mdash; private estates on a wild coast; the dream match, pending the villa inquiry.</span></li>
-    <li><strong>Todos Santos / El Pescadero</strong> <span class="t">&mdash; Baja surf town meets boutique farm hotel; artsy, slow.</span></li>
-    <li><strong>San Miguel de Allende</strong> <span class="t">&mdash; colonial city of food, art &amp; courtyards on a real wine route.</span></li>
-    <li><strong>Los Cabos (Acre)</strong> <span class="t">&mdash; a communal farm hacienda, available for our week, with golf 15 min away.</span></li>
+    <li><strong><a data-page="page-careyes" style="cursor:pointer;">Careyes / Cuixmala</a></strong> <span class="t">&mdash; private estates on a wild coast; the dream match, pending the villa inquiry.</span></li>
+    <li><strong><a data-page="page-todossantos" style="cursor:pointer;">Todos Santos / El Pescadero</a></strong> <span class="t">&mdash; Baja surf town meets boutique farm hotel; artsy, slow.</span></li>
+    <li><strong><a data-page="page-sanmiguel" style="cursor:pointer;">San Miguel de Allende</a></strong> <span class="t">&mdash; colonial city of food, art &amp; courtyards on a real wine route.</span></li>
+    <li><strong><a data-page="page-cabos" style="cursor:pointer;">Los Cabos (Acre)</a></strong> <span class="t">&mdash; a communal farm hacienda, available for our week, with golf 15 min away.</span></li>
   </ul>
 
   <h2 class="section">Caribbean &amp; East Coast</h2>
   <p class="cap" style="margin:-8px 0 14px;">The shorter flights from Boston (~4h nonstop for PR &amp; DR).</p>
   <ul class="drives" style="grid-template-columns:1fr;">
-    <li><strong>Puerto Rico (Royal Isabela)</strong> <span class="t">&mdash; a working farm-estate on Atlantic cliffs with golf on-site; ~4h nonstop, no passport.</span></li>
-    <li><strong>Dominican Republic (Playa Grande &amp; Sea Horse Ranch)</strong> <span class="t">&mdash; design bungalows or a staffed villa campus, adventure everywhere; ~4h nonstop.</span></li>
-    <li><strong>Grenada (Six Senses)</strong> <span class="t">&mdash; design/wellness resort with cocoa &amp; spice estates; its 4BR Cliff Retreat is a true communal house.</span></li>
+    <li><strong><a data-page="page-pr" style="cursor:pointer;">Puerto Rico (Royal Isabela)</a></strong> <span class="t">&mdash; a working farm-estate on Atlantic cliffs with golf on-site; ~4h nonstop, no passport.</span></li>
+    <li><strong><a data-page="page-jarabacoa" style="cursor:pointer;">Dominican Republic (Playa Grande &amp; Sea Horse Ranch)</a></strong> <span class="t">&mdash; design bungalows or a staffed villa campus, adventure everywhere; ~4h nonstop.</span></li>
+    <li><strong><a data-page="page-grenada" style="cursor:pointer;">Grenada (Six Senses)</a></strong> <span class="t">&mdash; design/wellness resort with cocoa &amp; spice estates; its 4BR Cliff Retreat is a true communal house.</span></li>
   </ul>
 
   <h2 class="section">At a Glance</h2>
@@ -297,7 +232,7 @@
       </thead>
       <tbody>
         <tr>
-          <th>Cuixmala / Careyes <small>Mexico &middot; Pacific coast</small></th>
+          <th><a data-page="page-careyes" style="cursor:pointer;">Cuixmala / Careyes</a> <small>Mexico &middot; Pacific coast</small></th>
           <td>Private estate in a coastal nature reserve; artful, bohemian. Get around by golf cart, estate truck or rental car/bike</td>
           <td>The spirit-match &mdash; the most Babylonstoren-like on the list; Careyes villas as the one-roof route</td>
           <td>Biodynamic estate garden; chef &amp; staff</td>
@@ -307,7 +242,7 @@
           <td class="col-travel">~7&ndash;8h fly + 1&frac12;&ndash;3h drive</td>
         </tr>
         <tr>
-          <th>Todos Santos / El Pescadero <small>Mexico &middot; Baja</small></th>
+          <th><a data-page="page-todossantos" style="cursor:pointer;">Todos Santos / El Pescadero</a> <small>Mexico &middot; Baja</small></th>
           <td>Quiet farm-and-surf; design hotels, not a resort. Walkable properties; car for beach &amp; town</td>
           <td>Campus yes, one roof mostly no; Villa Santa Cruz's multi-BR villas get closest</td>
           <td>Farm-to-table (Rancho Pescadero, Paradero)</td>
@@ -317,7 +252,7 @@
           <td class="col-travel">~6&frac12;h fly + ~1h drive</td>
         </tr>
         <tr>
-          <th>San Miguel de Allende <small>Mexico &middot; highlands</small></th>
+          <th><a data-page="page-sanmiguel" style="cursor:pointer;">San Miguel de Allende</a> <small>Mexico &middot; highlands</small></th>
           <td>Beautiful colonial town on a real wine route; all on foot, car for wineries &amp; golf</td>
           <td>One-roof staffed houses (pools, rooftops, cooks) with the town as the campus</td>
           <td>Excellent food town + estate kitchen</td>
@@ -327,7 +262,7 @@
           <td class="col-travel">~6&ndash;7h fly (1 stop) + 1&ndash;1&frac12;h drive</td>
         </tr>
         <tr>
-          <th>Los Cabos <small>Mexico &middot; Baja</small></th>
+          <th><a data-page="page-cabos" style="cursor:pointer;">Los Cabos</a> <small>Mexico &middot; Baja</small></th>
           <td>Organic farm (Acre) + gated villa communities. Acre is fully walkable; car only to leave</td>
           <td>Strong &mdash; Acre's 4BR farm Hacienda (sleeps 10, available) is a communal house on the farm campus</td>
           <td>Celebrated farm-to-table kitchen</td>
@@ -337,7 +272,7 @@
           <td class="col-travel">~6&frac12;h fly + ~40 min drive</td>
         </tr>
         <tr>
-          <th>Puerto Rico <small>Royal Isabela &middot; Vieques &middot; mountains</small></th>
+          <th><a data-page="page-pr" style="cursor:pointer;">Puerto Rico</a> <small>Royal Isabela &middot; Vieques &middot; mountains</small></th>
           <td>Working farm-estate casitas on Atlantic cliffs; golf carts around the estate, car to explore</td>
           <td>Estate campus to roam &mdash; but casitas sleep 2 each, so no shared house</td>
           <td>Farm-to-table from the estate's own gardens</td>
@@ -347,7 +282,7 @@
           <td class="col-travel">~4h fly (nonstop) + ~1&frac12;h drive &middot; no passport</td>
         </tr>
         <tr>
-          <th>Dominican Republic <small>North coast &middot; Playa Grande</small></th>
+          <th><a data-page="page-jarabacoa" style="cursor:pointer;">Dominican Republic</a> <small>North coast &middot; Playa Grande</small></th>
           <td>Design bungalows (Playa Grande) or villa community (Sea Horse Ranch); carts &amp; bikes, both walkable</td>
           <td>One staffed villa in Sea Horse Ranch's 250-acre campus; Playa Grande is a bungalow mini-campus</td>
           <td>In-villa chef; beach-club dining</td>
@@ -357,7 +292,7 @@
           <td class="col-travel">~4h fly (nonstop) + ~20 min drive</td>
         </tr>
         <tr>
-          <th>Grenada <small>Six Senses &middot; Spice Island</small></th>
+          <th><a data-page="page-grenada" style="cursor:pointer;">Grenada</a> <small>Six Senses &middot; Spice Island</small></th>
           <td>Design/wellness resort (Six Senses, hilly with buggies) or boutique beach (Calabash, walkable)</td>
           <td>Resort campus; one real communal house &mdash; the 4BR Cliff Retreat (sleeps 10, ~$69k / 6 nights)</td>
           <td>Farm-to-table; tree-to-bar cocoa &amp; spice estates</td>
@@ -375,46 +310,46 @@
   <p class="cap" style="margin:-8px 0 14px;">Where everything nets out, against what we're optimizing for.</p>
   <p style="margin:0 0 6px;"><strong>Overall best fit</strong></p>
   <ul class="drives" style="grid-template-columns:1fr; margin-bottom:18px;">
-    <li><strong>1 &middot; Acre</strong> <span class="t">&mdash; farm, gardens, communal house, restaurant on the property, walkable campus; golf &amp; ocean nearby.</span></li>
-    <li><strong>2 &middot; Sea Horse Ranch (DR)</strong> <span class="t">&mdash; villa + 250-acre campus (horses, biking, tennis, beach club); Cabarete, diving &amp; waterfalls close; 4h nonstop, lowest cost.</span></li>
-    <li><strong>3 &middot; Cuixmala</strong> <span class="t">&mdash; working estate in a nature reserve; hinges on the villa inquiry and the longer trip.</span></li>
-    <li><strong>4 &middot; Rosewood San Miguel</strong> <span class="t">&mdash; home base in a walkable city: architecture, art, restaurants, wineries, hiking; no coast.</span></li>
-    <li><strong>5 &middot; Royal Isabela</strong> <span class="t">&mdash; estate campus with cliffside golf on the property; no shared house.</span></li>
-    <li><strong>6 &middot; Paradero / Villa Santa Cruz</strong> <span class="t">&mdash; activity- and design-focused Baja farm hotels.</span></li>
-    <li><strong>7 &middot; Villa Bellissima / Casa Brooks</strong> <span class="t">&mdash; big houses in the Cabo golf corridor.</span></li>
+    <li><strong>1 &middot; <a data-page="page-cabos" style="cursor:pointer;">Acre</a></strong> <span class="t">&mdash; farm, gardens, communal house, restaurant on the property, walkable campus; golf &amp; ocean nearby.</span></li>
+    <li><strong>2 &middot; <a data-page="page-jarabacoa" style="cursor:pointer;">Sea Horse Ranch (DR)</a></strong> <span class="t">&mdash; villa + 250-acre campus (horses, biking, tennis, beach club); Cabarete, diving &amp; waterfalls close; 4h nonstop, lowest cost.</span></li>
+    <li><strong>3 &middot; <a data-page="page-careyes" style="cursor:pointer;">Cuixmala</a></strong> <span class="t">&mdash; working estate in a nature reserve; hinges on the villa inquiry and the longer trip.</span></li>
+    <li><strong>4 &middot; <a data-page="page-sanmiguel" style="cursor:pointer;">Rosewood San Miguel</a></strong> <span class="t">&mdash; home base in a walkable city: architecture, art, restaurants, wineries, hiking; no coast.</span></li>
+    <li><strong>5 &middot; <a data-page="page-pr" style="cursor:pointer;">Royal Isabela</a></strong> <span class="t">&mdash; estate campus with cliffside golf on the property; no shared house.</span></li>
+    <li><strong>6 &middot; <a data-page="page-todossantos" style="cursor:pointer;">Paradero / Villa Santa Cruz</a></strong> <span class="t">&mdash; activity- and design-focused Baja farm hotels.</span></li>
+    <li><strong>7 &middot; <a data-page="page-cabos" style="cursor:pointer;">Villa Bellissima / Casa Brooks</a></strong> <span class="t">&mdash; big houses in the Cabo golf corridor.</span></li>
   </ul>
   <p style="margin:0 0 6px;"><strong>Closest to Babylonstoren</strong></p>
   <ul class="drives" style="grid-template-columns:1fr; margin-bottom:18px;">
-    <li><strong>1 &middot; Cuixmala</strong> <span class="t">&mdash; working estate, wildlife reserve, farm, conservation, beaches.</span></li>
-    <li><strong>2 &middot; Acre</strong> <span class="t">&mdash; farm, gardens, communal spaces, farm-to-table restaurant.</span></li>
-    <li><strong>3 &middot; Villa Santa Cruz</strong> <span class="t">&mdash; beachfront ranch with gardens, stables &amp; multi-BR villas.</span></li>
-    <li><strong>4 &middot; Royal Isabela</strong> <span class="t">&mdash; working farm-estate on cliffs; the largest estate of the group.</span></li>
-    <li><strong>5 &middot; Paradero / Rancho Pescadero</strong> <span class="t">&mdash; design hotels built around working gardens.</span></li>
-    <li><strong>6 &middot; Rosewood San Miguel</strong> <span class="t">&mdash; courtyards, gardens, in-town hotel campus.</span></li>
+    <li><strong>1 &middot; <a data-page="page-careyes" style="cursor:pointer;">Cuixmala</a></strong> <span class="t">&mdash; working estate, wildlife reserve, farm, conservation, beaches.</span></li>
+    <li><strong>2 &middot; <a data-page="page-cabos" style="cursor:pointer;">Acre</a></strong> <span class="t">&mdash; farm, gardens, communal spaces, farm-to-table restaurant.</span></li>
+    <li><strong>3 &middot; <a data-page="page-todossantos" style="cursor:pointer;">Villa Santa Cruz</a></strong> <span class="t">&mdash; beachfront ranch with gardens, stables &amp; multi-BR villas.</span></li>
+    <li><strong>4 &middot; <a data-page="page-pr" style="cursor:pointer;">Royal Isabela</a></strong> <span class="t">&mdash; working farm-estate on cliffs; the largest estate of the group.</span></li>
+    <li><strong>5 &middot; <a data-page="page-todossantos" style="cursor:pointer;">Paradero / Rancho Pescadero</a></strong> <span class="t">&mdash; design hotels built around working gardens.</span></li>
+    <li><strong>6 &middot; <a data-page="page-sanmiguel" style="cursor:pointer;">Rosewood San Miguel</a></strong> <span class="t">&mdash; courtyards, gardens, in-town hotel campus.</span></li>
   </ul>
   <p style="margin:0 0 6px;"><strong>Best home base + surrounding activities</strong></p>
   <ul class="drives" style="grid-template-columns:1fr; margin-bottom:18px;">
-    <li><strong>1 &middot; Acre</strong> <span class="t">&mdash; walkable farm campus; golf, surfing, snorkeling, whale watching, two towns ≤20 min.</span></li>
-    <li><strong>2 &middot; Rosewood San Miguel</strong> <span class="t">&mdash; walk everywhere: restaurants, galleries, caf&eacute;s; wineries, horseback &amp; hiking near.</span></li>
-    <li><strong>3 &middot; Sea Horse Ranch</strong> <span class="t">&mdash; bikeable community; horses, diving, surfing, waterfalls, Cabarete.</span></li>
-    <li><strong>4 &middot; Cuixmala</strong> <span class="t">&mdash; safaris, three beaches, lagoon tours &amp; kayaking on the estate itself.</span></li>
-    <li><strong>5 &middot; Paradero</strong> <span class="t">&mdash; guided hikes, surfing, wellness &amp; Baja adventures bundled in.</span></li>
-    <li><strong>6 &middot; Royal Isabela</strong> <span class="t">&mdash; golf, beaches, surfing, caves, hiking, coffee farms.</span></li>
-    <li><strong>7 &middot; Playa Grande</strong> <span class="t">&mdash; bungalow mini-campus with golf next door and waterfalls nearby.</span></li>
+    <li><strong>1 &middot; <a data-page="page-cabos" style="cursor:pointer;">Acre</a></strong> <span class="t">&mdash; walkable farm campus; golf, surfing, snorkeling, whale watching, two towns ≤20 min.</span></li>
+    <li><strong>2 &middot; <a data-page="page-sanmiguel" style="cursor:pointer;">Rosewood San Miguel</a></strong> <span class="t">&mdash; walk everywhere: restaurants, galleries, caf&eacute;s; wineries, horseback &amp; hiking near.</span></li>
+    <li><strong>3 &middot; <a data-page="page-jarabacoa" style="cursor:pointer;">Sea Horse Ranch</a></strong> <span class="t">&mdash; bikeable community; horses, diving, surfing, waterfalls, Cabarete.</span></li>
+    <li><strong>4 &middot; <a data-page="page-careyes" style="cursor:pointer;">Cuixmala</a></strong> <span class="t">&mdash; safaris, three beaches, lagoon tours &amp; kayaking on the estate itself.</span></li>
+    <li><strong>5 &middot; <a data-page="page-todossantos" style="cursor:pointer;">Paradero</a></strong> <span class="t">&mdash; guided hikes, surfing, wellness &amp; Baja adventures bundled in.</span></li>
+    <li><strong>6 &middot; <a data-page="page-pr" style="cursor:pointer;">Royal Isabela</a></strong> <span class="t">&mdash; golf, beaches, surfing, caves, hiking, coffee farms.</span></li>
+    <li><strong>7 &middot; <a data-page="page-jarabacoa" style="cursor:pointer;">Playa Grande</a></strong> <span class="t">&mdash; bungalow mini-campus with golf next door and waterfalls nearby.</span></li>
   </ul>
   <p style="margin:0 0 6px;"><strong>Best golf</strong></p>
   <ul class="drives" style="grid-template-columns:1fr; margin-bottom:40px;">
-    <li><strong>1 &middot; Royal Isabela</strong> <span class="t">&mdash; cliffside course on the property.</span></li>
-    <li><strong>2 &middot; Villa Bellissima / Casa Brooks</strong> <span class="t">&mdash; Quivira, Diamante &amp; Cabo del Sol within 0&ndash;30 min.</span></li>
-    <li><strong>3 &middot; Playa Grande</strong> <span class="t">&mdash; the RTJ course next door to the bungalows.</span></li>
-    <li><strong>4 &middot; Acre</strong> <span class="t">&mdash; Puerto Los Cabos ~15 min; the rest of Cabo's courses within ~40.</span></li>
-    <li><strong>5 &middot; San Miguel</strong> <span class="t">&mdash; Malanqu&iacute;n ~10 min from town.</span></li>
-    <li><strong>6 &middot; Careyes / Cuixmala</strong> <span class="t">&mdash; El Tamarindo ~20 min.</span></li>
-    <li><strong>7 &middot; Todos Santos</strong> <span class="t">&mdash; Rancho San Lucas &amp; Solmar ~40&ndash;45 min.</span></li>
+    <li><strong>1 &middot; <a data-page="page-pr" style="cursor:pointer;">Royal Isabela</a></strong> <span class="t">&mdash; cliffside course on the property.</span></li>
+    <li><strong>2 &middot; <a data-page="page-cabos" style="cursor:pointer;">Villa Bellissima / Casa Brooks</a></strong> <span class="t">&mdash; Quivira, Diamante &amp; Cabo del Sol within 0&ndash;30 min.</span></li>
+    <li><strong>3 &middot; <a data-page="page-jarabacoa" style="cursor:pointer;">Playa Grande</a></strong> <span class="t">&mdash; the RTJ course next door to the bungalows.</span></li>
+    <li><strong>4 &middot; <a data-page="page-cabos" style="cursor:pointer;">Acre</a></strong> <span class="t">&mdash; Puerto Los Cabos ~15 min; the rest of Cabo's courses within ~40.</span></li>
+    <li><strong>5 &middot; <a data-page="page-sanmiguel" style="cursor:pointer;">San Miguel</a></strong> <span class="t">&mdash; Malanqu&iacute;n ~10 min from town.</span></li>
+    <li><strong>6 &middot; <a data-page="page-careyes" style="cursor:pointer;">Careyes / Cuixmala</a></strong> <span class="t">&mdash; El Tamarindo ~20 min.</span></li>
+    <li><strong>7 &middot; <a data-page="page-todossantos" style="cursor:pointer;">Todos Santos</a></strong> <span class="t">&mdash; Rancho San Lucas &amp; Solmar ~40&ndash;45 min.</span></li>
   </ul>
 
   <h2 class="section">Also on the Radar</h2>
-  <p class="cap" style="font-size:0.78em; font-style:italic; margin:16px 0 26px;">Also on the radar: St. Lucia &mdash; <a href="https://www.sugarbeachresort.com/" target="_blank" rel="noopener">Sugar Beach</a>, a Viceroy resort between the Pitons, with <a href="https://cabotsaintlucia.com/" target="_blank" rel="noopener">Cabot Saint Lucia</a>'s golf course on the island and a lot of activities &mdash; more resort vibes. And Dominica &mdash; a great spot (<a href="https://secretbay.dm/" target="_blank" rel="noopener">Secret Bay</a>), but nothing available for our week. And the British Virgin Islands (Virgin Gorda) &mdash; beautiful, with Guana Island as a Babylonstoren-adjacent private island, but zero golf in the BVI; the deep-dive is saved <a data-page="page-bvi" style="cursor:pointer;">here</a>.</p>
+  <p class="cap" style="font-size:0.78em; font-style:italic; margin:16px 0 26px;">Also on the radar: St. Lucia &mdash; <a href="https://www.sugarbeachresort.com/" target="_blank" rel="noopener">Sugar Beach</a>, a Viceroy resort between the Pitons, with <a href="https://cabotsaintlucia.com/" target="_blank" rel="noopener">Cabot Saint Lucia</a>'s golf course on the island and a lot of activities &mdash; more resort vibes. And Dominica &mdash; a great spot (<a href="https://secretbay.dm/" target="_blank" rel="noopener">Secret Bay</a>), but nothing available for our week. And the British Virgin Islands (Virgin Gorda) &mdash; beautiful, with Guana Island as a Babylonstoren-adjacent private island, but zero golf in the BVI. <a data-page="page-bvi" style="cursor:pointer;">BVI deep-dive &rarr;</a></p>
   <p class="cap" style="margin:0 0 40px; font-style:italic;">Also on the radar but doesn't seem to be the vibe: Riviera Maya / Tulum, the US Virgin Islands (Lovango), and Turks &amp; Caicos.</p>
 
 
@@ -446,9 +381,7 @@
   </div>
 
   <div class="intro">
-    <p><strong>The vibe:</strong> Private architectural estates on a wild coastline &mdash; quiet, curated and singular. Horses, nature preserves, empty beaches and dramatic scenery; more a private estate than a hotel.</p>
-    <p>The wild-and-artful coast: 35,000 acres of protected reserve, nine miles of empty beaches, swimmable coves, and a bohemian community of clifftop "ocean castles" and casitas. It's the purest casita answer &mdash; and the most remote, so it rewards settling in and staying put.</p>
-    <p>Below: an area map with drive times, where to stay, and things to do &mdash; this is the priciest finalist.</p>
+    <p><strong>The vibe:</strong> private architectural estates on a wild coastline &mdash; 35,000 acres of protected reserve, nine miles of empty beaches, swimmable coves. Quiet, curated and singular. The most remote of the finalists (~7&ndash;8h fly + 1&frac12;&ndash;3h drive) and the priciest, so it rewards settling in.</p>
     <ul class="drives" style="grid-template-columns:1fr; margin-top:4px;">
       <li><strong>One house for everyone?</strong> <span class="t">Cuixmala is the most Babylonstoren-like place on the entire list &mdash; a biodynamic farm estate in its own reserve; the Careyes villas are the one-roof route.</span></li>
       <li><strong>Golf?</strong> <span class="t">El Tamarindo (Four Seasons) ~20 min &#10003;</span></li>
@@ -478,9 +411,9 @@
   </div>
 
   <div class="smastay">
-    <div class="top"><span class="nm">Cuixmala &mdash; casitas, haciendas &amp; villas <span class="lead-tag">Inquiry pending</span></span><span class="pr">Casitas from ~MXN 244,600 / 5 nights (~$13.5k) each</span></div>
-    <div class="meta">3-BR Casitas (Casa Bugambilia, Casa Orquidea) with shared casita pool · haciendas &amp; grand villas (Casa Cuixmala, La Loma) by quote · full-board option (Bugambilia: MXN 380,609 / 5 nights) · biodynamic estate · staff · the most Babylonstoren-like on the list</div>
-    <p class="desc">Casa Bugambilia from MXN 244,600 / 5 nights and Casa Orquidea from MXN 282,800 &mdash; for eight, likely two casitas (~$29k / 5 nights) or one larger villa; inquiry submitted for the villas/haciendas, availability pending. Wildlife safaris, three private beaches, the sea-turtle program and the 5,000-acre biodynamic farm are all on the estate &mdash; vast enough that you golf-cart or drive between houses, beaches and farm. <a href="https://cuixmala.com/" target="_blank" rel="noopener">Cuixmala</a></p>
+    <div class="top"><span class="nm">Cuixmala &mdash; casitas, haciendas &amp; villas <span class="lead-tag">Inquiry pending</span></span><span class="pr"><strong>&asymp; $29k for the group</strong> (two casitas, 5-night quote)<br><small>casitas from ~$13,500 / 5 nights each</small></span></div>
+    <div class="meta">3-BR Casitas (Casa Bugambilia, Casa Orquidea) with shared casita pool · haciendas &amp; grand villas (Casa Cuixmala, La Loma) by quote · full-board option (Bugambilia: ~$21,000 / 5 nights) · biodynamic estate · staff · the most Babylonstoren-like on the list</div>
+    <p class="desc">Casa Bugambilia from ~$13,500 / 5 nights and Casa Orquidea from ~$15,600 &mdash; for eight, likely two casitas (~$29k / 5 nights) or one larger villa (they quote in pesos); inquiry submitted for the villas/haciendas, availability pending. Wildlife safaris, three private beaches, the sea-turtle program and the 5,000-acre biodynamic farm are all on the estate &mdash; vast enough that you golf-cart or drive between houses, beaches and farm. <a href="https://cuixmala.com/" target="_blank" rel="noopener">Cuixmala</a></p>
   </div>
 
   <p class="cap" style="font-style:italic;"><strong>Split-stay idea:</strong> 3&ndash;4 nights at <a href="https://haciendadesanantonio.com/" target="_blank" rel="noopener">Hacienda de San Antonio</a> &mdash; a grand 19th-century hacienda on a working ranch beneath the Colima volcano (gardens, horseback riding, the full hacienda experience) &mdash; then 3&ndash;4 nights at Cuixmala for beaches, sea turtles, safaris and kayaking. Sister properties; they arrange the transfer.</p>
@@ -567,9 +500,7 @@
   </div>
 
   <div class="intro">
-    <p><strong>The vibe:</strong> The resort end of the spectrum &mdash; beach clubs, golf, pools, spas and restaurants, where the hotel is the destination. The most conventional option (kept for easy group villas).</p>
-    <p>The easiest trip of the finalists &mdash; a ~6½h nonstop from Boston, no red-eye, no connection &mdash; with the best food-and-farm scene and, thanks to the Sea of Cortez, the strongest water of any Mexico option. The trade-off is cost: it's the priciest finalist at peak.</p>
-    <p>The lead here is now <strong>Acre</strong>: its 4 Bedroom Hacienda (sleeps 10) is <strong>available for our dates</strong> &mdash; one communal house on the working organic farm, with the Michelin-green restaurant on the property. Otherwise, a private villa in the gated communities (Pedregal, Palmilla, Cabo del Sol). The quieter Todos Santos / El Pescadero pocket is its own section.</p>
+    <p><strong>The vibe:</strong> the lead is <strong>Acre</strong> &mdash; its 4-bedroom farm Hacienda (sleeps 10) is <strong>available for our dates</strong>: one communal house on a working organic farm with the restaurant on the property, on the coast with the best food scene and strongest water in Mexico. The easiest trip too: ~6&frac12;h nonstop, no red-eye.</p>
     <ul class="drives" style="grid-template-columns:1fr; margin-top:4px;">
       <li><strong>One house for everyone?</strong> <span class="t">Yes &mdash; Acre's 4-bedroom farm Hacienda (sleeps 10) is available for our dates, right on the farm campus.</span></li>
       <li><strong>Golf?</strong> <span class="t">The easiest anywhere &mdash; Puerto Los Cabos ~15 min; several more within 40 &#10003;</span></li>
@@ -598,7 +529,7 @@
   </div>
 
   <div class="smastay">
-    <div class="top"><span class="nm">Acre &mdash; 4 Bedroom Hacienda <span class="lead-tag">Available</span></span><span class="pr">$16,600 / 6 nights (pre-paid) &middot; $18,445 flex</span></div>
+    <div class="top"><span class="nm">Acre &mdash; 4 Bedroom Hacienda <span class="lead-tag">Available</span></span><span class="pr"><strong>&asymp; $17k for the group</strong> (6-night quote)<br><small>$16,600 pre-paid &middot; $18,445 flex</small></span></div>
     <div class="meta">4 BR / 4 baths / sleeps 10 · 6,500 sq ft · private pool · on the working organic farm · Michelin-green kitchen on site · San Jos&eacute; del Cabo</div>
     <p class="desc"><span class="tag-ok">Available &#10003;</span> for Dec 27&ndash;Jan 2 (only 1 left; free cancellation). One communal house for all eight on the farm campus &mdash; restaurant, farm tours, animal sanctuary, pool &amp; spa all a short walk; a car only to leave. Puerto Los Cabos golf ~15 min, and the 2&ndash;3BR Jungle Villas (from ~$8k / 6 nights) if the group grows. <a href="https://acreresort.com/" target="_blank" rel="noopener">Acre</a></p>
   </div>
@@ -686,9 +617,7 @@
   </div>
 
   <div class="intro">
-    <p><strong>The vibe:</strong> Baja surf town meets boutique design hotel &mdash; artsy and laid-back, desert landscapes, farm-to-table, and a slower pace than Cabo.</p>
-    <p>The quiet, design-forward side of Baja: an hour up the Pacific from the Los Cabos airport, Todos Santos and neighboring El Pescadero trade the Cabo villa-and-golf scene for organic farms, empty surf beaches and understated design hotels under the Sierra de la Laguna. Same easy ~6½h nonstop from Boston &mdash; a completely different feel.</p>
-    <p>For eight you'd take a small design-hotel &mdash; Paradero, Villa Santa Cruz or Rancho Pescadero. It's the most on-brief Baja option: farm-driven, low-key, and not a resort bubble.</p>
+    <p><strong>The vibe:</strong> Baja surf town meets boutique farm hotel &mdash; artsy, laid-back, farm-to-table, an hour up the Pacific from the Los Cabos airport (same ~6&frac12;h nonstop). For eight you'd take a small design hotel: Paradero, Villa Santa Cruz or Rancho Pescadero. Farm-driven, low-key, not a resort bubble.</p>
     <ul class="drives" style="grid-template-columns:1fr; margin-top:4px;">
       <li><strong>One house for everyone?</strong> <span class="t">Mostly no &mdash; the farm hotels are wander-around campuses with separate rooms; Villa Santa Cruz's multi-bedroom villas get closest.</span></li>
       <li><strong>Golf?</strong> <span class="t">Rancho San Lucas &amp; Solmar (Greg Norman, oceanfront) ~40&ndash;45 min &#10003;</span></li>
@@ -713,7 +642,7 @@
   <h2 class="section">Where We Could Stay</h2>
 
   <div class="smastay">
-    <div class="top"><span class="nm">Paradero Todos Santos <span class="lead-tag">All-inclusive</span></span><span class="pr">~$25k&ndash;$34k / week<br>(meals + activities incl.)</span></div>
+    <div class="top"><span class="nm">Paradero Todos Santos <span class="lead-tag">All-inclusive</span></span><span class="pr"><strong>&asymp; $25&ndash;34k for the group</strong> (per week)<br><small>meals &amp; activities included</small></span></div>
     <div class="meta">~4 suites (780&ndash;2,674 sq ft) · design farm hotel · private plunge pools · 20+ daily activities</div>
     <p class="desc">Roomy suites with meals and 20+ daily activities bundled in &mdash; farm tours, cooking classes, guided hikes &amp; surf. Right on taste. One compact campus, all on foot; a car only for beach &amp; town. <a href="https://www.paraderohotels.com/" target="_blank" rel="noopener">Paradero</a></p>
   </div>
@@ -725,7 +654,7 @@
   </div>
 
   <div class="smastay">
-    <div class="top"><span class="nm">Rancho Pescadero / Kimpton Mas Olas</span><span class="pr">~$700&ndash;$1,200 / night per room</span></div>
+    <div class="top"><span class="nm">Rancho Pescadero / Kimpton Mas Olas</span><span class="pr"><strong>&asymp; $20&ndash;34k for the group</strong> (per week, ~4 rooms)<br><small>~$700&ndash;$1,200 / night per room &times; 7</small></span></div>
     <div class="meta">Rooms, suites &amp; villas on 30 acres · working farm-to-table · spa · on the Pacific</div>
     <p class="desc">A true farm-stay at hotel scale &mdash; book a cluster of rooms/suites for the group. Greenhouse dinners, cooking classes, pools and the spa sit on 30 walkable acres running down to the Pacific; Cerritos surf a short drive. <a href="https://www.ranchopescadero.com/" target="_blank" rel="noopener">Rancho Pescadero</a></p>
   </div>
@@ -811,9 +740,7 @@
   </div>
 
   <div class="intro">
-    <p><strong>The vibe:</strong> A colonial-city escape &mdash; architecture, food, art and courtyards, boutique hotels. More cultural than nature-focused.</p>
-    <p>Our first pick, and the easiest to make work: a beautiful, walkable town with wonderful food, a real wine route on the doorstep, comfortable dry-season weather, and simple logistics for a group &mdash; all without feeling like a resort.</p>
-    <p>Below: an area map with drive times to the wineries, walks, water and golf &mdash; with the shortlist of houses pinned on it.</p>
+    <p><strong>The vibe:</strong> a colonial-city escape &mdash; architecture, food, art and courtyards, with a real wine route on the doorstep, comfortable dry-season weather and easy group logistics. More cultural than coastal, and the most walkable option of all.</p>
     <ul class="drives" style="grid-template-columns:1fr; margin-top:4px;">
       <li><strong>One house for everyone?</strong> <span class="t">Yes &mdash; the staffed casas are the communal one-roof dream; the town itself is the campus.</span></li>
       <li><strong>Golf?</strong> <span class="t">Club de Golf Malanqu&iacute;n ~10 min &#10003;</span></li>
@@ -842,7 +769,7 @@
   <p class="cap">Five favorites, all in or on the edge of town, walkable to the restaurants &mdash; pinned on the map above. Holiday-week rates shown (New Year's); all are fully staffed.</p>
 
   <div class="smastay">
-    <div class="top"><span class="nm">Rosewood 5-Bedroom Residence <span class="lead-tag">Most upscale</span></span><span class="pr">~$25k&ndash;$35k / week<br>(NYE, service incl.)</span></div>
+    <div class="top"><span class="nm">Rosewood 5-Bedroom Residence <span class="lead-tag">Most upscale</span></span><span class="pr"><strong>&asymp; $25&ndash;35k for the group</strong> (per week, NYE)<br><small>service incl.</small></span></div>
     <div class="meta">5 BR · up to 10 · 3,600 sq ft · heart of town · full hotel service</div>
     <p class="desc">The step up in polish: a private residence with the hotel's four pools, spa, rooftop bar and restaurants on tap, in the heart of town &mdash; everything on foot. Summer rate is ~$2,382/night; confirm the holiday number. <a href="https://www.rosewoodhotels.com/en/san-miguel-de-allende/residences" target="_blank" rel="noopener">Rosewood Residences</a></p>
     <p class="svc"><b>Staff</b> &nbsp;Private chef on request, concierge, daily housekeeping &amp; room service.</p>
@@ -932,10 +859,7 @@
   </div>
 
   <div class="intro">
-    <p><strong>The vibe:</strong> a design-forward beach base on the quiet north coast, with a whole lot of water and adventure at the door &mdash; waterfalls, reefs, kite/surf, horseback and a whitewater day-trip. Two very different homes for the week, and the choice comes down to <em>vibe vs. easy group living</em>.</p>
-    <p><strong>Lead pick &mdash; Playa Grande Beach Club:</strong> the design choice, and the most on-brief. Nine storybook bungalows by the Kemble family on a wild mile-long Atlantic beach at Río San Juan, with its own restaurant, pool and the Robert Trent Jones golf course next door. It photographs like a magazine, and fits eight (book the three-bedroom bungalows or a full buyout).</p>
-    <p><strong>Or Sea Horse Ranch:</strong> the roomier, full-service alternative &mdash; one big oceanfront villa with a private pool, staff and in-villa chef, in a gated community with a beach club, calmer swimming coves and quicker access to the Cabarete/Damajagua adventure hub. Less designed, but easier for a group and better for swimming.</p>
-    <p><strong>Best of both &mdash; a split stay:</strong> 3 nights at Playa Grande on the coast, then 2 nights at a boutique mountain lodge in Jarabacoa for whitewater rafting, waterfalls and cool mountain air.</p>
+    <p><strong>The vibe:</strong> a design-forward beach base with adventure at the door &mdash; waterfalls, reefs, kite/surf, horseback; ~4h nonstop. Two homes to choose between: <strong>Playa Grande's</strong> storybook bungalows (restaurant, pool, golf next door) or <strong>Sea Horse Ranch's</strong> staffed oceanfront villa in a gated campus &mdash; vibe vs. easy group living.</p>
     <ul class="drives" style="grid-template-columns:1fr; margin-top:4px;">
       <li><strong>One house for everyone?</strong> <span class="t">Yes &mdash; one staffed villa inside Sea Horse Ranch's 250-acre campus; Playa Grande is a bungalow mini-campus with restaurant &amp; pool.</span></li>
       <li><strong>Golf?</strong> <span class="t">Robert Trent Jones course next door at Playa Grande; Playa Dorada ~35 min from Sea Horse Ranch &#10003;</span></li>
@@ -978,12 +902,12 @@
     <p class="lead">A 250-acre gated community of private oceanfront villas &mdash; beach club, tennis, an equestrian center, calm swimming coves and full concierge (in-villa chef available). One big house for everyone, minutes from the airport and the Cabarete adventure hub.</p>
   </div>
   <div class="smastay">
-    <div class="top"><span class="nm">Villa Windward (Sea Horse Ranch)</span><span class="pr">est. ~$2,000&ndash;$2,800 / night</span></div>
+    <div class="top"><span class="nm">Villa Windward (Sea Horse Ranch)</span><span class="pr"><strong>&asymp; $14&ndash;20k for the group</strong> (per week)<br><small>est. ~$2,000&ndash;$2,800 / night</small></span></div>
     <div class="meta">6 BR / 7 ba · private pool &amp; gardens · exceptional build · beach-club &amp; concierge access</div>
     <p class="desc">The roomy top-tier option, easily fitting eight. Beach club, three swimming coves, tennis, beach rides and in-villa chef service &mdash; golf carts &amp; bikes across the 250 acres. <a href="https://sea-horse-ranch.com/dominican-republic-vacation-rentals/" target="_blank" rel="noopener">Sea Horse Ranch rentals</a></p>
   </div>
   <div class="smastay">
-    <div class="top"><span class="nm">Villa Soleil (Sea Horse Ranch)</span><span class="pr">est. ~$1,500&ndash;$2,200 / night</span></div>
+    <div class="top"><span class="nm">Villa Soleil (Sea Horse Ranch)</span><span class="pr"><strong>&asymp; $11&ndash;15k for the group</strong> (per week)<br><small>est. ~$1,500&ndash;$2,200 / night</small></span></div>
     <div class="meta">5 BR · classic Caribbean layout · private pool · gardens · walk to the beach club</div>
     <p class="desc">A relaxed five-bedroom in the same community &mdash; a touch more value. <a href="https://www.vrbo.com/4657396ha" target="_blank" rel="noopener">A 5BR at Sea Horse Ranch</a> &middot; <a href="https://isleblue.co/villas/vacation-rentals/caribbean/dominican-republic/cabarete/villa-sea-horse-ranch-2" target="_blank" rel="noopener">more villas</a></p>
   </div>
@@ -1068,8 +992,7 @@
     <a data-page="page-grenada">Grenada</a>
   </div>
   <div class="intro">
-    <p><strong>The vibe:</strong> the easy, no-passport trip that still delivers a real working-farm estate. <strong>~4h nonstop from Boston</strong>, then a short drive or hop. The standout is <strong>Royal Isabela</strong> &mdash; freestanding casitas with private plunge pools on 200-ft Atlantic cliffs, a farm-to-table restaurant cooking daily from the estate's own River Farm and organic garden, and a dramatic oceanfront course (a bonus for the golfers).</p>
-    <p>Two more directions if you want them: <strong>Vieques</strong>, where Finca Victoria is a design-forward, plant-based guesthouse beside an 18,000-acre wildlife refuge and the world's brightest bioluminescent bay; or the cool <strong>central mountains</strong> for working coffee haciendas, waterfalls and river swims. (Sam's family has done El Yunque, so this skips the standard rainforest circuit.)</p>
+    <p><strong>The vibe:</strong> the easy, no-passport trip that still delivers a working farm-estate: <strong>Royal Isabela</strong> &mdash; casitas with plunge pools on 200-ft Atlantic cliffs, a restaurant fed by the estate's own farm, and an oceanfront course. ~4h nonstop, then a ~1&frac12;h drive.</p>
     <ul class="drives" style="grid-template-columns:1fr; margin-top:4px;">
       <li><strong>One house for everyone?</strong> <span class="t">Not quite &mdash; Royal Isabela is a wonderful estate campus, but the casitas sleep two each; Villa Monta&ntilde;a's villa cluster is the communal alternative.</span></li>
       <li><strong>Golf?</strong> <span class="t">The best on the list &mdash; the oceanfront course is on the estate &#10003;&#10003;</span></li>
@@ -1090,7 +1013,7 @@
   </ul>
   <h2 class="section">Where We Could Stay</h2>
   <div class="smastay">
-    <div class="top"><span class="nm">Royal Isabela <span class="lead-tag">Working farm estate</span></span><span class="pr">~$2k / casita night at holiday time (sleeps 2)</span></div>
+    <div class="top"><span class="nm">Royal Isabela <span class="lead-tag">Working farm estate</span></span><span class="pr"><strong>&asymp; $56k for the group</strong> (per week, four casitas &asymp; $8k/night)<br><small>~$2k / casita night at holiday time (sleeps 2)</small></span></div>
     <div class="meta">Freestanding ~1,500 sq ft casitas (each sleeps 2) with private plunge pools · 200-ft Atlantic cliffs · farm-to-table restaurant from its own River Farm &amp; garden · oceanfront course · spa &amp; pool · Isabela, NW coast</div>
     <p class="desc">A genuine working-farm estate you eat from, on dramatic cliffs. Each casita sleeps two &mdash; so eight means about four casitas, not a shared house &mdash; and the oceanfront golf is a bonus for Sam &amp; his brother. Farm-to-table restaurant, cliff trails, pool &amp; spa on the estate; golf carts between casitas, restaurant and course. <a href="https://www.royalisabela.com/" target="_blank" rel="noopener">Royal Isabela</a></p>
   </div>
@@ -1170,8 +1093,7 @@
     <a data-page="page-grenada" class="active">Grenada</a>
   </div>
   <div class="intro">
-    <p><strong>The vibe:</strong> the "Spice Island" &mdash; a design/wellness resort and a boutique beach classic, wrapped around organic <strong>cocoa and spice estates</strong>, tree-to-bar chocolate, rainforest waterfalls and quiet beaches. The estates here are modern and locally owned (Belmont Estate), so it's a real working-farm experience, farm-to-table, and off the mainstream track. Probably the nicest blend of design, hiking, diving/snorkeling and wellness.</p>
-    <p>Base at Six Senses La Sagesse or the boutique Calabash Hotel on the calm southern beaches, and fill the days with the cocoa &amp; spice estates, waterfall hikes and reefs. ~6h from Boston (usually one stop; a seasonal nonstop has run from Logan).</p>
+    <p><strong>The vibe:</strong> the "Spice Island" &mdash; base at Six Senses La Sagesse on the calm southern beaches and fill the days with locally-owned cocoa &amp; spice estates, rainforest waterfalls and reefs. A real working-farm island, off the mainstream track; ~6h from Boston, usually one stop.</p>
     <ul class="drives" style="grid-template-columns:1fr; margin-top:4px;">
       <li><strong>One house for everyone?</strong> <span class="t">Yes, one &mdash; Six Senses' 4-bedroom Cliff Retreat (sleeps 10) is a true communal house on the resort campus, ~$69k for 6 nights.</span></li>
       <li><strong>Golf?</strong> <span class="t">Weak &mdash; only the vintage 9-hole ~30 min; no 18-hole on the island &#10007;</span></li>
@@ -1192,7 +1114,7 @@
   </ul>
   <h2 class="section">Where We Could Stay</h2>
   <div class="smastay">
-    <div class="top"><span class="nm">Six Senses La Sagesse <span class="lead-tag">Design + wellness</span></span><span class="pr">4BR Cliff Retreat: $69,078 / 6 nights (~$11.5k/night, taxes incl.)</span></div>
+    <div class="top"><span class="nm">Six Senses La Sagesse <span class="lead-tag">Design + wellness</span></span><span class="pr"><strong>&asymp; $69k for the group</strong> (6-night quote)<br><small>4BR Cliff Retreat: $69,078 / 6 nights (~$11.5k/night, taxes incl.)</small></span></div>
     <div class="meta">Six Senses' Caribbean debut (2024) · pool suites ~592 sq ft + a 484 sq ft terrace &amp; private plunge pool, plus 1&ndash;4BR villas · organic garden &amp; farm-to-table · spa · two beaches (St. David's, SE Grenada)</div>
     <p class="desc">The most polished base on the island &mdash; and the one Grenada option that nails the home-base brief: the Four Bedroom Cliff Retreat (5,812 sq ft, sleeps 10, 270&deg; view) is a true communal house on the campus, quoted for our dates at $69,078 / 6 nights, breakfast included, free cancellation to 60 days out. Spa, organic garden, two beaches and farm-to-table restaurants, with buggy service across the hilly campus. <a href="https://www.sixsenses.com/en/hotels-resorts/the-americas/grenada/la-sagesse/" target="_blank" rel="noopener">Six Senses La Sagesse</a></p>
   </div>
@@ -1265,9 +1187,9 @@
     <a data-page="page-jarabacoa">Dominican Republic</a>
     <a data-page="page-grenada">Grenada</a>
   </div>
+  <p class="cap" style="font-style:italic;">Saved for reference &mdash; no golf in the BVI, so it fell off the main list. <a data-page="page-overview" style="cursor:pointer;">&larr; Back to Overview</a></p>
   <div class="intro">
-    <p><strong>The vibe:</strong> quiet-island living on <strong>Virgin Gorda</strong> &mdash; the BVI's most beautiful island, home to the boulder-and-grotto beaches of The Baths and a pair of understated, nature-first resorts. Design-forward and low-key, with sailing, snorkeling and empty cays a short hop away.</p>
-    <p>The two bases are <strong>Rosewood Little Dix Bay</strong> (Laurance Rockefeller's original, reborn) and the villa-and-marina world of <strong>Oil Nut Bay</strong>. For a whole private island instead, <strong>Guana Island</strong> off Tortola is an 850-acre nature sanctuary (below). No nonstop &mdash; fly to San Juan or St. Thomas, then a short hop or ferry (~7h door-to-door); passports needed.</p>
+    <p><strong>The vibe:</strong> quiet-island living on <strong>Virgin Gorda</strong> &mdash; The Baths, sailing and empty cays, with nature-first bases at Rosewood Little Dix Bay, Oil Nut Bay, or all of Guana Island. No nonstop: ~7h door-to-door via San Juan or St. Thomas; passports needed.</p>
     <ul class="drives" style="grid-template-columns:1fr; margin-top:4px;">
       <li><strong>One house for everyone?</strong> <span class="t">Great campus feel &mdash; Guana is a whole private island with communal meals; Oil Nut Bay is a golf-cart community.</span></li>
       <li><strong>Golf?</strong> <span class="t">None &mdash; there is no golf course in the BVI &#10007;</span></li>
@@ -1288,17 +1210,17 @@
   </ul>
   <h2 class="section">Where We Could Stay</h2>
   <div class="smastay">
-    <div class="top"><span class="nm">Rosewood Little Dix Bay <span class="lead-tag">Iconic, reborn</span></span><span class="pr">~$45&ndash;70k all-in</span></div>
+    <div class="top"><span class="nm">Rosewood Little Dix Bay <span class="lead-tag">Iconic, reborn</span></span><span class="pr"><strong>&asymp; $45&ndash;70k for the group</strong> (all-in, per week)</span></div>
     <div class="meta">Laurance Rockefeller's 1964 original, reimagined by Rosewood · from ~350 sq ft ocean-view cottages to 680&ndash;1,500 sq ft suites &amp; multi-BR villas · half-moon bay · spa, hikes, sailing &amp; sea-to-table dining · Virgin Gorda</div>
     <p class="desc">The understated grande dame of the BVI &mdash; book a cluster of rooms or a villa; the pricier end. <a href="https://www.rosewoodhotels.com/en/little-dix-bay-virgin-gorda" target="_blank" rel="noopener">Rosewood Little Dix Bay</a></p>
   </div>
   <div class="smastay">
-    <div class="top"><span class="nm">Guana Island <span class="lead-tag">Value private-island</span></span><span class="pr">from ~$995/night per room, all-in</span></div>
+    <div class="top"><span class="nm">Guana Island <span class="lead-tag">Value private-island</span></span><span class="pr"><strong>&asymp; $28k for the group</strong> (per week, ~4 rooms, all-inclusive)<br><small>from ~$995/night per room &times; 7</small></span></div>
     <div class="meta">850-acre private-island nature sanctuary off Tortola · organic orchard, farm-to-table, 7 beaches &amp; 12 miles of trails · all-inclusive</div>
     <p class="desc">A whole island to yourselves &mdash; the best value here, and the most Babylonstoren-like option in the BVI. <a href="https://www.guana.com/" target="_blank" rel="noopener">Guana Island</a></p>
   </div>
   <div class="smastay">
-    <div class="top"><span class="nm">Oil Nut Bay <span class="lead-tag">Splurge</span></span><span class="pr">~$70k+ all-in</span></div>
+    <div class="top"><span class="nm">Oil Nut Bay <span class="lead-tag">Splurge</span></span><span class="pr"><strong>&asymp; $70k+ for the group</strong> (all-in, per week)</span></div>
     <div class="meta">Secluded east-end community reachable only by boat or air · private villas · marina, beach club &amp; pools · nature trails</div>
     <p class="desc">A villa-and-marina world at Virgin Gorda's wild end &mdash; the dream option. <a href="https://oilnutbay.com/" target="_blank" rel="noopener">Oil Nut Bay</a></p>
   </div>
@@ -1350,21 +1272,6 @@
 </div>
 </div><!-- #page-bvi -->
 
-<script>
-(function () {
-  var btns = document.querySelectorAll('.tabbtn');
-  btns.forEach(function (b) {
-    b.addEventListener('click', function () {
-      var id = b.getAttribute('data-tab');
-      document.querySelectorAll('.tabbtn').forEach(function (x) { x.classList.remove('active'); });
-      document.querySelectorAll('.tabpanel').forEach(function (x) { x.classList.remove('active'); });
-      b.classList.add('active');
-      var panel = document.getElementById(id);
-      if (panel) { panel.classList.add('active'); if (window.__fixMaps) window.__fixMaps(); }
-    });
-  });
-})();
-</script>
 <!--MAPINIT-START-->
 <script>
 (function () {
@@ -1381,54 +1288,6 @@
     air:    { c: '#6b6157', label: 'Airport' }
   };
   var MAPS = {
-    map1: [
-      { la: 19.283, ln: -104.955, n: 'Cuixmala (stay)', k: 'stay' },
-      { la: 19.436, ln: -105.030, n: 'Careyes', k: 'town' },
-      { la: 19.283, ln: -104.790, n: 'La Manzanilla', k: 'town' },
-      { la: 19.290, ln: -104.860, n: 'Tenacatita beach', k: 'beach' },
-      { la: 19.500, ln: -105.030, n: 'Chamela-Cuixmala reserve', k: 'hike' },
-      { la: 19.323, ln: -104.998, n: 'El Tamarindo golf', k: 'golf' }
-    ],
-    map2: [
-      { la: 23.108, ln: -109.742, n: 'Acre (stay)', k: 'stay' },
-      { la: 23.063, ln: -109.702, n: 'San José del Cabo', k: 'town' },
-      { la: 22.891, ln: -109.912, n: 'Cabo San Lucas', k: 'town' },
-      { la: 23.470, ln: -109.717, n: 'Fox Canyon falls', k: 'hike' },
-      { la: 23.443, ln: -109.428, n: 'Cabo Pulmo', k: 'beach' },
-      { la: 23.073, ln: -109.660, n: 'Puerto Los Cabos golf', k: 'golf' },
-      { la: 23.152, ln: -109.721, n: 'Los Cabos airport', k: 'air' },
-      { la: 23.446, ln: -110.223, n: 'Todos Santos / El Pescadero', k: 'town' }
-    ],
-    map3: [
-      { la: 21.035, ln: -100.870, n: 'La Santísima Trinidad (stay)', k: 'stay' },
-      { la: 21.100, ln: -100.870, n: 'Tres Raíces vineyard', k: 'wine' },
-      { la: 20.914, ln: -100.744, n: 'San Miguel de Allende', k: 'town' },
-      { la: 21.157, ln: -100.933, n: 'Dolores Hidalgo', k: 'town' },
-      { la: 20.923, ln: -100.735, n: 'El Charco reserve', k: 'hike' },
-      { la: 20.767, ln: -100.930, n: 'Cañada de la Virgen', k: 'hike' },
-      { la: 20.895, ln: -100.755, n: 'Malanquín golf', k: 'golf' }
-    ],
-    map4: [
-      { la: 18.418, ln: -70.626, n: 'Ocoa Bay estate (stay)', k: 'stay' },
-      { la: 18.348, ln: -70.626, n: 'Palmar de Ocoa beach', k: 'beach' },
-      { la: 18.453, ln: -70.734, n: 'Azua', k: 'town' },
-      { la: 18.540, ln: -70.600, n: 'Ocoa hills & waterfalls', k: 'hike' }
-    ],
-    map5: [
-      { la: 19.121, ln: -70.629, n: 'Jarabacoa villa (stay)', k: 'stay' },
-      { la: 19.083, ln: -70.560, n: 'Salto de Jimenoa', k: 'hike' },
-      { la: 19.083, ln: -70.610, n: 'Salto de Baiguate', k: 'hike' },
-      { la: 19.055, ln: -70.855, n: 'Pico Duarte trailhead', k: 'hike' },
-      { la: 18.912, ln: -70.748, n: 'Constanza', k: 'town' }
-    ],
-    map6: [
-      { la: 18.360, ln: -65.831, n: 'Rainforest villa (stay)', k: 'stay' },
-      { la: 18.298, ln: -65.787, n: 'El Yunque / La Mina falls', k: 'hike' },
-      { la: 18.379, ln: -65.720, n: 'Luquillo beach', k: 'beach' },
-      { la: 18.383, ln: -65.773, n: 'Río Mar golf', k: 'golf' },
-      { la: 18.466, ln: -66.117, n: 'Old San Juan', k: 'town' },
-      { la: 18.437, ln: -66.002, n: 'San Juan airport', k: 'air' }
-    ],
     areamap: [
       { la: 20.9142, ln: -100.7440, n: 'San Miguel — the Jardín', k: 'town' },
       { la: 20.9128, ln: -100.7448, n: 'Rosewood Residence (stay)', k: 'stay' },
@@ -1584,13 +1443,16 @@
 (function () {
   function show(id) {
     document.querySelectorAll('.page').forEach(function (p) { p.classList.toggle('active', p.id === id); });
-    document.querySelectorAll('.topnav a[data-page]').forEach(function (a) { a.classList.toggle('active', a.getAttribute('data-page') === id); });
+    document.querySelectorAll('.pagenav a[data-page]').forEach(function (a) { a.classList.toggle('active', a.getAttribute('data-page') === id); });
+    if (history.replaceState) history.replaceState(null, '', '#' + id); else location.hash = id;
     window.scrollTo(0, 0);
     if (window.__fixMaps) setTimeout(window.__fixMaps, 60);
   }
   document.querySelectorAll('[data-page]').forEach(function (el) {
     el.addEventListener('click', function (e) { e.preventDefault(); show(el.getAttribute('data-page')); });
   });
+  var h = location.hash.replace('#', '');
+  if (h && document.getElementById(h)) show(h);
 })();
 </script>
 </body>
