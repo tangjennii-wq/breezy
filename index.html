@@ -67,6 +67,9 @@
   .maplegend { font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; font-size: 12.5px; color: var(--soft-ink); display: flex; flex-wrap: wrap; gap: 6px 16px; margin: 0 0 16px; }
   .maplegend .li { display: inline-flex; align-items: center; gap: 6px; }
   .maplegend .sw { width: 11px; height: 11px; border-radius: 50%; display: inline-block; }
+  .maplegend .li.site { cursor: pointer; border: 1px solid rgba(0,0,0,0.12); border-radius: 999px; padding: 2px 9px 2px 6px; transition: background .15s; }
+  .maplegend .li.site:hover { background: rgba(63,114,176,0.10); }
+  .maplegend .li.site.on { background: rgba(63,114,176,0.16); font-weight: 600; }
   .leaflet-tooltip.lbl { background: rgba(255,255,255,0.88); border: none; box-shadow: 0 1px 2px rgba(0,0,0,0.15); color: var(--ink); font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; font-size: 10.5px; padding: 1px 5px; }
   .leaflet-tooltip.lbl:before { display: none; }
 
@@ -191,16 +194,16 @@
   </header>
   <div class="pagenav">
     <a data-page="page-overview" class="active">Overview</a>
-    <span class="navgroup">Pacific</span>
-    <a data-page="page-careyes">Careyes / Cuixmala</a>
+    <span class="navgroup">Finalists</span>
     <a data-page="page-cabos">Los Cabos</a>
     <a data-page="page-todossantos">Todos Santos</a>
-    <a data-page="page-sanmiguel">San Miguel de Allende</a>
-    <span class="navrowbreak"></span>
-    <span class="navgroup">Caribbean</span>
-    <a data-page="page-pr">Puerto Rico</a>
     <a data-page="page-jarabacoa">Dominican Republic</a>
     <a data-page="page-grenada">Grenada</a>
+    <span class="navrowbreak"></span>
+    <span class="navgroup">Archived</span>
+    <a data-page="page-careyes">Careyes / Cuixmala</a>
+    <a data-page="page-sanmiguel">San Miguel de Allende</a>
+    <a data-page="page-pr">Puerto Rico</a>
   </div>
 
   <div class="intro">
@@ -210,8 +213,7 @@
   <h2 class="section">Pacific Mexico</h2>
   <p class="cap" style="margin:-8px 0 14px;">Longer flights, but the strongest fits for the brief.</p>
   <ul class="drives" style="grid-template-columns:1fr;">
-    <li><strong>Careyes / Cuixmala</strong> <span class="t">&mdash; private estates on a wild coast; the dream match, pending the villa inquiry.</span></li>
-    <li><strong>Todos Santos / El Pescadero</strong> <span class="t">&mdash; Baja surf town meets boutique farm hotel; artsy, slow.</span></li>
+        <li><strong>Todos Santos / El Pescadero</strong> <span class="t">&mdash; Baja surf town meets boutique farm hotel; artsy, slow.</span></li>
     <li><strong>San Miguel de Allende</strong> <span class="t">&mdash; colonial city of food, art &amp; courtyards on a real wine route.</span></li>
     <li><strong>Los Cabos (Acre)</strong> <span class="t">&mdash; a communal farm hacienda, available for our week, with golf 15 min away.</span></li>
   </ul>
@@ -221,7 +223,7 @@
   <ul class="drives" style="grid-template-columns:1fr;">
     <li><strong>Puerto Rico (Royal Isabela)</strong> <span class="t">&mdash; a working farm-estate on Atlantic cliffs with golf on-site; ~4h nonstop, no passport.</span></li>
     <li><strong>Dominican Republic (Playa Grande &amp; Sea Horse Ranch)</strong> <span class="t">&mdash; design bungalows or a staffed villa campus, adventure everywhere; ~4h nonstop.</span></li>
-    <li><strong>Grenada (Six Senses)</strong> <span class="t">&mdash; design/wellness resort with cocoa &amp; spice estates; its 4BR Cliff Retreat is a true communal house (sleeps 8 adults).</span></li>
+    <li><strong>Grenada (Six Senses)</strong> <span class="t">&mdash; design/wellness resort with cocoa &amp; spice estates; its 4BR Cliff Retreat is a true communal house (sleeps 8 adults). <a href="https://www.google.com/travel/flights?q=Flights%20from%20JFK%20to%20GND%20on%202026-12-25%20through%202027-01-02" target="_blank" rel="noopener">JFK&rarr;GND nonstop, Dec 25 &rarr; Jan 2 &mdash; live fares</a>.</span></li>
   </ul>
 
   <h2 class="section">At a Glance</h2>
@@ -241,17 +243,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th>Cuixmala / Careyes <small>Mexico &middot; Pacific coast</small></th>
-          <td>Private estate in a coastal nature reserve; artful, bohemian. Get around by golf cart, estate truck or rental car/bike</td>
-          <td>The spirit-match &mdash; the most Babylonstoren-like on the list; Careyes villas as the one-roof route</td>
-          <td>Biodynamic estate garden; chef &amp; staff</td>
-          <td>Swimmable coves + pools; snorkel boats &mdash; no dive shop on this coast</td>
-          <td>Reserve &amp; jungle-to-beach trails</td>
-          <td>El Tamarindo ~40 min</td>
-          <td class="col-travel">~7&ndash;8h fly + 1&frac12;&ndash;3h drive</td>
-        </tr>
-        <tr>
+                <tr>
           <th>Todos Santos / El Pescadero <small>Mexico &middot; Baja</small></th>
           <td>Quiet farm-and-surf; design hotels, not a resort. Walkable properties; car for beach &amp; town</td>
           <td>Campus yes, one roof mostly no; Villa Santa Cruz's multi-BR villas get closest</td>
@@ -261,17 +253,7 @@
           <td>Rancho San Lucas ~45 min</td>
           <td class="col-travel">~6&frac12;h fly + ~1h drive</td>
         </tr>
-        <tr>
-          <th>San Miguel de Allende <small>Mexico &middot; highlands</small></th>
-          <td>Beautiful colonial town on a real wine route; all on foot, car for wineries &amp; golf</td>
-          <td>One-roof staffed houses (pools, rooftops, cooks) with the town as the campus</td>
-          <td>Excellent food town + estate kitchen</td>
-          <td>Pools with valley views; no coast</td>
-          <td>Reserve, canyon &amp; Bernal day hikes</td>
-          <td>Malanqu&iacute;n ~10 min</td>
-          <td class="col-travel">~6&ndash;7h fly (1 stop) + 1&ndash;1&frac12;h drive</td>
-        </tr>
-        <tr>
+                <tr>
           <th>Los Cabos <small>Mexico &middot; Baja</small></th>
           <td>Organic farm (Acre) + gated villa communities. Acre is fully walkable; car only to leave</td>
           <td>Strong &mdash; Acre's 4BR farm Hacienda (sleeps 10, available) is a communal house on the farm campus</td>
@@ -281,17 +263,7 @@
           <td>Several, 15&ndash;40 min</td>
           <td class="col-travel">~6&frac12;h fly + ~40 min drive</td>
         </tr>
-        <tr>
-          <th>Puerto Rico <small>Royal Isabela &middot; Vieques &middot; mountains</small></th>
-          <td>Working farm-estate casitas on Atlantic cliffs; golf carts around the estate, car to explore</td>
-          <td>Estate campus to roam &mdash; but casitas sleep 2 each, so no shared house</td>
-          <td>Farm-to-table from the estate's own gardens</td>
-          <td>Atlantic cliffs &mdash; too rough to swim Dec&ndash;Mar; pool instead; scuba ~20 min (Crash Boat)</td>
-          <td>Cliff &amp; mountain trails; Cerro de Punta</td>
-          <td>On the estate</td>
-          <td class="col-travel">~4h fly (nonstop) + ~1&frac12;h drive &middot; no passport</td>
-        </tr>
-        <tr>
+                <tr>
           <th>Dominican Republic <small>North coast &middot; Playa Grande</small></th>
           <td>Design bungalows (Playa Grande) or villa community (Sea Horse Ranch); carts &amp; bikes, both walkable</td>
           <td>One staffed villa in Sea Horse Ranch's 250-acre campus; Playa Grande is a bungalow mini-campus</td>
@@ -302,14 +274,14 @@
           <td class="col-travel">~4h fly (nonstop) + ~20 min drive</td>
         </tr>
         <tr>
-          <th>Grenada <small>Six Senses &middot; Spice Island</small></th>
+          <th>Grenada <small>Six Senses &middot; Calabash</small></th>
           <td>Design/wellness resort (Six Senses, hilly with buggies) or boutique beach (Calabash, walkable)</td>
           <td>Resort campus; one real communal house &mdash; the 4BR Cliff Retreat (sleeps 8 adults + 2 kids, ~$69k / 6 nights)</td>
           <td>Farm-to-table; tree-to-bar cocoa &amp; spice estates</td>
           <td>Calm SW beaches; dive shops 25&ndash;40 min, snorkelable sculpture park</td>
           <td>Grand &Eacute;tang rainforest; Seven Sisters falls</td>
           <td class="golf-no">&mdash; 9-hole only</td>
-          <td class="col-travel">~6h fly (1 stop; seasonal nonstop)</td>
+          <td class="col-travel">~4h50 fly (JFK nonstop) &middot; BOS = 1 stop</td>
         </tr>
       </tbody>
     </table>
@@ -317,75 +289,66 @@
 
 
   <h2 class="section">Best Hikes</h2>
-  <p class="cap" style="margin:-8px 0 14px;">The standout trail near each option, ordered by an overall hiking score (<b style="color:var(--marigold);letter-spacing:1.5px;">&#9733;&#9733;&#9733;&#9733;&#9733;</b>&nbsp;= best) &mdash; a consistent read across all seven, weighing trail variety, scenery, accessibility from the house and how family-friendly it is. Open the AllTrails link for the official map, distance and difficulty. &ldquo;<b style="color:var(--soft-ink);">&#8776;N trails nearby</b>&rdquo; is an approximate count of worthwhile mapped trails within about an hour (per AllTrails); the number in brackets is that specific trail's review count &mdash; a popularity signal, not a quality score.</p>
+  <p class="cap" style="margin:-8px 0 14px;">The standout trail near each option, ordered by an overall hiking score (<b style="color:var(--marigold);letter-spacing:1.5px;">&#9733;&#9733;&#9733;&#9733;&#9733;</b>&nbsp;= best) &mdash; a consistent read across the finalists, weighing trail variety, scenery, accessibility from the house and how family-friendly it is. Open the AllTrails link for the official map, distance and difficulty. &ldquo;<b style="color:var(--soft-ink);">&#8776;N trails nearby</b>&rdquo; is an approximate count of worthwhile mapped trails within about an hour (per AllTrails); the number in brackets is that specific trail's review count &mdash; a popularity signal, not a quality score.</p>
   <ul class="drives" style="grid-template-columns:1fr;">
-    <li><strong>Puerto Rico &mdash; El Yunque Trail</strong> &nbsp;<b style="color:var(--marigold);letter-spacing:1.5px;">&#9733;&#9733;&#9733;&#9733;&#9733;</b> &middot; <b style="color:var(--soft-ink);">&#8776;10+ trails nearby</b> <span class="t">&mdash; a full-day climb through the only tropical rainforest in the U.S. forest system to the misty peak, inside a large, well-maintained network with easier options for everyone; by far the most-hiked trail of any option here. <a href="https://www.alltrails.com/trail/puerto-rico/east-region/el-yunque-trail" target="_blank" rel="noopener">AllTrails &middot; El Yunque Trail [2,228]</a> &middot; <a href="https://www.alltrails.com/parks/puerto-rico/east-region/el-yunque-national-forest" target="_blank" rel="noopener">all El Yunque trails</a></span></li>
-    <li><strong>Dominican Republic &mdash; Pico Duarte</strong> &nbsp;<b style="color:var(--marigold);letter-spacing:1.5px;">&#9733;&#9733;&#9733;&#9733;&#9733;</b> &middot; <b style="color:var(--soft-ink);">&#8776;6 trails nearby</b> <span class="t">&mdash; the Caribbean's highest peak (3,098&nbsp;m), a serious multi-day guided trek from La Ci&eacute;naga near Jarabacoa; the best raw hiking of any option, though the summit is an expedition rather than a casual walk. Gentler nearby options: the 27 Charcos de Damajagua river-scramble and the Jimenoa &amp; Baiguate waterfalls. <a href="https://www.alltrails.com/trail/dominican-republic/la-vega/pico-duarte-via-la-cienaga-ruta-completa" target="_blank" rel="noopener">AllTrails &middot; Pico Duarte [86]</a></span></li>
+        <li><strong>Dominican Republic &mdash; Pico Duarte</strong> &nbsp;<b style="color:var(--marigold);letter-spacing:1.5px;">&#9733;&#9733;&#9733;&#9733;&#9733;</b> &middot; <b style="color:var(--soft-ink);">&#8776;6 trails nearby</b> <span class="t">&mdash; the Caribbean's highest peak (3,098&nbsp;m), a serious multi-day guided trek from La Ci&eacute;naga near Jarabacoa; the best raw hiking of any option, though the summit is an expedition rather than a casual walk. Gentler nearby options: the 27 Charcos de Damajagua river-scramble and the Jimenoa &amp; Baiguate waterfalls. <a href="https://www.alltrails.com/trail/dominican-republic/la-vega/pico-duarte-via-la-cienaga-ruta-completa" target="_blank" rel="noopener">AllTrails &middot; Pico Duarte [86]</a></span></li>
     <li><strong>Grenada &mdash; Seven Sisters Waterfalls</strong> &nbsp;<b style="color:var(--marigold);letter-spacing:1.5px;">&#9733;&#9733;&#9733;&#9733;</b><span style="color:#d8cfbc;letter-spacing:1.5px;">&#9733;</span> &middot; <b style="color:var(--soft-ink);">&#8776;6 trails nearby</b> <span class="t">&mdash; a rainforest walk in Grand &Eacute;tang National Park to a chain of falls and pools you can jump into, part of a decent network of rainforest and crater-lake trails (Mount Qua Qua, Concord &amp; Annandale falls); short but atmospheric. <a href="https://www.alltrails.com/trail/grenada/saint-andrew/seven-sisters-waterfall-hike" target="_blank" rel="noopener">AllTrails &middot; Seven Sisters [190]</a></span></li>
     <li><strong>Los Cabos &mdash; Fox Canyon (Ca&ntilde;&oacute;n de la Zorra)</strong> &nbsp;<b style="color:var(--marigold);letter-spacing:1.5px;">&#9733;&#9733;&#9733;&#9733;</b><span style="color:#d8cfbc;letter-spacing:1.5px;">&#9733;</span> &middot; <b style="color:var(--soft-ink);">&#8776;5 trails nearby</b> <span class="t">&mdash; a shaded canyon walk in the Sierra de la Laguna foothills to the Sol de Mayo waterfall and swimming pools; easy, rewarding and very family-friendly, ~1h from Acre. <a href="https://www.alltrails.com/trail/mexico/baja-california-sur/canon-de-la-zorra" target="_blank" rel="noopener">AllTrails &middot; La Zorra Canyon [123]</a></span></li>
     <li><strong>Todos Santos / El Pescadero &mdash; Sierra de la Laguna</strong> &nbsp;<b style="color:var(--marigold);letter-spacing:1.5px;">&#9733;&#9733;&#9733;&#9733;</b><span style="color:#d8cfbc;letter-spacing:1.5px;">&#9733;</span> &middot; <b style="color:var(--soft-ink);">&#8776;3 trails nearby</b> <span class="t">&mdash; palm-canyon backcountry rising into pine-oak highlands above the desert; the San Dionisio canyon route is the classic, though more remote and less maintained than the Cabo side. <a href="https://www.alltrails.com/trail/mexico/baja-california-sur/camino-sierra-de-la-laguna" target="_blank" rel="noopener">AllTrails &middot; Sierra de la Laguna [27]</a></span></li>
-    <li><strong>San Miguel de Allende &mdash; Pe&ntilde;a de Bernal</strong> &nbsp;<b style="color:var(--marigold);letter-spacing:1.5px;">&#9733;&#9733;&#9733;</b><span style="color:#d8cfbc;letter-spacing:1.5px;">&#9733;&#9733;</span> &middot; <b style="color:var(--soft-ink);">&#8776;5 trails nearby</b> <span class="t">&mdash; a short steep scramble up one of the world's tallest monoliths, an easy day trip on the wine route, plus the in-town Charco del Ingenio canyon-and-botanical-garden loop; pleasant day walks rather than immersive wilderness. <a href="https://www.alltrails.com/trail/mexico/queretaro/pena-de-bernal" target="_blank" rel="noopener">AllTrails &middot; Pe&ntilde;a de Bernal [256]</a> &middot; <a href="https://www.alltrails.com/trail/mexico/guanajuato/el-charco-del-ingenio" target="_blank" rel="noopener">Charco del Ingenio [67]</a></span></li>
-    <li><strong>Careyes / Cuixmala</strong> &nbsp;<b style="color:var(--marigold);letter-spacing:1.5px;">&#9733;&#9733;</b><span style="color:#d8cfbc;letter-spacing:1.5px;">&#9733;&#9733;&#9733;</span> &middot; <b style="color:var(--soft-ink);">&#8776;2 trails nearby</b> <span class="t">&mdash; mostly a private coastal nature reserve, so mapped trails are limited; the Cerro Careyes viewpoint is the main marked walk, and most nature outings here are guided within the estate. <a href="https://www.alltrails.com/trail/mexico/jalisco/cerro-careyes" target="_blank" rel="noopener">AllTrails &middot; Cerro Careyes [6]</a></span></li>
+        <li><strong>Careyes / Cuixmala</strong> &nbsp;<b style="color:var(--marigold);letter-spacing:1.5px;">&#9733;&#9733;</b><span style="color:#d8cfbc;letter-spacing:1.5px;">&#9733;&#9733;&#9733;</span> &middot; <b style="color:var(--soft-ink);">&#8776;2 trails nearby</b> <span class="t">&mdash; mostly a private coastal nature reserve, so mapped trails are limited; the Cerro Careyes viewpoint is the main marked walk, and most nature outings here are guided within the estate. <a href="https://www.alltrails.com/trail/mexico/jalisco/cerro-careyes" target="_blank" rel="noopener">AllTrails &middot; Cerro Careyes [6]</a></span></li>
   </ul>
   <p class="cap" style="font-size:0.78em; font-style:italic; margin:0 0 40px;">On the radar: the BVI's best hike is <a href="https://www.alltrails.com/trail/british-virgin-islands/virgin-gorda/gorda-peak-trail" target="_blank" rel="noopener">Gorda Peak</a> on Virgin Gorda &mdash; a quick forest climb to a 360&deg; lookout, and about the only real trail on the island.</p>
 
   <h2 class="section">The Rankings</h2>
-  <p class="cap" style="margin:-8px 0 14px;">Where everything nets out &mdash; re-ranked after digging through guest reviews (see each page's Honest Take).</p>
+  <p class="cap" style="margin:-8px 0 14px;">Where everything nets out among the <strong>finalists</strong> &mdash; re-ranked after digging through guest reviews (see each page's Honest Take). Archived options live on their own pages.</p>
   <p style="margin:0 0 6px;"><strong>Overall best fit</strong></p>
   <ul class="drives" style="grid-template-columns:1fr; margin-bottom:18px;">
     <li><strong>1 &middot; <a href="https://acreresort.com/" target="_blank" rel="noopener">Acre</a></strong> <span class="t">&mdash; farm, gardens, communal house, restaurant on the property, walkable campus; golf &amp; ocean nearby. One check before booking: what events/weddings are on for our week (noise is the #1 guest complaint).</span></li>
     <li><strong>2 &middot; <a href="https://sea-horse-ranch.com/dominican-republic-vacation-rentals/" target="_blank" rel="noopener">Sea Horse Ranch (DR)</a></strong> <span class="t">&mdash; villa + 250-acre campus (horses, biking, tennis, beach club); Cabarete, diving &amp; waterfalls close; 4h nonstop, lowest cost &mdash; and the cleanest guest reviews of any finalist.</span></li>
-    <li><strong>3 &middot; <a href="https://cuixmala.com/" target="_blank" rel="noopener">Cuixmala</a></strong> <span class="t">&mdash; working estate in a nature reserve; hinges on the villa inquiry and the longer trip. Note: casitas sit inland from the famous house, and holiday bookings are non-refundable.</span></li>
-    <li><strong>4 &middot; <a href="https://villasantacruzbaja.com/" target="_blank" rel="noopener">Villa Santa Cruz</a></strong> <span class="t">&mdash; the family-fit Todos Santos pick (TripAdvisor 5.0, #1 in town); beachfront ranch with farm &amp; stables. Paradero and the Kimpton are adults-only.</span></li>
-    <li><strong>5 &middot; <a href="https://www.royalisabela.com/" target="_blank" rel="noopener">Royal Isabela</a></strong> <span class="t">&mdash; estate campus with cliffside golf on the property; no shared house, and no swimmable beach in winter.</span></li>
-    <li><strong>6 &middot; <a href="https://www.rosewoodhotels.com/en/san-miguel-de-allende/residences" target="_blank" rel="noopener">Rosewood San Miguel</a> / the casas</strong> <span class="t">&mdash; walkable-city home base; the risks for the in-laws are 6,200-ft altitude, near-freezing nights and peak-week crowds.</span></li>
-    <li><strong>7 &middot; <a href="https://lunacabo.com/villa/villa-bellissima-pedregal/" target="_blank" rel="noopener">Villa Bellissima</a> / <a href="https://lunacabo.com/villa/casa-brooks-cabo-del-sol/" target="_blank" rel="noopener">Casa Brooks</a></strong> <span class="t">&mdash; big houses in the Cabo golf corridor.</span></li>
+    <li><strong>3 &middot; <a href="https://villasantacruzbaja.com/" target="_blank" rel="noopener">Villa Santa Cruz</a></strong> <span class="t">&mdash; the family-fit Todos Santos pick (TripAdvisor 5.0, #1 in town); beachfront ranch with farm &amp; stables. Paradero and the Kimpton are adults-only.</span></li>
+    <li><strong>4 &middot; Grenada &mdash; <a href="https://www.sixsenses.com/en/hotels-resorts/the-americas/grenada/la-sagesse/" target="_blank" rel="noopener">Six Senses Cliff Retreat</a> or <a href="https://www.calabashhotel.com/" target="_blank" rel="noopener">Calabash</a></strong> <span class="t">&mdash; the Cliff Retreat is the island's one true shared house, but carries the longest caveat list (price, dining, the InterContinental next door); Calabash is the safer, better-value base without the single roof.</span></li>
+    <li><strong>5 &middot; <a href="https://www.playagrandebeachclub.com/" target="_blank" rel="noopener">Playa Grande</a></strong> <span class="t">&mdash; the design pick in the DR; dreamy for 3&ndash;4 nights, possibly confining for eight over a full week.</span></li>
+    <li><strong>6 &middot; <a href="https://lunacabo.com/villa/villa-bellissima-pedregal/" target="_blank" rel="noopener">Villa Bellissima</a> / <a href="https://lunacabo.com/villa/casa-brooks-cabo-del-sol/" target="_blank" rel="noopener">Casa Brooks</a></strong> <span class="t">&mdash; big houses in the Cabo golf corridor; the backup route.</span></li>
   </ul>
   <p style="margin:0 0 6px;"><strong>Closest to Babylonstoren</strong></p>
   <ul class="drives" style="grid-template-columns:1fr; margin-bottom:18px;">
-    <li><strong>1 &middot; <a href="https://cuixmala.com/" target="_blank" rel="noopener">Cuixmala</a></strong> <span class="t">&mdash; working estate, wildlife reserve, farm, conservation, beaches.</span></li>
-    <li><strong>2 &middot; <a href="https://acreresort.com/" target="_blank" rel="noopener">Acre</a></strong> <span class="t">&mdash; farm, gardens, communal spaces, farm-to-table restaurant.</span></li>
-    <li><strong>3 &middot; <a href="https://villasantacruzbaja.com/" target="_blank" rel="noopener">Villa Santa Cruz</a></strong> <span class="t">&mdash; beachfront ranch with gardens, stables &amp; multi-BR villas.</span></li>
-    <li><strong>4 &middot; <a href="https://www.royalisabela.com/" target="_blank" rel="noopener">Royal Isabela</a></strong> <span class="t">&mdash; working farm-estate on cliffs; the largest estate of the group.</span></li>
+    <li><strong>1 &middot; <a href="https://acreresort.com/" target="_blank" rel="noopener">Acre</a></strong> <span class="t">&mdash; farm, gardens, communal spaces, farm-to-table restaurant.</span></li>
+    <li><strong>2 &middot; <a href="https://villasantacruzbaja.com/" target="_blank" rel="noopener">Villa Santa Cruz</a></strong> <span class="t">&mdash; beachfront ranch with gardens, stables &amp; multi-BR villas.</span></li>
+    <li><strong>3 &middot; Grenada as an island</strong> <span class="t">&mdash; the working cocoa &amp; spice estates (Belmont, Gouyave) deliver the estate-as-experience feel as day trips, whichever base we pick.</span></li>
+    <li><strong>4 &middot; <a href="https://www.playagrandebeachclub.com/" target="_blank" rel="noopener">Playa Grande</a></strong> <span class="t">&mdash; storybook curation and an on-site restaurant, though no working farm.</span></li>
     <li><strong>5 &middot; <a href="https://www.paraderohotels.com/" target="_blank" rel="noopener">Paradero</a> / <a href="https://www.ranchopescadero.com/" target="_blank" rel="noopener">Rancho Pescadero</a></strong> <span class="t">&mdash; design hotels built around working gardens (note: both adults-only).</span></li>
-    <li><strong>6 &middot; <a href="https://www.rosewoodhotels.com/en/san-miguel-de-allende/residences" target="_blank" rel="noopener">Rosewood San Miguel</a></strong> <span class="t">&mdash; courtyards, gardens, in-town hotel campus.</span></li>
   </ul>
   <p style="margin:0 0 6px;"><strong>Best home base + surrounding activities</strong></p>
   <ul class="drives" style="grid-template-columns:1fr; margin-bottom:18px;">
-    <li><strong>1 &middot; <a href="https://acreresort.com/" target="_blank" rel="noopener">Acre</a></strong> <span class="t">&mdash; walkable farm campus; golf, surfing, snorkeling, whale watching, two towns ≤20 min.</span></li>
+    <li><strong>1 &middot; <a href="https://acreresort.com/" target="_blank" rel="noopener">Acre</a></strong> <span class="t">&mdash; walkable farm campus; golf, surfing, snorkeling, whale watching, two towns &le;20 min.</span></li>
     <li><strong>2 &middot; <a href="https://sea-horse-ranch.com/dominican-republic-vacation-rentals/" target="_blank" rel="noopener">Sea Horse Ranch</a></strong> <span class="t">&mdash; bikeable community; horses, diving, surfing, waterfalls, Cabarete.</span></li>
-    <li><strong>3 &middot; <a href="https://www.rosewoodhotels.com/en/san-miguel-de-allende/residences" target="_blank" rel="noopener">Rosewood San Miguel</a></strong> <span class="t">&mdash; walk everywhere: restaurants, galleries, caf&eacute;s; wineries, horseback &amp; hiking near.</span></li>
-    <li><strong>4 &middot; <a href="https://cuixmala.com/" target="_blank" rel="noopener">Cuixmala</a></strong> <span class="t">&mdash; safaris, three beaches, lagoon tours &amp; kayaking on the estate itself.</span></li>
-    <li><strong>5 &middot; <a href="https://villasantacruzbaja.com/" target="_blank" rel="noopener">Villa Santa Cruz</a></strong> <span class="t">&mdash; beachfront ranch: stables, farm, bonfires &amp; yoga on-property; family-friendly.</span></li>
-    <li><strong>6 &middot; <a href="https://www.royalisabela.com/" target="_blank" rel="noopener">Royal Isabela</a></strong> <span class="t">&mdash; golf, beaches, surfing, caves, hiking, coffee farms.</span></li>
-    <li><strong>7 &middot; <a href="https://www.playagrandebeachclub.com/" target="_blank" rel="noopener">Playa Grande</a></strong> <span class="t">&mdash; bungalow mini-campus with golf next door and waterfalls nearby.</span></li>
+    <li><strong>3 &middot; <a href="https://villasantacruzbaja.com/" target="_blank" rel="noopener">Villa Santa Cruz</a></strong> <span class="t">&mdash; beachfront ranch: stables, farm, bonfires &amp; yoga on-property; family-friendly.</span></li>
+    <li><strong>4 &middot; <a href="https://www.playagrandebeachclub.com/" target="_blank" rel="noopener">Playa Grande</a></strong> <span class="t">&mdash; bungalow mini-campus with golf next door and waterfalls nearby.</span></li>
+    <li><strong>5 &middot; Grenada bases</strong> <span class="t">&mdash; the island delivers (falls, estates, sailing, sculpture park) but every outing from Six Senses is a 40&ndash;60 min expedition; Calabash sits closer to the action.</span></li>
   </ul>
   <p style="margin:0 0 6px;"><strong>Best golf</strong></p>
   <ul class="drives" style="grid-template-columns:1fr; margin-bottom:18px;">
-    <li><strong>1 &middot; <a href="https://www.royalisabela.com/" target="_blank" rel="noopener">Royal Isabela</a></strong> <span class="t">&mdash; cliffside course on the property.</span></li>
-    <li><strong>2 &middot; <a href="https://lunacabo.com/villa/villa-bellissima-pedregal/" target="_blank" rel="noopener">Villa Bellissima</a> / <a href="https://lunacabo.com/villa/casa-brooks-cabo-del-sol/" target="_blank" rel="noopener">Casa Brooks</a></strong> <span class="t">&mdash; Quivira, Diamante &amp; Cabo del Sol within 0&ndash;30 min.</span></li>
-    <li><strong>3 &middot; <a href="https://www.playagrandebeachclub.com/" target="_blank" rel="noopener">Playa Grande</a></strong> <span class="t">&mdash; the RTJ course next door to the bungalows.</span></li>
-    <li><strong>4 &middot; <a href="https://acreresort.com/" target="_blank" rel="noopener">Acre</a></strong> <span class="t">&mdash; Puerto Los Cabos ~15 min; the rest of Cabo's courses within ~40.</span></li>
-    <li><strong>5 &middot; San Miguel</strong> <span class="t">&mdash; Malanqu&iacute;n ~10 min from town.</span></li>
-    <li><strong>6 &middot; Careyes / Cuixmala</strong> <span class="t">&mdash; El Tamarindo ~40 min.</span></li>
-    <li><strong>7 &middot; Todos Santos</strong> <span class="t">&mdash; Rancho San Lucas &amp; Solmar ~40&ndash;45 min.</span></li>
+    <li><strong>1 &middot; <a href="https://lunacabo.com/villa/villa-bellissima-pedregal/" target="_blank" rel="noopener">Villa Bellissima</a> / <a href="https://lunacabo.com/villa/casa-brooks-cabo-del-sol/" target="_blank" rel="noopener">Casa Brooks</a></strong> <span class="t">&mdash; Quivira, Diamante &amp; Cabo del Sol within 0&ndash;30 min.</span></li>
+    <li><strong>2 &middot; <a href="https://www.playagrandebeachclub.com/" target="_blank" rel="noopener">Playa Grande</a></strong> <span class="t">&mdash; the RTJ course next door to the bungalows.</span></li>
+    <li><strong>3 &middot; <a href="https://acreresort.com/" target="_blank" rel="noopener">Acre</a></strong> <span class="t">&mdash; Puerto Los Cabos ~15 min; the rest of Cabo's courses within ~40.</span></li>
+    <li><strong>4 &middot; Sea Horse Ranch</strong> <span class="t">&mdash; Playa Dorada ~35 min; Playa Grande ~1h.</span></li>
+    <li><strong>5 &middot; Todos Santos</strong> <span class="t">&mdash; Rancho San Lucas &amp; Solmar ~40&ndash;45 min.</span></li>
+    <li><strong>6 &middot; Grenada</strong> <span class="t">&mdash; the vintage 9-hole only; the weak spot.</span></li>
   </ul>
   <p style="margin:0 0 6px;"><strong>Resort feel</strong> <span class="t">(for the resort-averse)</span></p>
   <ul class="drives" style="grid-template-columns:1fr; margin-bottom:40px;">
-    <li><strong>Not resort-like at all</strong> <span class="t">&mdash; Cuixmala (private estate in a reserve) &middot; Sea Horse Ranch (residential community) &middot; Playa Grande (nine bungalows) &middot; Acre (boutique working farm) &middot; Paradero &amp; Villa Santa Cruz (small farm hotels) &middot; the San Miguel casas (private houses in town).</span></li>
-    <li><strong>Some resort feel</strong> <span class="t">&mdash; Rancho Pescadero (now a Kimpton, hotel-scale) &middot; Rosewood San Miguel (full hotel service, though in a real town) &middot; Royal Isabela (quiet estate with golf-club polish).</span></li>
+    <li><strong>Not resort-like at all</strong> <span class="t">&mdash; Sea Horse Ranch (residential community) &middot; Playa Grande (nine bungalows) &middot; Acre (boutique working farm) &middot; Villa Santa Cruz &amp; Paradero (small farm hotels).</span></li>
+    <li><strong>Some resort feel</strong> <span class="t">&mdash; Rancho Pescadero (now a Kimpton, hotel-scale).</span></li>
     <li><strong>True resorts</strong> <span class="t">&mdash; Six Senses La Sagesse (buggies, spa programming &mdash; the Cliff Retreat is a house on a resort campus) &middot; Calabash &middot; the Cabo corridor villas (gated hotel-corridor communities).</span></li>
   </ul>
   <p style="margin:0 0 6px;"><strong>Purely on guest reviews</strong></p>
   <ul class="drives" style="grid-template-columns:1fr; margin-bottom:40px;">
     <li><strong>1 &middot; <a href="https://villasantacruzbaja.com/" target="_blank" rel="noopener">Villa Santa Cruz</a></strong> <span class="t">&mdash; TripAdvisor 5.0, #1 in Todos Santos; Booking 9.8.</span></li>
-    <li><strong>2 &middot; <a href="https://www.royalisabela.com/" target="_blank" rel="noopener">Royal Isabela</a></strong> <span class="t">&mdash; 4.6 across 466 reviews &mdash; the most robust review base of the finalists.</span></li>
+    <li><strong>2 &middot; <a href="https://www.calabashhotel.com/" target="_blank" rel="noopener">Calabash</a></strong> <span class="t">&mdash; 4.9, the quiet Grenada winner; named-staff service, 10 min from the airport.</span></li>
     <li><strong>3 &middot; <a href="https://acreresort.com/" target="_blank" rel="noopener">Acre</a></strong> <span class="t">&mdash; restaurant 4.6 across 1,800+ reviews; strong property scores, with event-noise the recurring gripe.</span></li>
     <li><strong>4 &middot; <a href="https://sea-horse-ranch.com/dominican-republic-vacation-rentals/" target="_blank" rel="noopener">Sea Horse Ranch</a></strong> <span class="t">&mdash; glowing and complaint-free, but a thin base (74 reviews; villas vary by owner).</span></li>
-    <li><strong>5 &middot; <a href="https://cuixmala.com/" target="_blank" rel="noopener">Cuixmala</a></strong> <span class="t">&mdash; adored (&ldquo;ruined all other vacations&rdquo;) but only ~89 reviews, with value &amp; policy gripes.</span></li>
-    <li><strong>6 &middot; <a href="https://www.sixsenses.com/en/hotels-resorts/the-americas/grenada/la-sagesse/" target="_blank" rel="noopener">Six Senses La Sagesse</a></strong> <span class="t">&mdash; 4.5 headline, but ~14% of reviews are 3&#9733; or below and the misses are severe.</span></li>
-    <li><strong>7 &middot; <a href="https://www.rosewoodhotels.com/en/san-miguel-de-allende/residences" target="_blank" rel="noopener">Rosewood San Miguel</a></strong> <span class="t">&mdash; 4.0, ranked ~#15 in its own town; the staffed casas review better.</span></li>
-    <li><strong>8 &middot; <a href="https://www.paraderohotels.com/" target="_blank" rel="noopener">Paradero</a></strong> <span class="t">&mdash; design praise undercut by recurring service-chaos reviews; adults-only anyway.</span></li>
+    <li><strong>5 &middot; <a href="https://www.sixsenses.com/en/hotels-resorts/the-americas/grenada/la-sagesse/" target="_blank" rel="noopener">Six Senses La Sagesse</a></strong> <span class="t">&mdash; 4.6 across 184, but the reviews are bimodal and the misses are severe.</span></li>
+    <li><strong>6 &middot; <a href="https://www.paraderohotels.com/" target="_blank" rel="noopener">Paradero</a></strong> <span class="t">&mdash; design praise undercut by recurring service-chaos reviews; adults-only anyway.</span></li>
   </ul>
 
   <h2 class="section">Also on the Radar</h2>
@@ -408,16 +371,16 @@
   </header>
   <div class="pagenav">
     <a data-page="page-overview">Overview</a>
-    <span class="navgroup">Pacific</span>
-    <a data-page="page-careyes" class="active">Careyes / Cuixmala</a>
+    <span class="navgroup">Finalists</span>
     <a data-page="page-cabos">Los Cabos</a>
     <a data-page="page-todossantos">Todos Santos</a>
-    <a data-page="page-sanmiguel">San Miguel de Allende</a>
-    <span class="navrowbreak"></span>
-    <span class="navgroup">Caribbean</span>
-    <a data-page="page-pr">Puerto Rico</a>
     <a data-page="page-jarabacoa">Dominican Republic</a>
     <a data-page="page-grenada">Grenada</a>
+    <span class="navrowbreak"></span>
+    <span class="navgroup">Archived</span>
+    <a data-page="page-careyes" class="active">Careyes / Cuixmala</a>
+    <a data-page="page-sanmiguel">San Miguel de Allende</a>
+    <a data-page="page-pr">Puerto Rico</a>
   </div>
 
   <div class="intro">
@@ -548,16 +511,16 @@
   </header>
   <div class="pagenav">
     <a data-page="page-overview">Overview</a>
-    <span class="navgroup">Pacific</span>
-    <a data-page="page-careyes">Careyes / Cuixmala</a>
+    <span class="navgroup">Finalists</span>
     <a data-page="page-cabos" class="active">Los Cabos</a>
     <a data-page="page-todossantos">Todos Santos</a>
-    <a data-page="page-sanmiguel">San Miguel de Allende</a>
-    <span class="navrowbreak"></span>
-    <span class="navgroup">Caribbean</span>
-    <a data-page="page-pr">Puerto Rico</a>
     <a data-page="page-jarabacoa">Dominican Republic</a>
     <a data-page="page-grenada">Grenada</a>
+    <span class="navrowbreak"></span>
+    <span class="navgroup">Archived</span>
+    <a data-page="page-careyes">Careyes / Cuixmala</a>
+    <a data-page="page-sanmiguel">San Miguel de Allende</a>
+    <a data-page="page-pr">Puerto Rico</a>
   </div>
 
   <div class="intro">
@@ -614,6 +577,19 @@
     <li><strong><a href="https://lunacabo.com/services/villas/" target="_blank" rel="noopener">Luna Cabo</a></strong> <span class="t">&mdash; dozens more villas; "from" rates are base-season &mdash; the New Year's week runs higher. Note: these sit in gated hotel-corridor communities &mdash; the most resort-flavored route in Cabo.</span></li>
   </ul>
 
+  <h2 class="section">Fresh Food &mdash; with links</h2>
+  <p class="cap" style="margin:-6px 0 12px;"><strong>The food take:</strong> the strongest restaurant scene of the finalists, by a lot &mdash; <a href="https://www.flora-farms.com/" target="_blank" rel="noopener">Flora Farms</a> and Acre are both Michelin-recommended working farms, Los Tamarindos adds a 19th-century farm with cooking classes, and good wine lists are everywhere, fed by Baja’s Valle de Guadalupe. The honest caveat: it’s an international, chef-driven scene more than a deep local food culture &mdash; much is trucked in, and prices run American.</p>
+  <ul class="drives" style="grid-template-columns:1fr;">
+    <li><strong>Fish (daily, local):</strong> <span class="t">Cabo is a top sportfishing port where the Sea of Cortez meets the Pacific &mdash; boats land the catch at Puerto Los Cabos daily. December stars: <strong>yellowfin tuna &amp; wahoo</strong>; also dorado (past its fall peak) and <strong>sierra</strong> (the winter ceviche/taco fish), snapper &amp; cabrilla. Buy at <a href="https://www.loscabosguide.com/fish-markets-pescaderia-seafood/" target="_blank" rel="noopener">Pescader&iacute;a Cabo Mar</a>; <a href="https://fishingbooker.com/blog/cabo-fishing-seasons/" target="_blank" rel="noopener">Dec fishing calendar</a>.</span></li>
+    <li><strong>Meat:</strong> <span class="t">a real Sierra ranchero culture around Santiago &amp; Miraflores &mdash; ranch beef, cabrito/goat, carnitas &amp; artisanal cheeses; <a href="https://matadornetwork.com/read/rancho-cacachilas/" target="_blank" rel="noopener">Rancho Cacachilas</a> is a visitable working ranch.</span></li>
+    <li><strong>Fruit &amp; produce:</strong> <span class="t">Los Cabos is Mexico's biggest organic grower (for local eating, not export); <a href="https://tendenciaelartedeviajar.com/en/2019/04/tendencia-en/the-baja-california-sur-flavors-in-miraflores/" target="_blank" rel="noopener">Miraflores</a> is the organic capital (~45 min); <a href="https://mexiconewsdaily.com/food/why-flora-farms-is-baja-california-surs-premier-farm-to-table-destination/" target="_blank" rel="noopener">Flora Farms</a> is minutes from Acre.</span></li>
+    <li><strong>At Acre:</strong> <span class="t">an on-site working organic farm (60+ items) feeds a <a href="https://acreresort.com/restaurant/" target="_blank" rel="noopener">Michelin Green Star restaurant</a> &mdash; the strongest eat-from-the-farm story of the finalists.</span></li>
+  </ul>
+  <h2 class="section">Hikes &mdash; with links</h2>
+  <ul class="drives" style="grid-template-columns:1fr;">
+    <li><strong>Fox Canyon / Ca&ntilde;&oacute;n de la Zorra &rarr; Sol de Mayo waterfall</strong> <span class="t">&mdash; easy ~1h canyon walk to a swimmable waterfall; family-friendly; ~1h drive then dirt road. <a href="https://www.alltrails.com/trail/mexico/baja-california-sur/canon-de-la-zorra" target="_blank" rel="noopener">AllTrails</a></span></li>
+    <li><strong>Sierra de la Laguna</strong> <span class="t">&mdash; the range behind the East Cape (UNESCO biosphere); serious multi-day/guided backpacking from the Santiago side &mdash; Fox Canyon is the accessible taste. <a href="https://www.alltrails.com/parks/mexico/baja-california-sur/reserva-de-la-biosfera-sierra-la-laguna" target="_blank" rel="noopener">AllTrails</a></span></li>
+  </ul>
   <h2 class="section">Things to Do</h2>
   <div class="compare-wrap">
     <table class="compare">
@@ -654,7 +630,21 @@
   </div>
 
 
-  <h2 class="section">Activity Guide &mdash; with links</h2>
+    <h2 class="section">The Adventure Checklist &mdash; with links</h2>
+  <p class="cap" style="margin:-8px 0 10px;">The Cabo week, itemized &mdash; December is peak season for the water:</p>
+  <ul class="drives">
+    <li><strong><a href="https://cabotrek.com/whale-watching/" target="_blank" rel="noopener">Whale watching</a></strong> <span class="t">&mdash; humpbacks at their December peak, biologist-led</span></li>
+    <li><strong><a href="https://www.eastcapeexplorers.com/tours/whale-shark-snorkel-tour/" target="_blank" rel="noopener">Whale sharks</a></strong> <span class="t">&mdash; swim alongside them at La Paz; full day</span></li>
+    <li><strong><a href="https://www.cabopulmodivers.com/?lang=en" target="_blank" rel="noopener">Snorkel &amp; scuba</a></strong> <span class="t">&mdash; Cabo Pulmo, the Sea of Cortez’s healthiest reef; Chileno Bay closer in</span></li>
+    <li><strong><a href="https://mikedoylesurfschool.com/" target="_blank" rel="noopener">Surfing</a></strong> <span class="t">&mdash; Costa Azul lessons, ~15 min</span></li>
+    <li><strong><a href="https://discoverbaja.com/2025/02/04/canon-de-la-zorra-waterfall/" target="_blank" rel="noopener">Waterfall hike</a></strong> <span class="t">&mdash; Ca&ntilde;&oacute;n de la Zorra to a swimmable fall</span></li>
+    <li><strong><a href="https://wildcanyon.com.mx/" target="_blank" rel="noopener">Ziplines</a></strong> <span class="t">&mdash; Wild Canyon over the arroyo, ~30 min</span></li>
+    <li><strong><a href="https://acreresort.com/restaurant/" target="_blank" rel="noopener">Farm dinners</a></strong> <span class="t">&mdash; Acre’s own tables, plus Flora Farms up the road</span></li>
+    <li><strong><a href="https://lostamarindos.mx/cooking-classes/" target="_blank" rel="noopener">Cooking classes</a></strong> <span class="t">&mdash; Los Tamarindos’ farm kitchen; book early for our week</span></li>
+    <li><strong><a href="https://www.birdingloscabostours.com/loscabos" target="_blank" rel="noopener">Bird estuary</a></strong> <span class="t">&mdash; Estero San Jos&eacute;, flat and easy, ~10 min</span></li>
+    <li><strong><a href="https://www.artcabo.com/san-jose-del-cabo-art-walk.html" target="_blank" rel="noopener">Art Walk</a></strong> <span class="t">&mdash; San Jos&eacute; del Cabo Thursdays; Dec 31 falls on one</span></li>
+  </ul>
+<h2 class="section">Activity Guide &mdash; with links</h2>
   <ul class="drives" style="grid-template-columns:1fr;">
     <li><strong>Scuba:</strong> <span class="t"><a href="https://www.eastcapeexplorers.com/" target="_blank" rel="noopener">East Cape Explorers</a> &amp; <a href="https://www.sanjosedivers.com/" target="_blank" rel="noopener">San Jos&eacute; Divers</a> ~15 min; <a href="https://www.cabopulmodivers.com/?lang=en" target="_blank" rel="noopener">Cabo Pulmo</a> UNESCO reef as a guided full day (~2h); <a href="https://www.diveninjaexpeditions.com/" target="_blank" rel="noopener">Dive Ninja</a> in Cabo ~40 min.</span></li>
     <li><strong>Adventure:</strong> <span class="t"><a href="https://discoverbaja.com/2025/02/04/canon-de-la-zorra-waterfall/" target="_blank" rel="noopener">Ca&ntilde;&oacute;n de la Zorra / Sol de Mayo waterfall</a> swim (~1&frac14;h, a scramble), <a href="https://wildcanyon.com.mx/" target="_blank" rel="noopener">Wild Canyon ziplines</a> ~30 min, <a href="https://mikedoylesurfschool.com/" target="_blank" rel="noopener">Costa Azul surf lessons</a> ~15 min, whale watching at peak (<a href="https://cabotrek.com/whale-watching/" target="_blank" rel="noopener">Cabo Trek</a>, marine-biologist led), <a href="https://www.eastcapeexplorers.com/tours/whale-shark-snorkel-tour/" target="_blank" rel="noopener">La Paz whale sharks</a> (full day). No whitewater in Baja.</span></li>
@@ -687,16 +677,16 @@
   </header>
   <div class="pagenav">
     <a data-page="page-overview">Overview</a>
-    <span class="navgroup">Pacific</span>
-    <a data-page="page-careyes">Careyes / Cuixmala</a>
+    <span class="navgroup">Finalists</span>
     <a data-page="page-cabos">Los Cabos</a>
     <a data-page="page-todossantos" class="active">Todos Santos</a>
-    <a data-page="page-sanmiguel">San Miguel de Allende</a>
-    <span class="navrowbreak"></span>
-    <span class="navgroup">Caribbean</span>
-    <a data-page="page-pr">Puerto Rico</a>
     <a data-page="page-jarabacoa">Dominican Republic</a>
     <a data-page="page-grenada">Grenada</a>
+    <span class="navrowbreak"></span>
+    <span class="navgroup">Archived</span>
+    <a data-page="page-careyes">Careyes / Cuixmala</a>
+    <a data-page="page-sanmiguel">San Miguel de Allende</a>
+    <a data-page="page-pr">Puerto Rico</a>
   </div>
 
   <div class="intro">
@@ -748,6 +738,19 @@
   <h2 class="section">More Options</h2>
   <p class="cap" style="font-style:italic;"><strong>Alternatives:</strong> <a href="https://www.paraderohotels.com/" target="_blank" rel="noopener">Paradero</a> &mdash; striking design-farm hotel with 20+ bundled activities, but adults-only (18+), meals extra, and recurring service complaints at capacity &mdash; demoted after the review research. And <a href="https://sancristobalbaja.com/" target="_blank" rel="noopener">Hotel San Crist&oacute;bal</a> &mdash; boho beach hotel on the sand, understated and the best value up here (~$300&ndash;$600/night per room); book a block of rooms for a relaxed base.</p>
 
+  <h2 class="section">Fresh Food &mdash; with links</h2>
+  <ul class="drives" style="grid-template-columns:1fr;">
+    <li><strong>Fish (daily panga catch):</strong> <span class="t">the local fleet lands at <strong>Punta Lobos</strong> beach &mdash; genuinely daily-caught, not imported. December: <strong>dorado</strong> strong, <strong>striped marlin</strong> at its peak, and <strong>sierra</strong> (the winter ceviche/taco fish); tuna &amp; yellowtail lighter. Try Siempre Viva, Barracuda Cantina or <a href="https://tritoncollective.com/hierbabuena-el-pescadero-farm-to-table-dining-guide-2/" target="_blank" rel="noopener">Hierbabuena</a>.</span></li>
+    <li><strong>Meat:</strong> <span class="t">modest ranch culture; <a href="https://www.pastemagazine.com/travel/mexico/rancho-pescadero-baja-california" target="_blank" rel="noopener">Rancho Pescadero</a> grills organic beef &amp; poultry (90% sourced within 50 miles); Paradero sources regional livestock.</span></li>
+    <li><strong>Fruit &amp; produce:</strong> <span class="t">El Pescadero is a farming belt (organic basil, herbs, poblano chiles, heirloom tomatoes). Mango is the icon but it's summer; <strong>December is prime cool-season</strong> (tomatoes, greens, citrus, chiles). The <a href="https://www.bajaproperties.com/blog/todos-santos-organic-market/" target="_blank" rel="noopener">Todos Santos organic market</a> runs in winter.</span></li>
+    <li><strong>At the property:</strong> <span class="t"><a href="https://www.pastemagazine.com/travel/mexico/rancho-pescadero-baja-california" target="_blank" rel="noopener">Rancho Pescadero</a> (9 gardens, citrus orchard, two farms), <a href="https://www.forbes.com/sites/keylavasconcellos/2024/11/27/paradero-todos-santos-from-soil-to-soul/" target="_blank" rel="noopener">Paradero</a> and Villa Santa Cruz all grow their own.</span></li>
+  </ul>
+  <h2 class="section">Hikes &mdash; with links</h2>
+  <ul class="drives" style="grid-template-columns:1fr;">
+    <li><strong>Sierra de la Laguna &mdash; Ca&ntilde;&oacute;n San Dionisio</strong> <span class="t">&mdash; the classic summit route into a high pine-oak "sky island"; hard, often multi-day, guided; trailhead ~1.5&ndash;2h drive (Santiago side). <a href="https://www.alltrails.com/trail/mexico/baja-california-sur/canon-de-san-dionisio-cumbre-sierra-la-laguna" target="_blank" rel="noopener">AllTrails</a></span></li>
+    <li><strong>Punta Lobos</strong> <span class="t">&mdash; easy flat coastal walk; watch the pangas land; family-friendly.</span></li>
+    <li><strong>La Paz / Isla Esp&iacute;ritu Santo</strong> <span class="t">&mdash; day trip (~1h to La Paz + boat): snorkel with sea lions and (Dec peak) whale sharks. <a href="https://www.alltrails.com/mexico/baja-california-sur/todos-santos" target="_blank" rel="noopener">more trails</a></span></li>
+  </ul>
   <h2 class="section">Things to Do</h2>
   <div class="compare-wrap">
     <table class="compare">
@@ -826,16 +829,16 @@
   </header>
   <div class="pagenav">
     <a data-page="page-overview">Overview</a>
-    <span class="navgroup">Pacific</span>
-    <a data-page="page-careyes">Careyes / Cuixmala</a>
+    <span class="navgroup">Finalists</span>
     <a data-page="page-cabos">Los Cabos</a>
     <a data-page="page-todossantos">Todos Santos</a>
-    <a data-page="page-sanmiguel" class="active">San Miguel de Allende</a>
-    <span class="navrowbreak"></span>
-    <span class="navgroup">Caribbean</span>
-    <a data-page="page-pr">Puerto Rico</a>
     <a data-page="page-jarabacoa">Dominican Republic</a>
     <a data-page="page-grenada">Grenada</a>
+    <span class="navrowbreak"></span>
+    <span class="navgroup">Archived</span>
+    <a data-page="page-careyes">Careyes / Cuixmala</a>
+    <a data-page="page-sanmiguel" class="active">San Miguel de Allende</a>
+    <a data-page="page-pr">Puerto Rico</a>
   </div>
 
   <div class="intro">
@@ -967,16 +970,16 @@
   </header>
   <div class="pagenav">
     <a data-page="page-overview">Overview</a>
-    <span class="navgroup">Pacific</span>
-    <a data-page="page-careyes">Careyes / Cuixmala</a>
+    <span class="navgroup">Finalists</span>
     <a data-page="page-cabos">Los Cabos</a>
     <a data-page="page-todossantos">Todos Santos</a>
-    <a data-page="page-sanmiguel">San Miguel de Allende</a>
-    <span class="navrowbreak"></span>
-    <span class="navgroup">Caribbean</span>
-    <a data-page="page-pr">Puerto Rico</a>
     <a data-page="page-jarabacoa" class="active">Dominican Republic</a>
     <a data-page="page-grenada">Grenada</a>
+    <span class="navrowbreak"></span>
+    <span class="navgroup">Archived</span>
+    <a data-page="page-careyes">Careyes / Cuixmala</a>
+    <a data-page="page-sanmiguel">San Miguel de Allende</a>
+    <a data-page="page-pr">Puerto Rico</a>
   </div>
 
   <div class="intro">
@@ -1042,6 +1045,21 @@
     <div class="meta">5 BR · classic Caribbean layout · private pool · gardens · walk to the beach club</div>
     <p class="desc">A relaxed five-bedroom in the same community &mdash; a touch more value. <a href="https://www.vrbo.com/4657396ha" target="_blank" rel="noopener">A 5BR at Sea Horse Ranch</a> &middot; <a href="https://isleblue.co/villas/vacation-rentals/caribbean/dominican-republic/cabarete/villa-sea-horse-ranch-2" target="_blank" rel="noopener">more villas</a></p>
   </div>
+  <h2 class="section">Fresh Food &mdash; with links</h2>
+  <p class="cap" style="margin:-6px 0 12px;"><strong>The food take:</strong> still excellent, but chef-dependent. The raw material is great &mdash; mahi, snapper and lobster off the Sos&uacute;a boats, tropical fruit, single-origin cacao and coffee, and proper Dominican cooking (<em>la bandera</em>, sancocho, chivo guisado). The restaurant scene is a kitesurf-town scene &mdash; a few genuine standouts (<a href="https://casaveintiuno.com/" target="_blank" rel="noopener">Casa Veintiuno</a> in Sos&uacute;a, arguably the north coast’s best, plus Bliss, Tuv&aacute; and Castle Club’s hosted dinners) surrounded by beach-casual. The best meals of the week would be the in-villa chefs at Sea Horse Ranch &mdash; and upscale spots lean on imports, so the move is always asking for <em>pescado del d&iacute;a</em>.</p>
+  <ul class="drives" style="grid-template-columns:1fr;">
+    <li><strong>Fish:</strong> <span class="t">offshore mahi/dorado, wahoo, tuna &amp; marlin; reef <strong>red snapper (chillo)</strong> &amp; grouper (mero); plus <strong>lobster</strong> and <strong>conch (lamb&iacute;)</strong>. Sos&uacute;a still has an artisanal fleet you can buy off the beach. <strong>Honest caveat:</strong> December is a good-not-peak offshore window and many restaurants import fish &mdash; ask for <em>pescado del d&iacute;a</em>; the <a href="https://sea-horse-ranch.com/dominican-republic-villas-private-chef/" target="_blank" rel="noopener">Sea Horse Ranch</a> Beach Club is noted for local fish. <a href="https://pasodominican.com/fishing-sosua-complete-guide/" target="_blank" rel="noopener">north-coast fish guide</a></span></li>
+    <li><strong>Meat:</strong> <span class="t">Dominican classics &mdash; pork (chicharr&oacute;n), chicken (pollo guisado), beef, and <strong>goat (chivo guisado picante)</strong>; the <em>la bandera</em> plate and <em>sancocho</em> stew.</span></li>
+    <li><strong>Fruit:</strong> <span class="t">tropical abundance &mdash; papaya (lechosa), pineapple, passion fruit (chinola), guan&aacute;bana, citrus (mango is summer), as fresh <em>batidas</em>; single-origin coffee &amp; cacao inland.</span></li>
+    <li><strong>At the property:</strong> <span class="t">Sea Horse Ranch's <strong>in-villa private chefs</strong> get glowing reviews (guests name "chef Wilfredo"); off-property, the hillside <a href="https://stayincabarete.com/the-6-best-high-end-restaurants-cabarete-and-sosua-area/" target="_blank" rel="noopener">Castle Club</a> private dinner and <a href="https://casaveintiuno.com/" target="_blank" rel="noopener">Casa Veintiuno</a> lead the scene.</span></li>
+  </ul>
+  <h2 class="section">Hikes &mdash; with links</h2>
+  <ul class="drives" style="grid-template-columns:1fr;">
+    <li><strong>27 Charcos de Damajagua</strong> <span class="t">&mdash; guided waterfall canyoning (jumps &amp; slides); choose the 7, 12 or all-27 falls (7 = family/moderate); ~45 min. <a href="https://27waterfalls.org/" target="_blank" rel="noopener">27waterfalls.org</a></span></li>
+    <li><strong>El Choco caves (Cabarete)</strong> <span class="t">&mdash; half-day guided caves incl. the Crystal Cave with a freshwater swim; ~10&ndash;15 min; family-friendly. <a href="https://www.explore-share.com/trip/half-day-guided-tour-caves-cabarete-el-choco-national-park/" target="_blank" rel="noopener">details</a></span></li>
+    <li><strong>Mount Isabel de Torres</strong> <span class="t">&mdash; the easy option: a cable car to the Christ statue &amp; botanical gardens over Puerto Plata; ~30&ndash;40 min. <a href="https://travel.usnews.com/Puerto_Plata_Dominican_Republic/Things_To_Do/Mount_Isabel_de_Torres_22239/" target="_blank" rel="noopener">details</a></span></li>
+    <li><strong>Pico Duarte</strong> <span class="t">&mdash; the Caribbean's highest peak: a strenuous <strong>2&ndash;3 day guided trek</strong> from La Ci&eacute;naga (not a day hike; the ~2h is only the drive to the region). <a href="https://www.alltrails.com/trail/dominican-republic/la-vega/pico-duarte-via-la-cienaga-ruta-completa" target="_blank" rel="noopener">AllTrails</a></span></li>
+  </ul>
   <h2 class="section">Things to Do</h2>
   <div class="compare-wrap">
     <table class="compare">
@@ -1086,6 +1104,20 @@
       </tbody>
     </table>
   </div>
+  <h2 class="section">The Adventure Checklist &mdash; with links</h2>
+  <p class="cap" style="margin:-8px 0 10px;">Why the DR is the best pure-adventure pick on the list &mdash; every one of these is real here, most within an hour:</p>
+  <ul class="drives">
+    <li><strong><a href="https://27waterfalls.org/" target="_blank" rel="noopener">Damajagua waterfalls</a></strong> <span class="t">&mdash; the famous 27 falls; ~45 min</span></li>
+    <li><strong><a href="https://www.iguanamama.com/" target="_blank" rel="noopener">River canyoning</a></strong> <span class="t">&mdash; jumps &amp; slides, guided with Cabarete pickup</span></li>
+    <li><strong><a href="https://www.ranchobaiguate.com/" target="_blank" rel="noopener">Whitewater rafting</a></strong> <span class="t">&mdash; R&iacute;o Yaque del Norte, the Caribbean's only; day trip</span></li>
+    <li><strong><a href="https://www.alltrails.com/trail/dominican-republic/la-vega/pico-duarte-via-la-cienaga-ruta-completa" target="_blank" rel="noopener">Pico Duarte</a></strong> <span class="t">&mdash; the Caribbean's highest peak; 2&ndash;3 day guided trek</span></li>
+    <li><strong><a href="https://www.explore-share.com/trip/half-day-guided-tour-caves-cabarete-el-choco-national-park/" target="_blank" rel="noopener">Rainforest</a></strong> <span class="t">&mdash; El Choco National Park walks; ~15 min</span></li>
+    <li><strong><a href="https://sea-horse-ranch.com/amenities/equestrian-center-sea-horse-ranch/" target="_blank" rel="noopener">Horseback</a></strong> <span class="t">&mdash; beach rides from the Ranch's equestrian center</span></li>
+    <li><strong><a href="https://www.swellsurfcamp.com/" target="_blank" rel="noopener">Surfing</a></strong> <span class="t">&mdash; Playa Encuentro lessons; ~10 min</span></li>
+    <li><strong><a href="https://laureleastman.com/" target="_blank" rel="noopener">Kiteboarding</a></strong> <span class="t">&mdash; Cabarete is the Caribbean's kite capital</span></li>
+    <li><strong><a href="https://lagunadudu.com/" target="_blank" rel="noopener">Caves</a></strong> <span class="t">&mdash; Dud&uacute; cenote + El Choco's crystal cave</span></li>
+    <li><strong><a href="https://sosuadivingcenter.com/about-us/" target="_blank" rel="noopener">Snorkeling</a></strong> <span class="t">&mdash; Sos&uacute;a Bay's calm reefs; ~15 min</span></li>
+  </ul>
   <p class="intro" style="margin:0 0 8px;"><strong>Easy add-ons for the week:</strong> private-chef dinners, whitewater rafting, waterfall adventures, surfing lessons, horseback riding on the beach, and in-villa massages.</p>
   <p class="cap">Rough all-in for eight (excl. flights): ~$20&ndash;35k &mdash; the gentlest all-in of the finalists, with plenty of room for private experiences.</p>
 
@@ -1122,16 +1154,16 @@
   </header>
   <div class="pagenav">
     <a data-page="page-overview">Overview</a>
-    <span class="navgroup">Pacific</span>
-    <a data-page="page-careyes">Careyes / Cuixmala</a>
+    <span class="navgroup">Finalists</span>
     <a data-page="page-cabos">Los Cabos</a>
     <a data-page="page-todossantos">Todos Santos</a>
-    <a data-page="page-sanmiguel">San Miguel de Allende</a>
-    <span class="navrowbreak"></span>
-    <span class="navgroup">Caribbean</span>
-    <a data-page="page-pr" class="active">Puerto Rico</a>
     <a data-page="page-jarabacoa">Dominican Republic</a>
     <a data-page="page-grenada">Grenada</a>
+    <span class="navrowbreak"></span>
+    <span class="navgroup">Archived</span>
+    <a data-page="page-careyes">Careyes / Cuixmala</a>
+    <a data-page="page-sanmiguel">San Miguel de Allende</a>
+    <a data-page="page-pr" class="active">Puerto Rico</a>
   </div>
   <div class="intro">
     <p><strong>The vibe:</strong> the easy, no-passport trip that still delivers a working farm-estate: <strong>Royal Isabela</strong> &mdash; casitas with plunge pools on 200-ft Atlantic cliffs, a restaurant fed by the estate's own farm, and an oceanfront course. ~4h nonstop, then a ~1&frac12;h drive.</p>
@@ -1245,26 +1277,26 @@
   </header>
   <div class="pagenav">
     <a data-page="page-overview">Overview</a>
-    <span class="navgroup">Pacific</span>
-    <a data-page="page-careyes">Careyes / Cuixmala</a>
+    <span class="navgroup">Finalists</span>
     <a data-page="page-cabos">Los Cabos</a>
     <a data-page="page-todossantos">Todos Santos</a>
-    <a data-page="page-sanmiguel">San Miguel de Allende</a>
-    <span class="navrowbreak"></span>
-    <span class="navgroup">Caribbean</span>
-    <a data-page="page-pr">Puerto Rico</a>
     <a data-page="page-jarabacoa">Dominican Republic</a>
     <a data-page="page-grenada" class="active">Grenada</a>
+    <span class="navrowbreak"></span>
+    <span class="navgroup">Archived</span>
+    <a data-page="page-careyes">Careyes / Cuixmala</a>
+    <a data-page="page-sanmiguel">San Miguel de Allende</a>
+    <a data-page="page-pr">Puerto Rico</a>
   </div>
   <div class="intro">
-    <p><strong>The vibe:</strong> the "Spice Island" &mdash; base at Six Senses La Sagesse on the calm southern beaches and fill the days with locally-owned cocoa &amp; spice estates, rainforest waterfalls and reefs. A real working-farm island, off the mainstream track; ~6h from Boston, usually one stop.</p>
+    <p><strong>The vibe:</strong> the "Spice Island" &mdash; base at Six Senses La Sagesse on the calm southern beaches and fill the days with locally-owned cocoa &amp; spice estates, rainforest waterfalls and reefs. A real working-farm island, off the mainstream track; ~4h50 <strong>nonstop from JFK</strong> (JetBlue year-round, plus Caribbean Airlines; note JetBlue discontinued the Boston nonstop in 2025, so Boston means a connection &mdash; or the gather-in-NYC plan): <a href="https://www.google.com/travel/flights?q=Flights%20from%20JFK%20to%20GND%20on%202026-12-25%20through%202027-01-02" target="_blank" rel="noopener">JFK&rarr;GND Dec 25 &rarr; Jan 2 on Google Flights</a>.</p>
     <p class="cap"><strong>Top stay:</strong> <a href="https://www.sixsenses.com/en/hotels-resorts/the-americas/grenada/la-sagesse/" target="_blank" rel="noopener">Six Senses La Sagesse</a> &mdash; the 4-bedroom Cliff Retreat.</p>
     <p class="cap"><strong>Further reading:</strong> <a href="https://www.sixsenses.com/en/hotels-resorts/the-americas/grenada/la-sagesse/" target="_blank" rel="noopener">Six Senses La Sagesse</a> &middot; <a href="https://belmontestategrenada.com/" target="_blank" rel="noopener">Belmont Estate agritourism</a></p>
     <ul class="drives" style="grid-template-columns:1fr; margin-top:4px;">
       <li><strong>One house for everyone?</strong> <span class="t">Yes, one &mdash; Six Senses' 4-bedroom Cliff Retreat (officially 8 adults + 2 kids &mdash; confirm our 8 in writing) is a true communal house on the resort campus, ~$69k for 6 nights.</span></li>
       <li><strong>Golf?</strong> <span class="t">Weak &mdash; only the vintage 9-hole ~30 min; no 18-hole on the island &#10007;</span></li>
       <li><strong>Getting around?</strong> <span class="t">Six Senses is hilly with buggy service between suites, beaches and restaurants.</span></li>
-      <li><strong>Biggest negatives?</strong> <span class="t">Hotel construction next door, no swimmable beach at the resort, and shaky new-resort service &mdash; at ~$69k.</span></li>
+      <li><strong>Biggest negatives?</strong> <span class="t">A 120-room InterContinental opening directly next door in Nov 2026, no swimmable beach at the resort, pricey hit-or-miss dining, and shaky new-resort service &mdash; at ~$69k plus per-person charges.</span></li>
     </ul>
   </div>
   <h2 class="section">Where We Could Stay</h2>
@@ -1273,6 +1305,40 @@
     <div class="meta">Six Senses' Caribbean debut (2024) · pool suites ~592 sq ft + a 484 sq ft terrace &amp; private plunge pool, plus 1&ndash;4BR villas · organic garden &amp; farm-to-table · spa · two beaches (St. David's, SE Grenada) · a true resort campus</div>
     <p class="desc">The most polished base on the island &mdash; and the one Grenada option that nails the home-base brief: the Four Bedroom Cliff Retreat (5,812 sq ft, sleeps 10, 270&deg; view) is a true communal house on the campus, quoted for our dates at $69,078 / 6 nights, breakfast included, free cancellation to 60 days out. Spa, organic garden, two beaches and farm-to-table restaurants, with buggy service across the hilly campus. <a href="https://www.sixsenses.com/en/hotels-resorts/the-americas/grenada/la-sagesse/" target="_blank" rel="noopener">Six Senses La Sagesse</a></p>
   </div>
+  <h2 class="section">Life on the Six Senses Campus</h2>
+  <p class="cap" style="margin:-8px 0 14px;">38 hillside acres with buggy service, bordering the La Sagesse nature reserve &mdash; mangroves, a salt pond, birdlife &mdash; making it the wildest-set base on the island. A 2025 Michelin Key for hospitality.</p>
+  <ul class="drives">
+    <li><strong>Callaloo</strong> <span class="t">&mdash; farm-to-table all-day restaurant fed by the on-site organic gardens; the natural home for most of our dinners</span></li>
+    <li><strong>SeaFire</strong> <span class="t">&mdash; the signature restaurant (local lobster &amp; snapper; the pricey one &mdash; see the chef note below)</span></li>
+    <li><strong>Panquai</strong> <span class="t">&mdash; poolside dining &amp; cocktails</span></li>
+    <li><strong>The spa</strong> <span class="t">&mdash; fishing-village style, overlooking the lagoon; the most-praised part of the resort in reviews</span></li>
+    <li><strong>24-hour gym &amp; recovery lounge</strong> <span class="t">&mdash; 180 m&sup2; fitness space with its own round-the-clock entrance, trainers 7am&ndash;7pm, spin/yoga/aerial-yoga studio; sauna, hot pool &amp; cold plunge, hammam, and Normatec compression recovery</span></li>
+    <li><strong>Two beaches</strong> <span class="t">&mdash; the sandy bay is shallow &amp; family-friendly; windward coast, so better for wading &amp; walks than swimming</span></li>
+    <li><strong>Kids &amp; teens</strong> <span class="t">&mdash; Grow With Six Senses program + Teens&rsquo; Lounge; babysitting on request</span></li>
+    <li><strong>Experience Center</strong> <span class="t">&mdash; the hub for booking island outings, boats &amp; guides</span></li>
+  </ul>
+  <p style="margin:14px 0 6px;"><strong>Distances from the resort</strong></p>
+  <ul class="drives">
+    <li>Maurice Bishop airport (GND) <span class="t">&mdash; ~25 min</span></li>
+    <li>Sailing pickups (Woburn / Le Phare Bleu marinas) <span class="t">&mdash; ~15&ndash;25 min</span></li>
+    <li>Grand &Eacute;tang rainforest &amp; Seven Sisters trailhead <span class="t">&mdash; ~30&ndash;40 min</span></li>
+    <li>Annandale Falls <span class="t">&mdash; ~35&ndash;40 min</span></li>
+    <li>Golf club (the 9-hole) <span class="t">&mdash; ~30&ndash;35 min</span></li>
+    <li>St. George&rsquo;s town <span class="t">&mdash; ~30&ndash;35 min</span></li>
+    <li>Grand Anse beach &amp; sculpture-park snorkel boats <span class="t">&mdash; ~40&ndash;45 min</span></li>
+    <li>Belmont Estate / River Antoine (north-island day) <span class="t">&mdash; ~1h&ndash;1h15</span></li>
+    <li>Gouyave Fish Friday <span class="t">&mdash; ~1h15+</span></li>
+  </ul>
+  <p class="cap" style="margin:6px 0 14px;">Note the shape of that list: the rainforest and sailing are the close things; the beach scene and town are the far things &mdash; the right trade for a week of hikes, a sailboat day and estate lunches.</p>
+  <p style="margin:14px 0 6px;"><strong>If we book it &mdash; the checklist</strong></p>
+  <ul class="drives" style="grid-template-columns:1fr; margin-bottom:22px;">
+    <li><strong>Drivers, not a rental car:</strong> <span class="t">every outing is a two-van expedition for eight on narrow, unlit roads &mdash; have the concierge put driver days on the calendar up front (airport, rainforest day, north-island day, Grand Anse runs).</span></li>
+    <li><strong>Buggy logistics on the campus:</strong> <span class="t">the grounds are steep &mdash; staff-operated buggies are how everyone moves, walking is limited and most buildings involve stairs. The Cliff Retreat sits out on the point, so ask whether it comes with a <strong>dedicated buggy &amp; driver</strong> (and if not, negotiate one) plus standing dinner-hour pickups for eight &mdash; peak-time waits are a known gripe.</span></li>
+    <li><strong>Private chef for the Retreat:</strong> <span class="t">ask for a dedicated chef / in-villa dining quote alongside the house &mdash; it sidesteps the $120&ndash;150 &agrave; la carte dinners and suits the communal-house plan anyway.</span></li>
+    <li><strong>Configuration in writing:</strong> <span class="t">the Cliff Retreat officially sleeps 8 adults + 2 children &mdash; confirm our eight in writing on the quote.</span></li>
+    <li><strong>Events check:</strong> <span class="t">ask exactly what weddings/events are booked Dec 26&ndash;Jan 2.</span></li>
+    <li><strong>The neighbor:</strong> <span class="t">the InterContinental next door opens Nov 2026 &mdash; ask what construction or opening activity is expected during our week, in writing.</span></li>
+  </ul>
   <h2 class="section">The Area &mdash; Cocoa, Spice &amp; Sea</h2>
   <div class="arearow">
     <div class="areainfo">
@@ -1294,6 +1360,21 @@
   <h2 class="section">More Options</h2>
   <p class="cap" style="font-style:italic;"><strong>Alternative:</strong> <a href="https://www.calabashhotel.com/" target="_blank" rel="noopener">Calabash Hotel</a> &mdash; a low-key Relais &amp; Ch&acirc;teaux classic on a calm beach near St. George's, the better-value base (~$35&ndash;45k all-in for eight) with free watersports &amp; a dive center on-site. It has 2&ndash;5BR estate homes (inquire directly &mdash; not bookable online), but probably not our vibe: more traditional resort than design-forward farm estate.</p>
   <p class="cap">Rough all-in for eight (excl. flights): ~$35&ndash;45k at Calabash. The Six Senses 4BR Cliff Retreat is the splurge route &mdash; $69,078 for 6 nights (~$11.5k/night, taxes &amp; breakfast incl.).</p>
+        <h2 class="section">Calabash &mdash; The Real Alternative</h2>
+  <p class="cap" style="margin:-8px 0 14px;">The island's quiet 4.9-rated classic &mdash; family-run Relais &amp; Ch&acirc;teaux since 1964, ~30 suites on calm, swimmable L'Anse aux &Eacute;pines, 10 minutes from the airport. (Spice Island and Silversands were considered and ruled out; the Cliff Retreat comparison is above.)</p>
+  <ul class="drives" style="grid-template-columns:1fr;">
+    <li><strong>Why guests love it:</strong> <span class="t">exceptional named-staff service, breakfast cooked to order on your suite's terrace, complimentary 6pm canap&eacute;s delivered to the room, lovely gardens, and an on-site dive center on a calm beach. Est. ~$35&ndash;45k all-in for eight; 2&ndash;5BR estate homes exist by direct inquiry for a more house-like setup.</span></li>
+    <li><strong>The food:</strong> <span class="t">the strongest program on the island, personally curated by owner Beth Garbutt &mdash; <a href="https://www.calabashhotel.com/rhodes-restaurant" target="_blank" rel="noopener">Rhodes</a> (the fine-dining benchmark: local ingredients, vine-covered terrace, the island's best cellar), <a href="https://www.calabashhotel.com/food-overview" target="_blank" rel="noopener">Nori</a> (a newer Japanese room built on local seafood &mdash; the answer to menu fatigue), and the Beach Club for barefoot lunches, grill nights &amp; bistro nights. Plus afternoon tea, Friday cooking demos, Sunday tropical-fruit tastings and private candlelit beach dinners.</span></li>
+    <li><strong>The honest caveats:</strong> <span class="t">over a full week some guests find the menus repetitive (Nori helps) and dinner service can be leisurely; suites are 1&ndash;2BR, so eight of us means a cluster of suites or one of the estate homes &mdash; not automatically one roof.</span></li>
+  </ul>
+  <h2 class="section">Fresh Food &mdash; with links</h2>
+  <p class="cap" style="margin:-6px 0 12px;"><strong>The food take:</strong> the deepest food culture on the list, and the thinnest restaurant scene. Everything revolves around what the island grows &mdash; nutmeg, cocoa, cinnamon and cloves, spiny lobster (December is peak season), fresh tuna, mahi and snapper, and serious chocolate and rum (<a href="https://belmontestategrenada.com/" target="_blank" rel="noopener">Belmont</a> tree-to-bar, River Antoine’s 1785 distillery). Eating well means estate lunches, Gouyave Fish Friday and a handful of <a href="https://www.inspiringtravel.co.uk/caribbean/grenada/travel-guides/top-10-restaurants-in-grenada" target="_blank" rel="noopener">good rooms</a> &mdash; BB’s Crabback, Rhodes at Calabash (the fine-dining benchmark), the Beach Club, Aquarium. Wine is the one weak spot on a rum island &mdash; lists are short and import-priced, with Calabash and Six Senses holding the only real cellars.</p>
+  <ul class="drives" style="grid-template-columns:1fr;">
+    <li><strong>Fish &amp; the Spice-Island catch:</strong> <span class="t">offshore <strong>yellowfin tuna, wahoo &amp; mahi</strong>, reef red snapper, and <strong>lamb&iacute; (conch)</strong> as a local staple; <strong>spiny lobster is in season Sep&ndash;Apr, so December is prime</strong>. Build a night around <a href="https://www.gogouyave.com/index.php/gouyave-fish-friday" target="_blank" rel="noopener">Gouyave "Fish Friday"</a>, the fishing town's weekly street fish-fry (~40 min; confirm scale &mdash; recent road closures).</span></li>
+    <li><strong>Meat &amp; national dish:</strong> <span class="t"><strong>oildown</strong> (breadfruit, salted meat, callaloo &amp; coconut steamed down with turmeric); plus curry goat with roti and <em>pelau</em> (browned chicken-and-rice).</span></li>
+    <li><strong>Fruit &amp; spices &mdash; why it's the "Spice Island":</strong> <span class="t"><strong>nutmeg</strong> (world #2 producer, on the flag), cocoa, cinnamon &amp; cloves; December fruit is citrus, papaya, coconut &amp; soursop (mango/guava are off-season). Tour the <a href="https://www.puregrenada.com/gouyave-nutmeg-processing-station/" target="_blank" rel="noopener">Gouyave Nutmeg Station</a> and <a href="https://belmontestategrenada.com/experience-belmont/tours/" target="_blank" rel="noopener">Belmont Estate</a> (tree-to-bar + creole farm lunch).</span></li>
+    <li><strong>At the property:</strong> <span class="t">Six Senses' SeaFire &amp; Callaloo do local lobster, snapper &amp; lamb&iacute; (on-site garden is modest, sourced via local farmers); Calabash's Rhodes is the fine-dining benchmark off-property.</span></li>
+  </ul>
   <h2 class="section">Things to Do</h2>
   <div class="compare-wrap">
     <table class="compare">
@@ -1323,15 +1404,43 @@
           <td>Grand &Eacute;tang rainforest &amp; the Seven Sisters waterfalls hike; gentle river tubing on the Balthazar</td>
           <td>~40 min</td>
         </tr>
+        <tr>
+          <th>Sailing</th>
+          <td>Day sails to Hog Island &amp; the south-coast cays &mdash; a traditional Carriacou sloop (Savvy) or the Shadowfax catamaran</td>
+          <td>From the south coast</td>
+        </tr>
         <tr class="grp"><th colspan="3">Day trips &mdash; the north (~1h)</th></tr>
         <tr>
           <th>Cocoa &amp; spice estate</th>
-          <td>Belmont Estate: cocoa, goat dairy, tree-to-bar &amp; estate-to-plate lunch</td>
+          <td>Belmont Estate: cocoa, goat dairy, tree-to-bar &amp; estate-to-plate lunch &mdash; pair with the Gouyave nutmeg station &amp; River Antoine rum</td>
           <td>~1h north</td>
         </tr>
       </tbody>
     </table>
   </div>
+    <h2 class="section">The Adventure Checklist &mdash; with links</h2>
+  <p class="cap" style="margin:-8px 0 10px;">The Grenada week, itemized &mdash; gentler than the DR’s, greener than Cabo’s:</p>
+  <ul class="drives">
+    <li><strong><a href="https://divegrenada.com/" target="_blank" rel="noopener">Underwater sculpture park</a></strong> <span class="t">&mdash; snorkelable for everyone, off Grand Anse</span></li>
+    <li><strong><a href="https://www.puregrenada.com/gouyave-nutmeg-processing-station/" target="_blank" rel="noopener">Spice plantations</a></strong> <span class="t">&mdash; the Gouyave nutmeg station; world #2 producer</span></li>
+    <li><strong><a href="https://belmontestategrenada.com/experience-belmont/tours/" target="_blank" rel="noopener">Cocoa estates</a></strong> <span class="t">&mdash; Belmont tree-to-bar + creole farm lunch</span></li>
+    <li><strong><a href="https://savvygrenada.com/" target="_blank" rel="noopener">Sailing</a></strong> <span class="t">&mdash; a traditional Carriacou sloop to Hog Island</span></li>
+    <li><strong><a href="https://www.ecodiveandtrek.com/" target="_blank" rel="noopener">Snorkeling</a></strong> <span class="t">&mdash; reefs off Grand Anse; Bianca C wreck for divers</span></li>
+    <li><strong><a href="https://www.alltrails.com/trail/grenada/saint-andrew/grand-etang-lake" target="_blank" rel="noopener">Rainforest</a></strong> <span class="t">&mdash; Grand &Eacute;tang crater lake &amp; Mona monkeys</span></li>
+    <li><strong><a href="https://www.alltrails.com/trail/grenada/saint-andrew/seven-sisters-waterfall-hike" target="_blank" rel="noopener">Waterfalls</a></strong> <span class="t">&mdash; Seven Sisters; Annandale for the easy day</span></li>
+    <li><strong><a href="https://www.islandroutes.com/caribbean-tours/grenada/9180/balthazar-river-tubing-adventure" target="_blank" rel="noopener">River tubing</a></strong> <span class="t">&mdash; gentle Balthazar float, all ages</span></li>
+    <li><strong><a href="https://www.tripadvisor.com/AttractionProductReview-g147295-d19597103-Tri_Island_Chocolate_Make_Your_Own_Chocolate_Bars_Experience-Grenada.html" target="_blank" rel="noopener">Chocolate</a></strong> <span class="t">&mdash; make-your-own-bar workshop</span></li>
+    <li><strong><a href="https://www.tripadvisor.com/Attraction_Review-g147295-d150099-Reviews-River_Antoine_Estate_Rum_Distillery-Grenada.html" target="_blank" rel="noopener">Rum</a></strong> <span class="t">&mdash; River Antoine, water-wheel powered since 1785</span></li>
+  </ul>
+<h2 class="section">Hikes &mdash; with links</h2>
+  <ul class="drives" style="grid-template-columns:1fr;">
+    <li><strong>Annandale Falls</strong> <span class="t">&mdash; easy, ~5-min paved walk to a swimmable pool, ~20 min from St. George's; the most family-friendly. <a href="https://www.puregrenada.com/annandale-falls/" target="_blank" rel="noopener">PureGrenada</a></span></li>
+    <li><strong>Grand &Eacute;tang Lake loop</strong> <span class="t">&mdash; easy ~1h self-guided crater-lake walk with an interpretation centre and Mona monkeys. <a href="https://www.alltrails.com/trail/grenada/saint-andrew/grand-etang-lake" target="_blank" rel="noopener">AllTrails</a></span></li>
+    <li><strong>Concord Falls</strong> <span class="t">&mdash; lower fall roadside/easy; the upper Au Coin fall is a ~30&ndash;45 min guided upriver walk (moderate). <a href="https://www.puregrenada.com/concord-waterfalls/" target="_blank" rel="noopener">PureGrenada</a></span></li>
+    <li><strong>Seven Sisters Waterfalls</strong> <span class="t">&mdash; easy&ndash;moderate ~1.5&ndash;2h, steep &amp; muddy on private land (small fee, guide advised), with pools you can jump into. <a href="https://www.alltrails.com/trail/grenada/saint-andrew/seven-sisters-waterfall-hike" target="_blank" rel="noopener">AllTrails</a></span></li>
+    <li><strong>Mount Qua Qua</strong> <span class="t">&mdash; moderate ~1.5&ndash;2h return along a muddy ridge with crater-lake views; the Qua Qua&rarr;Concord traverse is a longer guided option. <a href="https://www.alltrails.com/trail/grenada/saint-george/mt-qua-qua" target="_blank" rel="noopener">AllTrails</a></span></li>
+    <li><strong>Mount St. Catherine</strong> <span class="t">&mdash; the island's highest peak (840 m); strenuous ~5h of steep, muddy scrambling, guide required &mdash; for the fit hikers, not young kids. <a href="https://www.alltrails.com/trail/grenada/saint-mark/mount-saint-catherine" target="_blank" rel="noopener">AllTrails</a></span></li>
+  </ul>
   <h2 class="section">Activity Guide &mdash; with links</h2>
   <ul class="drives" style="grid-template-columns:1fr;">
     <li><strong>Scuba:</strong> <span class="t"><a href="https://www.aquanautsgrenada.com/" target="_blank" rel="noopener">Aquanauts</a> ~25 min (closest), <a href="https://divegrenada.com/" target="_blank" rel="noopener">Dive Grenada</a> &amp; <a href="https://www.ecodiveandtrek.com/" target="_blank" rel="noopener">Eco Dive</a> at Grand Anse ~40 min; the sculpture park is snorkelable for everyone; Bianca C is advanced-only.</span></li>
@@ -1343,12 +1452,13 @@
   <h2 class="section">The Honest Take</h2>
   <p class="cap" style="margin:-8px 0 14px;">From guest reviews &mdash; TripAdvisor, Reddit &amp; forums. What people love, and what they complain about.</p>
   <ul class="drives" style="grid-template-columns:1fr;">
-    <li><strong>Loved:</strong> <span class="t">&ldquo;It's like paradise&hellip; the staff hospitality was 4/4&rdquo;; an excellent kids club; Michelin-listed; and the island itself (Belmont cocoa, river tubing, the sculpture park) charms everyone.</span></li>
-    <li><strong>New-resort wobble:</strong> <span class="t">~14% of reviews are 3&#9733; or below &mdash; slow service (&ldquo;2-hour dinners&rdquo;), construction-quality gripes, and the sharpest line: &ldquo;if you expect an InterContinental you'll be fine; if you expect Six Senses you'll be very disappointed.&rdquo;</span></li>
+    <li><strong>Loved:</strong> <span class="t">TripAdvisor 4.6 across 184 reviews &mdash; staff warmth, the spa and the breakfasts are the most-loved parts: &ldquo;It's like paradise&hellip; the staff hospitality was 4/4&rdquo;; an excellent kids club; Michelin-listed; and the island itself (Belmont cocoa, river tubing, the sculpture park) charms everyone.</span></li>
+    <li><strong>New-resort wobble:</strong> <span class="t">the reviews are bimodal &mdash; seasoned guests of the brand say it's &ldquo;not Six Senses-caliber&rdquo;; ~14% of reviews are 3&#9733; or below &mdash; slow service (&ldquo;2-hour dinners&rdquo;), construction-quality gripes, and the sharpest line: &ldquo;if you expect an InterContinental you'll be fine; if you expect Six Senses you'll be very disappointed.&rdquo;</span></li>
+    <li><strong>Food prices sting:</strong> <span class="t">~$50 breakfasts and $120&ndash;150 dinners that guests call hit-or-miss &mdash; reviewers describe literally leaving the resort to eat next door. For a food-first family, that's the caveat that matters most.</span></li>
     <li><strong>No swimmable beach:</strong> <span class="t">the resort sits on the rough windward coast with a documented sargassum history (December is usually the low season for it, but swimming there is discouraged either way); the real beach, Grand Anse, is a 40&ndash;45 min shuttle.</span></li>
-    <li><strong>Construction next door:</strong> <span class="t">a 100+-room InterContinental is being built adjacent &mdash; guests have reported bulldozers visible from the pool; decent odds it's still active Dec 2026.</span></li>
+    <li><strong>The neighbor problem:</strong> <span class="t">a 120-room InterContinental opens <strong>directly next door in November 2026</strong> &mdash; so our festive week lands on either final construction or a brand-new resort sharing the beach. Either way, the secluded-cove premise changes.</span></li>
     <li><strong>Isolation:</strong> <span class="t">a 40-min &ldquo;scary&rdquo; airport transfer on narrow unlit roads, and everything (golf, town, dive boats) is 40&ndash;60 min away &mdash; every outing is a two-van expedition.</span></li>
-    <li><strong>Fine print:</strong> <span class="t">the Cliff Retreat officially sleeps 8 adults + 2 children &mdash; get our configuration in writing; a refund dispute is documented; and the Saturday-only BOS nonstop actually fits Dec 26 &rarr; Jan 2 perfectly if the quote is moved off the Dec 25 arrival.</span></li>
+    <li><strong>Fine print:</strong> <span class="t">the Cliff Retreat officially sleeps 8 adults + 2 children &mdash; get our configuration in writing; a refund dispute is documented; and JetBlue discontinued the Boston&ndash;Grenada nonstop in 2025, so it&rsquo;s the JFK nonstop for everyone &mdash; which matches the gather-in-NYC-on-the-24th plan. And the $69k is before the per-person charges.</span></li>
   </ul>
 
   <footer>Grenada deep dive &bull; A week together, late December 2026</footer>
@@ -1362,16 +1472,16 @@
   </header>
   <div class="pagenav">
     <a data-page="page-overview">Overview</a>
-    <span class="navgroup">Pacific</span>
-    <a data-page="page-careyes">Careyes / Cuixmala</a>
+    <span class="navgroup">Finalists</span>
     <a data-page="page-cabos">Los Cabos</a>
     <a data-page="page-todossantos">Todos Santos</a>
-    <a data-page="page-sanmiguel">San Miguel de Allende</a>
-    <span class="navrowbreak"></span>
-    <span class="navgroup">Caribbean</span>
-    <a data-page="page-pr">Puerto Rico</a>
     <a data-page="page-jarabacoa">Dominican Republic</a>
     <a data-page="page-grenada">Grenada</a>
+    <span class="navrowbreak"></span>
+    <span class="navgroup">Archived</span>
+    <a data-page="page-careyes">Careyes / Cuixmala</a>
+    <a data-page="page-sanmiguel">San Miguel de Allende</a>
+    <a data-page="page-pr">Puerto Rico</a>
   </div>
   <p class="cap" style="font-style:italic;">Saved for reference &mdash; no golf in the BVI, so it fell off the main list. <a data-page="page-overview" style="cursor:pointer;">&larr; Back to Overview</a></p>
   <div class="intro">
@@ -1586,17 +1696,19 @@
       attribution: '&copy; OpenStreetMap &copy; CARTO', subdomains: 'abcd', maxZoom: 19
     }).addTo(map);
 
-    var pts = MAPS[id], bounds = [], used = {};
+    var pts = MAPS[id], bounds = [], used = {}, markers = [];
     pts.forEach(function (p) {
       var col = (CAT[p.k] || CAT.town).c;
       var isStay = p.k === 'stay';
-      L.circleMarker([p.la, p.ln], {
-        radius: isStay ? 9 : 6, color: '#fff', weight: isStay ? 2 : 1.5,
+      var baseR = isStay ? 9 : 6, baseW = isStay ? 2 : 1.5;
+      var m = L.circleMarker([p.la, p.ln], {
+        radius: baseR, color: '#fff', weight: baseW,
         fillColor: col, fillOpacity: 1
       }).addTo(map).bindTooltip(p.n, {
         permanent: true, direction: 'right', offset: [6, 0],
         className: 'lbl' + (isStay ? ' stay' : '')
       });
+      markers.push({ m: m, p: p, baseR: baseR, baseW: baseW, col: col });
       bounds.push([p.la, p.ln]);
       used[p.k] = true;
     });
@@ -1605,9 +1717,35 @@
 
     var leg = document.getElementById(LEGID[id] || ('leg' + id.slice(3)));
     if (leg) {
-      leg.innerHTML = Object.keys(CAT).filter(function (k) { return used[k]; }).map(function (k) {
+      var cats = Object.keys(CAT).filter(function (k) { return used[k]; }).map(function (k) {
         return '<span class="li"><span class="sw" style="background:' + CAT[k].c + '"></span>' + CAT[k].label + '</span>';
       }).join('');
+      var chips = markers.map(function (mk, i) {
+        var short = mk.p.n.replace(/\s*\(stay\)\s*/, '').split(' — ')[0].split(' · ')[0];
+        return '<span class="li site" data-i="' + i + '" title="Show on map"><span class="sw" style="background:' + mk.col + '"></span>' + short + '</span>';
+      }).join('');
+      leg.innerHTML = cats + '<span style="flex-basis:100%; height:0;"></span>' + chips;
+      var pulsing = null;
+      leg.addEventListener('click', function (e) {
+        var chip = e.target.closest('.li.site');
+        if (!chip) return;
+        var mk = markers[+chip.getAttribute('data-i')];
+        if (!mk) return;
+        leg.querySelectorAll('.li.site.on').forEach(function (c) { c.classList.remove('on'); });
+        chip.classList.add('on');
+        map.panTo(mk.m.getLatLng());
+        if (pulsing) { clearInterval(pulsing.t); pulsing.mk.m.setStyle({ weight: pulsing.mk.baseW, color: '#fff' }); pulsing.mk.m.setRadius(pulsing.mk.baseR); }
+        var n = 0;
+        var t = setInterval(function () {
+          n++;
+          var big = n % 2 === 1;
+          mk.m.setRadius(big ? mk.baseR + 7 : mk.baseR);
+          mk.m.setStyle({ weight: big ? 4 : mk.baseW, color: big ? '#1c355e' : '#fff' });
+          if (n >= 8) { clearInterval(t); mk.m.setRadius(mk.baseR); mk.m.setStyle({ weight: mk.baseW, color: '#fff' }); pulsing = null; }
+        }, 260);
+        pulsing = { t: t, mk: mk };
+        mk.m.bringToFront();
+      });
     }
   });
 
